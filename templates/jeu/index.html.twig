@@ -23,7 +23,7 @@
                 <td>{{ jeu.titre }}</td>
                 <td>{{ jeu.description }}</td>
                 <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ jeu.image }}</td>
+                <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td>
                 <td>
                     <a href="{{ path('jeu_show', {'id': jeu.id}) }}">show</a>
                     <a href="{{ path('jeu_edit', {'id': jeu.id}) }}">edit</a>

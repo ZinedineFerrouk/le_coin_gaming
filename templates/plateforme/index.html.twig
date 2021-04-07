@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ plateforme.id }}</td>
                 <td>{{ plateforme.titre }}</td>
-                <td>{{ plateforme.logo }}</td>
+                <td><img style="width:32px;" src="{{ asset(plateforme.logo) }}" /></td>
                 <td>
                     <a href="{{ path('plateforme_show', {'id': plateforme.id}) }}">show</a>
                     <a href="{{ path('plateforme_edit', {'id': plateforme.id}) }}">edit</a>
