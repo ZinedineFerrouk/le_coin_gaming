@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Plateforme{% endblock %}
+
+{% block body %}
+    <h1>Plateforme</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ plateforme.id }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ plateforme.titre }}</td>
+            </tr>
+            <tr>
+                <th>Logo</th>
+                <td>{{ plateforme.logo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('plateforme_index') }}">back to list</a>
+
+    <a href="{{ path('plateforme_edit', {'id': plateforme.id}) }}">edit</a>
+
+    {{ include('plateforme/_delete_form.html.twig') }}
+{% endblock %}

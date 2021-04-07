@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jeu{% endblock %}
+
+{% block body %}
+    <h1>Jeu</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ jeu.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ jeu.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ jeu.description }}</td>
+            </tr>
+            <tr>
+                <th>Date_sortie</th>
+                <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ jeu.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('jeu_index') }}">back to list</a>
+
+    <a href="{{ path('jeu_edit', {'id': jeu.id}) }}">edit</a>
+
+    {{ include('jeu/_delete_form.html.twig') }}
+{% endblock %}
