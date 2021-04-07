@@ -16,7 +16,6 @@ class AnnonceType extends AbstractType
     {
         $builder
             ->add('prix')
-            ->add('created_at')
             ->add('boite')
             ->add('jeu', EntityType::class,[
                 'class' => Jeu::class,
