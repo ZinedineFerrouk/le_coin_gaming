@@ -3,18 +3,139 @@
 {% block title %}Hello DefaultController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<div class="containerAcc">
+    <div class="accueil">
+            <div class="titre">
+                    <h1>Le Coin Des Gameurs</h1>
+                    <p>Achat et Vente de Jeux d'Occasion</p>
+                    <div class="desc">
+                            <div class="slider-container">
+                                    <figure id="carousel--3d">
+                                            <input type="radio" name="carousel-3d"
+                                                    id="carousel-3d-controller-1" class="rad" />
+                                            <input type="radio" name="carousel-3d"
+                                                    id="carousel-3d-controller-2" class="rad" />
+                                            <input type="radio" name="carousel-3d"
+                                                    id="carousel-3d-controller-3" class="rad" />
+                                            <div id="carousel-3d-controller-1" class="carousel-3d-item">
+                                                    <div class="slide-img">
+                                                            <img src="assets/img/ghost.jpg" alt="" />
+                                                    </div>
+                                                    <div class="slide-content">
+                                                            <!-- <img src="assets/dist/img/easy.png"> -->
+                                                            <p>Ghost Of Tsushima</p>
+                                                    </div>
+                                            </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                                            <div id="carousel-3d-controller-2" class="carousel-3d-item">
+                                                    <div class="slide-img">
+                                                            <img src="assets/img/cyberpunk-cover.webp"
+                                                                    alt="" />
+                                                    </div>
+                                                    <div class="slide-content">
+                                                            <!-- <img src="assets/dist/img/easy.png"> -->
+                                                            <p>CyberPunk 2077</p>
+                                                    </div>
+                                            </div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/xampp/htdocs/le_coin_gaming/src/Controller/DefaultController.php'|file_link(0) }}">src/Controller/DefaultController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/xampp/htdocs/le_coin_gaming/templates/default/index.html.twig'|file_link(0) }}">templates/default/index.html.twig</a></code></li>
-    </ul>
+                                            <div id="carousel-3d-controller-3" class="carousel-3d-item">
+                                                    <div class="slide-img">
+                                                            <img src="assets/img/dbz.jpg" alt="" />
+                                                    </div>
+                                                    <div class="slide-content">
+                                                            <!-- <img src="assets/dist/img/easy.png"> -->
+                                                            <p>Dragon Ball Z </p>
+                                                    </div>
+                                            </div>
+                                    </figure>
+                            </div>
+                    </div>
+
+                    <a href="#"><input type="button" class="button" value="Vendre un Produit"></a>
+            </div>
+
+    </div>
 </div>
+
+
+
+<section class="propos">
+    <h2>Jeux Récents</h2><br>
+    <div class="jeuxR">
+            <div class="imgdesc">
+                    <img src="assets/img/modern.jpg" alt="">
+                    <img src="assets/img/cyberpunk-cover.webp" alt="">
+                    <img src="assets/img/dbz.jpg" alt="">
+                    <img src="assets/img/ghost.jpg" alt="">
+            </div>
+
+
+            <div class="desc1">
+                    <!-- <p>Vous retrouverez ici les jeux les plus récents</p> -->
+                    <a href="#"><input type="button" class="buttonPop"
+                                    value="Voir plus de jeux populaires"></a>
+            </div>
+
+    </div>
+
+
+</section>
+
+<section id="services4" class="services1">
+
+    <div class="service">
+            <div class="service1">
+                    <div class="imgser"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Visibilité Digitale</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur aperiam,
+                            ducimus temporibus nisi, ipsam quo inventore suscipit magnam dolore quasi atque,
+                            id ratione deleniti numquam vero tenetur voluptatum velit!</p>
+            </div>
+            <div class="border"></div>
+            <div class="service2">
+                    <div class="imgser"><i class="fas fa-scroll"></i></div>
+                    <h3>Visibilité Digitale</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat unde repellendus
+                            dolore eius, cum, esse quis vel laboriosam, nostrum autem voluptates omnis? Eos,
+                            possimus ipsum? Inventore neque consequuntur deleniti tempora.</p>
+            </div>
+            <div class="border"></div>
+            <div class="service3">
+                    <div class="imgser"><i class="fas fa-comments"></i></div>
+                    <h3>Visibilité Digitale</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nam ut repellat.
+                            Iste ea voluptatum laborum, officiis repellendus qui mollitia asperiores quae
+                            doloribus impedit. Adipisci sed beatae eum reiciendis nihil!</p>
+            </div>
+    </div>
+
+</section>
+
+<section class="ventesR">
+    <h2>Les Dernières Annonces</h2>
+    <div class="jeuxR">
+            <div class="imgdesc">
+                    <img src="assets/img/modern.jpg" alt="">
+                    <img src="assets/img/cyberpunk-cover.webp" alt="">
+                    <img src="assets/img/dbz.jpg" alt="">
+                    <img src="assets/img/ghost.jpg" alt="">
+                    <img src="assets/img/halo.jpg" alt="">
+                    <img src="assets/img/gta5.webp" alt="">
+            </div>
+
+
+            <div class="desc1">
+
+                    <!-- <p>Vous retrouverez ici les dernières annonces faites récemment!</p> -->
+                    <a href="#"><input type="button" class="buttonPop"
+                                    value="Voir plus de jeux populaires"></a>
+            </div>
+    </div>
+
+
+
+</section>
+{% endblock %}
+{% block javascripts %}
+<script src="assets/js/accueil.js"></script>
 {% endblock %}
