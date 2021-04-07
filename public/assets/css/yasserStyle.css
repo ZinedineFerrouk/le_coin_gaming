@@ -18,6 +18,7 @@
   }
   header {
     text-align: center;
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
     width: 100%;
@@ -249,8 +250,10 @@
     }
     .slider-container {
       position: relative;
-      perspective: 350px;
-      transform-style: preserve-3d;
+      -webkit-perspective: 350px;
+              perspective: 350px;
+      -webkit-transform-style: preserve-3d;
+              transform-style: preserve-3d;
     }
   
     .slide-content p {
@@ -274,6 +277,8 @@
     #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(2),
     #carousel-3d-controller-2 ~ .carousel-3d-item:nth-of-type(3),
     #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(3) {
+      -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+      -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
       transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     }
   
@@ -281,8 +286,11 @@
     #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(2),
     #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(3),
     #carousel-3d-controller-3:checked ~ .carousel-3d-item:nth-of-type(1) {
-      transform: translateX(-175px) translateZ(-130px);
+      -webkit-transform: translateX(-175px) translateZ(-130px);
+              transform: translateX(-175px) translateZ(-130px);
       opacity: 0.7;
+      -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+      -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
       transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     }
   
@@ -290,8 +298,11 @@
     #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(1),
     #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(2),
     #carousel-3d-controller-3:checked ~ .carousel-3d-item:nth-of-type(3) {
-      transform: translateX(0) translateZ(0);
+      -webkit-transform: translateX(0) translateZ(0);
+              transform: translateX(0) translateZ(0);
       opacity: 1;
+      -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+      -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
       transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     }
   
@@ -299,8 +310,11 @@
     #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(3),
     #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(1),
     #carousel-3d-controller-3:checked ~ .carousel-3d-item:nth-of-type(2) {
-      transform: translateX(175px) translateZ(-130px);
+      -webkit-transform: translateX(175px) translateZ(-130px);
+              transform: translateX(175px) translateZ(-130px);
       opacity: 0.7;
+      -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+      -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
       transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     }
   }
@@ -328,9 +342,14 @@
   }
   
   .imgdesc {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   
   .propos h2,
@@ -461,9 +480,14 @@
   }
   
   .imgdesc {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   
   .ventesR h2,
