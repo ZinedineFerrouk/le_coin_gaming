@@ -13,22 +13,22 @@ class PlateformeFixtures extends Fixture
         $tableau = [
             [
                 'titre' => 'Playstation',
-                'image' => 'images/plateforme/play.png',
+                'image' => 'assets/images/plateforme/play.png',
             ],
 
             [
                 'titre' => 'Xbox',
-                'image' => 'images/plateforme/xbox.png',
+                'image' => 'assets/images/plateforme/xbox.png',
             ],
 
             [
                 'titre' => 'Nintendo',
-                'image' => 'images/plateforme/nintendo.png',
+                'image' => 'assets/images/plateforme/nintendo.png',
             ],
 
             [
                 'titre' => 'Windows',
-                'image' => 'images/plateforme/windows.png',
+                'image' => 'assets/images/plateforme/windows.png',
             ],
         ];
 
