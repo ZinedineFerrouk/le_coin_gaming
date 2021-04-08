@@ -37,10 +37,15 @@
         <nav>
             <ul>
 
-                        <li><a href="{{ path('games_listing') }}">Parcourir</a></li>
-                        <li><a href="{{ path('annonce_new')}}">Vendre</a></li>
-                        <li><a href="{{ path('app_login') }}">Connexion</a></li>
-                        <li><a href="{{ path('app_register') }}">Inscription</a></li>
+                <li><a href="{{ path('games_listing') }}">Parcourir</a></li>
+                <li><a href="{{ path('annonce_new')}}">Vendre</a></li>
+                {% if is_granted('ROLE_USER') %}
+                <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                <li><a href="{{ path('profil') }}">Profil</a></li>
+                {% else %}
+                <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                <li><a href="{{ path('app_register') }}">Inscription</a></li>
+                {% endif %}
 
             </ul>
         </nav>

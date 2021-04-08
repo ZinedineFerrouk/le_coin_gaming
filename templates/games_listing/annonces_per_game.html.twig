@@ -1,23 +1,56 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les Annonces | Le Coin Gaming
+{% block title %}Les Annonces pour
+	{{ jeu.titre }}
+	| Le Coin Gaming
 {% endblock %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('assets/css/zinedineStyles.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_annonces_styles.css')}}">
 {% endblock %}
 
 {% block body %}
 
-	<div class="container">
-        <div class="__game_details">
-            <h1> {{ jeu.titre }} </h1>
-        </div>
+	<div class="container d-flex">
+		<div class="__game__image_container">
+			<img class="__game_image" src=" {{ asset(jeu.image) }} "/>
+		</div>
 
-		{% for a in annonces %}
-            <p>{{ a.prix }}</p>
-        {% endfor %}
+		<div class="__game_info">
+			<div class="d-flex">
+				<h1 class="__game_title">
+					{{ jeu.titre }}
+				</h1>
+				<p class="__game_date">({{ jeu.dateSortie|date('Y') }})</p>
+			</div>
 
+			<div class="__border_black mt-3"></div>
+			<div class="__border_grey mb-3"></div>
+
+			<div>
+				<p class="__game_synopsis">Synopsis</p>
+				<p class="__game_description">{{ jeu.description|nl2br }}</p>
+			</div>
+		</div>
 	</div>
 
+    {# BARRE DE TRI PAR PRIX A METTRE ICI #}
+
+	<div class="container">
+		{% for a in annonces %}
+			<p>{{ a.prix }}</p>
+			<a href=" {{ path('annonce_show', {id: a.id}) }} ">Voir l'annonce</a>
+
+			<div class="__border_black mt-3"></div>
+			<div class="__border_grey mb-3"></div>
+		{% endfor %}
+	</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{# BARRE DE TRI #}
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<script></script>
 {% endblock %}
