@@ -123,7 +123,7 @@
     display: none;
   }
   
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 1224px) {
     .burger {
       display: none;
     }
@@ -166,13 +166,12 @@
     }
     nav ul li a {
       font-size: 20px;
-      margin: 0 20px;
-      padding: 7px 12px;
+      
       border-radius: 3px;
     }
   }
   
-  @media screen and (min-width: 650px) and (max-width: 1150px) {
+  @media screen and (min-width: 650px) and (max-width: 1224px) {
     nav ul {
       display: -ms-grid;
       display: grid;
@@ -199,7 +198,7 @@
   .titre {
     position: relative;
     z-index: 2;
-    padding: 280px 0;
+    padding-top: 280px ;
   }
   
   .titre h1 {
@@ -236,7 +235,7 @@
     display: none;
   }
   
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 1224px) {
   
     .containerAcc {
       margin-top: -10%;
@@ -246,7 +245,7 @@
       width: 25vw;
       position: absolute;
       top: 250px;
-      right: 15%;
+      right: 20%
     }
     .slider-container {
       position: relative;
@@ -319,10 +318,15 @@
     }
   }
   
-  @media screen and (min-width: 650px) and (max-width: 1150px) {
-    .accueil {
+  @media screen and (min-width: 650px) and (max-width: 1224px) {
+    .containerAcc {
       height: 860px;
     }
+    .titre{
+        padding-top: 370px;
+    }
+
+    
   }
   
   /* a propos */
@@ -388,7 +392,7 @@
     text-align: center;
   }
   
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 1224px) {
     
     
     .propos .imgdesc{
@@ -436,7 +440,7 @@
       padding: 25px;
     }
   
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 1224px) {
     .service {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -527,7 +531,7 @@
   }
   
   
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 1224px) {
    
     .ventesR .imgdesc{
       margin: 0 auto;
@@ -625,7 +629,7 @@
     font-size: 20px;
   }
   
-  @media screen and (min-width: 1150px) {
+  @media screen and (min-width: 1224px) {
     .footer-right > * {
       -webkit-box-flex: 1;
       -ms-flex: 1;
