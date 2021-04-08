@@ -20,8 +20,10 @@ class AnnonceController extends AbstractController
      */
     public function index(AnnonceRepository $annonceRepository): Response
     {
+        $annonces = $annonceRepository->findAllAnnonce();
+        //dd($annonceRepository->findAll());
         return $this->render('annonce/index.html.twig', [
-            'annonces' => $annonceRepository->findAll(),
+            'annonces' => $annonces,
         ]);
     }
 
@@ -54,8 +56,13 @@ class AnnonceController extends AbstractController
      */
     public function show(Annonce $annonce): Response
     {
+        $plateforme = $annonce->getPlateforme();
+        $jeu = $annonce->getJeu();
+
         return $this->render('annonce/show.html.twig', [
             'annonce' => $annonce,
+            'jeu' => $jeu,
+            'plateforme' => $plateforme,
         ]);
     }
 
