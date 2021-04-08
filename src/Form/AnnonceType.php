@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Annonce;
 use App\Entity\Jeu;
 use App\Entity\Plateforme;
+use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
