@@ -35,14 +35,14 @@
         <nav>
                 <ul>
 
-                        <li><a href="#">Parcourir</a></li>
+                        <li><a href="{{ path('games_listing') }}">Parcourir</a></li>
                         <li><a href="#">Vendre</a></li>
                         <li><a href="#">Connexion</a></li>
                         <li><a href="#">Inscription</a></li>
 
                 </ul>
         </nav>
-</header>
+    </header>
     {% block body %}{% endblock %}
     <footer class="footer">
 
@@ -86,11 +86,7 @@
         <div class="footer-bottom">
                 <p>All Right reserved</p>
         </div>
-
-
-
-
-</footer>
+    </footer>
     
     <script src="assets/js/main.js"></script>
     {% block javascripts %}

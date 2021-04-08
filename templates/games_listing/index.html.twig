@@ -2,8 +2,37 @@
 
 {% block title %}Les Jeux | Le Coin Gaming{% endblock %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/css/zinedineStyles.css')}}">
+{% endblock %}
+
 {% block body %}
 
+<div class="__game_container">
+    <div class="container">
+        <div class="__game_title_div">
+            <span class="__game_span">Les</span>
+            <h1 class="__game_h1">Jeux</h1>
+        </div>
 
+        {% for jeu in jeux %}
+        <div class="__game d-flex">
+            <div class="__game_image_div">
+                <img class="__game_image" src="{{ asset(jeu.image) }}" />
+            </div>
+            <p class="__game_title"><a href="">{{ jeu.titre }}</a></p>
+            <div class="__game_platform">
+               {# <img src="{{ asset(jeu.plateforme.logo) }}" /> #}
+               <pre>
+                   {{ dump(jeu) }}
+               </pre>
+            </div>
+        </div>
+        
+        <div class="__border_black mt-3"></div>
+        <div class="__border_grey mb-3"></div>
+        {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
