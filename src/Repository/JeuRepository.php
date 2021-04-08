@@ -36,6 +36,16 @@ class JeuRepository extends ServiceEntityRepository
     }
     */
 
+    public function findAllWithPlateformeAndAnnonce()
+    {
+        return $this->createQueryBuilder('j')
+            ->addSelect('j', 'p', 'a')
+            ->leftJoin('j.plateforme', 'p')
+            ->leftJoin('j.annonces', 'a')
+            ->getQuery()
+            ->getResult();
+    }
+
     /*
     public function findOneBySomeField($value): ?Jeu
     {

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Annonces | Le Coin Gaming
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('assets/css/zinedineStyles.css')}}">
+{% endblock %}
+
+{% block body %}
+
+	<div class="container">
+        <div class="__game_details">
+            <h1> {{ jeu.titre }} </h1>
+        </div>
+
+		{% for a in annonces %}
+            <p>{{ a.prix }}</p>
+        {% endfor %}
+
+	</div>
+
+{% endblock %}

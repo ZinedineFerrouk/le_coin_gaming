@@ -19,6 +19,31 @@ class AnnonceRepository extends ServiceEntityRepository
         parent::__construct($registry, Annonce::class);
     }
 
+
+    public function findAllAnnonce()
+    {
+        return $this->createQueryBuilder('a')
+            ->addselect('a','j','p')
+            ->leftJoin('a.jeu','j')
+            ->leftJoin('a.plateforme','p')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
+    public function findAnnonceById($id)
+    {
+        return $this->createQueryBuilder('a')
+            ->addselect('a','j','p')
+            ->leftJoin('a.jeu','j')
+            ->leftJoin('a.plateforme','p')
+            ->where("a.id = ?1")
+            ->setParameter(1, $id)
+            ->getQuery()
+            ->getResult()
+            ;
+    }
+
     // /**
     //  * @return Annonce[] Returns an array of Annonce objects
     //  */

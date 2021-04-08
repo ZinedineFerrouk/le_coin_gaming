@@ -7,24 +7,23 @@
 
     <table class="table">
         <thead>
-            <tr>
-                <th>Id</th>
+            <tr class="text-center">
+                <th>Jeux</th>
+                <th>Plateforme</th>
+                <th>Titre</th>
                 <th>Prix</th>
-                <th>Created_at</th>
-                <th>Boite</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for annonce in annonces %}
-            <tr>
-                <td>{{ annonce.id }}</td>
-                <td>{{ annonce.prix }}</td>
-                <td>{{ annonce.createdAt ? annonce.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ annonce.boite ? 'Yes' : 'No' }}</td>
+            <tr class="text-center">
+                <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
+                <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
+                <td>{{annonce.jeu.titre}}</td>
+                <td>{{ annonce.prix }} €</td>
                 <td>
-                    <a href="{{ path('annonce_show', {'id': annonce.id}) }}">show</a>
-                    <a href="{{ path('annonce_edit', {'id': annonce.id}) }}">edit</a>
+                    <a class="btn btn-primary" href="{{ path('annonce_show', {'id': annonce.id}) }}">Voir l'annonce</a>
                 </td>
             </tr>
         {% else %}
