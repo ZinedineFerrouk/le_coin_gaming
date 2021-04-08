@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Titre</th>
                 <th>Prix</th>
                 <th>Created_at</th>
                 <th>Boite</th>
@@ -19,6 +20,7 @@
         {% for annonce in annonces %}
             <tr>
                 <td>{{ annonce.id }}</td>
+                <td>{{ annonce.jeu.titre }}</td>
                 <td>{{ annonce.prix }}</td>
                 <td>{{ annonce.createdAt ? annonce.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ annonce.boite ? 'Yes' : 'No' }}</td>

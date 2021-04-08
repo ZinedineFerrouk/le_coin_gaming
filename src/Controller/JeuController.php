@@ -53,8 +53,11 @@ class JeuController extends AbstractController
      */
     public function show(Jeu $jeu): Response
     {
+        $annonces = $jeu->getAnnonces();
+
         return $this->render('jeu/show.html.twig', [
             'jeu' => $jeu,
+            'annonces' => $annonces,
         ]);
     }
 

@@ -1,38 +1,53 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Les Jeux | Le Coin Gaming{% endblock %}
+{% block title %}Les Jeux | Le Coin Gaming
+{% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('assets/css/zinedineStyles.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/zinedineStyles.css')}}">
 {% endblock %}
 
 {% block body %}
 
-<div class="__game_container">
-    <div class="container">
-        <div class="__game_title_div">
-            <span class="__game_span">Les</span>
-            <h1 class="__game_h1">Jeux</h1>
-        </div>
+	<div class="__game_container">
+		<div class="container">
+			<div class="__game_title_div">
+				<span class="__game_span">Les</span>
+				<h1 class="__game_h1">Jeux</h1>
+			</div>
 
-        {% for jeu in jeux %}
-        <div class="__game d-flex">
-            <div class="__game_image_div">
-                <img class="__game_image" src="{{ asset(jeu.image) }}" />
-            </div>
-            <p class="__game_title"><a href="">{{ jeu.titre }}</a></p>
-            <div class="__game_platform">
-               {# <img src="{{ asset(jeu.plateforme.logo) }}" /> #}
-               <pre>
-                   {{ dump(jeu) }}
-               </pre>
-            </div>
-        </div>
-        
-        <div class="__border_black mt-3"></div>
-        <div class="__border_grey mb-3"></div>
-        {% endfor %}
-    </div>
-</div>
+			{% for jeu in jeux %}
+				<div class="__game d-flex">
+					<div class="__game_image_div">
+						<img class="__game_image" src="{{ asset(jeu.image) }}"/>
+					</div>
+
+
+					<div class="d-block">
+
+						<p class="__game_title">
+							<a href="">{{ jeu.titre }}</a>
+						</p>
+
+						<div class="__game_platform">
+							{% for p in jeu.plateforme %}
+								<img class="__game_platform_logo" src="{{ asset(p.logo) }}"/>
+							{% endfor %}
+						</div>
+
+						<div class="__game_annonces">
+							<div>
+								<a href="{{ path('annonces_per_game', {'id': jeu.id}) }}">Voir les annonces</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="__border_black mt-3"></div>
+				<div class="__border_grey mb-3"></div>
+			{% endfor %}
+		</div>
+	</div>
 
 {% endblock %}

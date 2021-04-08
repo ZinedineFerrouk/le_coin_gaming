@@ -38,10 +38,6 @@ a:hover{
     margin: 0 2rem;
 }
 
-/* .__game_container{
-    background: #002126;
-} */
-
 .__game_span{
     color: white;
     font-size: 2em;
@@ -61,4 +57,13 @@ a:hover{
 
 body{
     background: #002126;
+}
+
+.__game_platform_logo{
+    width: 16px;
+    height: 16px;
+}
+
+.__game_platform{
+    margin-left: 1rem;
 }
