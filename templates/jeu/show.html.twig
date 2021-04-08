@@ -30,6 +30,10 @@
         </tbody>
     </table>
 
+    {% for a in annonces %}
+        <td>{{ a.prix }}</td>
+    {% endfor %}
+
     <a href="{{ path('jeu_index') }}">back to list</a>
 
     <a href="{{ path('jeu_edit', {'id': jeu.id}) }}">edit</a>
