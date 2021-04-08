@@ -16,17 +16,17 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $admin = new User();
-        $admin->setPseudo('battosai');
-        $admin->setNom('elab');
-        $admin->setPrenom('Yasser');
+        $admin->setPseudo('said27');
+        $admin->setNom('adraou');
+        $admin->setPrenom('said');
         $admin->setAge('18');
-        $admin->setEmail('elabdallaouiyasser@gmail.com');
+        $admin->setEmail('said27@gmail.com');
         $admin->setPassword($this->passwordEncoder->encodePassword($admin,'testadmin'));
         $admin->setRoles(['ROLE_USER','ROLE_ADMIN','ROLE_SUPER_ADMIN']);
         $manager->persist($admin);
 
         $abonne = new User();
-        $abonne->setPseudo('battosaii');
+        $abonne->setPseudo('zizou');
         $abonne->setNom('Ferrouk');
         $abonne->setPrenom('Zinedine');
         $abonne->setAge('22');
