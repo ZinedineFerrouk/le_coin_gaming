@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProfilController!{% endblock %}
+
+{% block body %}
+<div class="containerProf">
+    <div class="accueilProf">
+            <div class="titreProf">
+                    <p>Bienvenue</p>
+                    <h1>{{ app.user.pseudo }}</h1>
+                    <a href="#"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
+            </div>
+
+    </div>
+</div>
+
+<section class="fil1">
+
+</section>
+{% endblock %}
