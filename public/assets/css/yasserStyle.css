@@ -579,7 +579,7 @@ label #cancel {
 }
 
 .formRegis {
-  padding-top: 600px;
+  padding-top: 450px;
   color: white;
 }
 .formG{
@@ -610,6 +610,16 @@ margin-right: 15px;
   background: #7FD9E0;
   color: white;
 }
+
+/* RESPONSIVE MEDIA QUERY */
+
+@media screen and (min-width: 1224px) {
+  .formRegis{
+    padding-top: 600px;
+  }
+}
+
+/* \\\\\\\\\\\\\\\\\\\PAGE LOGIN ///////////////////// */
 
 .login{
   margin-top: -25%;
