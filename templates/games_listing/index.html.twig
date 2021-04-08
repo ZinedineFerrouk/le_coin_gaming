@@ -24,9 +24,7 @@
 						<img class="__game_image" src="{{ asset(jeu.image) }}"/>
 					</div>
 
-
 					<div class="d-block">
-
 						<p class="__game_title">
 							<a href="">{{ jeu.titre }}</a>
 						</p>
@@ -39,7 +37,10 @@
 
 						<div class="__game_annonces">
 							<a class="__game_link" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
-								<div class="__game_link_div">Voir les annonces<i class="fas fa-arrow-right ml-2"></i></div>
+								<div class="__game_link_div">
+									Voir les annonces
+									<i class="fas fa-arrow-right ml-2"></i>
+								</div>
 							</a>
 						</div>
 					</div>
