@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20210407094751 extends AbstractMigration
+final class Version20210407125156 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -24,6 +24,7 @@ final class Version20210407094751 extends AbstractMigration
         $this->addSql('CREATE TABLE jeu (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, description LONGTEXT NOT NULL, date_sortie DATETIME NOT NULL, image VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE jeu_plateforme (jeu_id INT NOT NULL, plateforme_id INT NOT NULL, INDEX IDX_14AAFE598C9E392E (jeu_id), INDEX IDX_14AAFE59391E226B (plateforme_id), PRIMARY KEY(jeu_id, plateforme_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE plateforme (id INT AUTO_INCREMENT NOT NULL, titre VARCHAR(255) NOT NULL, logo VARCHAR(255) DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles LONGTEXT NOT NULL COMMENT \'(DC2Type:json)\', password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E58C9E392E FOREIGN KEY (jeu_id) REFERENCES jeu (id)');
         $this->addSql('ALTER TABLE annonce ADD CONSTRAINT FK_F65593E5391E226B FOREIGN KEY (plateforme_id) REFERENCES plateforme (id)');
         $this->addSql('ALTER TABLE jeu_plateforme ADD CONSTRAINT FK_14AAFE598C9E392E FOREIGN KEY (jeu_id) REFERENCES jeu (id) ON DELETE CASCADE');
@@ -41,5 +42,6 @@ final class Version20210407094751 extends AbstractMigration
         $this->addSql('DROP TABLE jeu');
         $this->addSql('DROP TABLE jeu_plateforme');
         $this->addSql('DROP TABLE plateforme');
+        $this->addSql('DROP TABLE user');
     }
 }
