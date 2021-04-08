@@ -634,6 +634,89 @@ margin-right: 15px;
   width: 25%;
   margin: 0 auto;
 }
+.formLog1 h1{
+  text-align: center;
+}
+.formLog1 .btn{
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background: #7FD9E0;
+  color: white;
+}
+
+/* \\\\\\\\\PAGE PROFIL//////////*/
+
+.containerProf {
+  margin-top: -25%;
+  height: 650px;
+  background-image: url("../img/red.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+
+.titreProf {
+  position: relative;
+  z-index: 2;
+  padding: 250px 0;
+  text-align: center;
+}
+
+.titreProf h1 {
+  font-size: 90px;
+  position: relative;
+  color: white;
+  padding-bottom: 20px;
+}
+.titreProf p {
+  font-size: 30px;
+  margin: 7px 0;
+  color: white;
+}
+
+.modifProf {
+  padding: 12px;
+  font-size: 20px;
+  width: 250px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background: green;
+  color: white;
+}
+.desc {
+  display: none;
+}
+
+
+@media screen and (min-width: 1150px) {
+
+  .containerProf {
+    margin-top: -10%;
+  }
+  .desc {
+    display: block;
+    width: 25vw;
+    position: absolute;
+    top: 250px;
+    right: 15%;
+  }
+
+}
+
+
+/* fil d actu */
+
+.fil1{
+  background: #002126;
+}
 /* footer */
 
 footer {
