@@ -7,10 +7,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/profil")
+ */
 class ProfilController extends AbstractController
-{
+{    
     /**
-    * @Route("/profil", name="profil")
+    * @Route("/", name="profil")
     */
     public function index(): Response
     {
