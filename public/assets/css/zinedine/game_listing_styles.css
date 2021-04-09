@@ -24,7 +24,7 @@ a:hover{
 .__game_title > a{
     font-weight: 700;
     letter-spacing: 0.5px;
-    color: #96e4ee;
+    color: #fff;
 }
 
 .__game_title > a:hover{
@@ -81,4 +81,20 @@ body{
 }
 .__game_link{
     color: #002126;
+}
+
+.__game_pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem;
+}
+
+.__game_pagination > ul > li > a{
+    border: 1px #7FD9E0 solid;
+    background-color: #7FD9E0;
+    color: white;
+    margin: 0.2rem;
+    border-radius: 3px;
+    padding: 0.3rem;
 }

@@ -1,56 +1,64 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Les Annonces pour
-	{{ jeu.titre }}
-	| Le Coin Gaming
+{{ jeu.titre }}
+| Le Coin Gaming
 {% endblock %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_annonces_styles.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_annonces_styles.css')}}">
 {% endblock %}
 
 {% block body %}
 
-	<div class="container d-flex">
-		<div class="__game__image_container">
-			<img class="__game_image" src=" {{ asset(jeu.image) }} "/>
-		</div>
-
-		<div class="__game_info">
-			<div class="d-flex">
-				<h1 class="__game_title">
-					{{ jeu.titre }}
-				</h1>
-				<p class="__game_date">({{ jeu.dateSortie|date('Y') }})</p>
-			</div>
-
-			<div class="__border_black mt-3"></div>
-			<div class="__border_grey mb-3"></div>
-
-			<div>
-				<p class="__game_synopsis">Synopsis</p>
-				<p class="__game_description">{{ jeu.description|nl2br }}</p>
-			</div>
-		</div>
+<div class="container d-flex">
+	<div class="__game__image_container">
+		<img class="__game_image" src=" {{ asset(jeu.image) }} " />
 	</div>
 
-    {# BARRE DE TRI PAR PRIX A METTRE ICI #}
+	<div class="__game_info">
+		<div class="d-flex">
+			<h1 class="__game_title">
+				{{ jeu.titre }}
+			</h1>
+			<p class="__game_date">({{ jeu.dateSortie|date('Y') }})</p>
+		</div>
 
-	<div class="container">
-		{% for a in annonces %}
-			<p>{{ a.prix }}</p>
-			<a href=" {{ path('annonce_show', {id: a.id}) }} ">Voir l'annonce</a>
+		<div class="__border_black mt-3"></div>
+		<div class="__border_grey mb-3"></div>
 
-			<div class="__border_black mt-3"></div>
-			<div class="__border_grey mb-3"></div>
-		{% endfor %}
+		<div>
+			<p class="__game_synopsis">Synopsis</p>
+			<p class="__game_description">{{ jeu.description|nl2br }}</p>
+		</div>
 	</div>
+</div>
+
+{# BARRE DE TRI PAR PRIX A METTRE ICI #}
+
+<div class="container my-5">
+	{% for a in annonces %}
+	<a class="p-4" href=" {{ path('annonce_show', {id: a.id}) }} ">
+		<div class="__game_annonce">
+			<div class="__game_annonce_details">
+				<p class="font-weight-bold ml-5">{{ a.prix }} €</p>
+				<p class="mr-5">postée le : {{ a.createdAt|date('d - m - Y')}}</p>
+			</div>
+			<p class="ml-5 text-white">Voir l'annonce <i class="fas fa-arrow-right ml-2"></i></p>
+	</a>
+</div>
+
+
+<div class="__border_black mt-3"></div>
+<div class="__border_grey mb-3"></div>
+{% endfor %}
+</div>
 
 {% endblock %}
 
 {% block javascripts %}
-	{# BARRE DE TRI #}
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+{# BARRE DE TRI #}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-	<script></script>
+<script></script>
 {% endblock %}
