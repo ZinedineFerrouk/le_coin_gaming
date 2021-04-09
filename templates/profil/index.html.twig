@@ -5,17 +5,22 @@
 {% block body %}
 <div class="containerProf">
     <div class="accueilProf">
-            <div class="titreProf">
-                    <p>Bienvenue</p>
-                    <h1>{{ app.user.pseudo }}</h1>
-                    <a href="#"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
-            </div>
+        <div class="titreProf">
+            <p>Bienvenue</p>
+            <h1>{{ app.user.pseudo }}</h1>
+            <a href="#"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
+        </div>
 
     </div>
 </div>
 
 <section class="fil1">
-  <div class="lastAnn">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptas maxime ullam ratione possimus et rerum? Libero ab veritatis sunt assumenda laborum voluptatem, eligendi dolores doloremque, eveniet neque nisi aliquam?</div>
-  <div class="descProf">Bonjour </div>
+    <div class="lastAnn">
+        <h1>Dernières Annonces</h1>
+        <div class="annonceProf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptas maxime ullam
+            ratione possimus et rerum? Libero ab veritatis sunt assumenda laborum voluptatem, eligendi dolores doloremque,
+            eveniet neque nisi aliquam?</div>
+    </div>
+    <div class="descProf">Bonjour </div>
 </section>
 {% endblock %}
