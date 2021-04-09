@@ -705,6 +705,31 @@ margin-right: 15px;
   display: none;
 }
 
+/* fil d actu */
+
+.fil1{
+  padding-top: 150px;
+  background: #002126;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.lastAnn{
+  
+  width: 60%;
+  margin-left: 45px;
+}
+
+.descProf{
+  
+margin-left: 45px;
+  width: 25%;
+}
+
+
+
 
 @media screen and (min-width: 1150px) {
 
@@ -722,11 +747,7 @@ margin-right: 15px;
 }
 
 
-/* fil d actu */
 
-.fil1{
-  background: #002126;
-}
 /* footer */
 
 footer {
