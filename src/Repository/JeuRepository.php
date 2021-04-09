@@ -23,7 +23,7 @@ class JeuRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('jeu')
             ->addSelect('jeu')
-            ->join('jeu.plateforme', 'p')
+            ->innerJoin('jeu.plateforme', 'p')
             
             ->setFirstResult($offset)
             ->setMaxResults($itemPerPage)
