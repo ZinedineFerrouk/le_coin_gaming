@@ -708,6 +708,7 @@ margin-right: 15px;
 /* fil d actu */
 
 .fil1{
+  padding-top: 150px;
   background: #002126;
   color: white;
   display: flex;
@@ -716,12 +717,15 @@ margin-right: 15px;
 }
 
 .lastAnn{
-  width: 45%;
+  
+  width: 60%;
+  margin-left: 45px;
 }
 
 .descProf{
   
-  width: 45%;
+margin-left: 45px;
+  width: 25%;
 }
 
 
