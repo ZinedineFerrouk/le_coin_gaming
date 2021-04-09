@@ -32,6 +32,9 @@ class AnnonceController extends AbstractController
      */
     public function new(Request $request): Response
     {
+        if (!$this->getUser()) {
+            return $this->redirectToRoute('app_login');
+        }
         $annonce = new Annonce();
         $form = $this->createForm(AnnonceType::class, $annonce);
         $form->handleRequest($request);
@@ -39,6 +42,7 @@ class AnnonceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $annonce->setCreatedAt(new \DateTime());
+            $annonce->setUser($this->getUser());
             $entityManager->persist($annonce);
             $entityManager->flush();
 

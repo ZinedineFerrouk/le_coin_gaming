@@ -25,7 +25,7 @@
 
 <body>
     <header>
-        <label class="logo"><a href="{{ path('home') }}"><img src="assets/img/logo.png" alt=""></a></label>
+        <label class="logo"><a href="{{ path('home') }}"><img src="{{asset('assets/img/logo.png')}}" alt=""></a></label>
         <input type="checkbox" id="toggler" class="toggler">
         <label for="toggler" class="burger">
             <span>
@@ -38,7 +38,7 @@
             <ul>
 
                 <li><a href="{{ path('games_listing') }}">Parcourir</a></li>
-                <li><a href="#">Vendre</a></li>
+                <li><a href="{{ path('annonce_new')}}">Vendre</a></li>
                 {% if is_granted('ROLE_USER') %}
                 <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
                 <li><a href="{{ path('profil') }}">Profil</a></li>

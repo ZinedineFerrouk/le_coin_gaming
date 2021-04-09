@@ -1,0 +1,46 @@
+a:hover{
+    text-decoration: none;
+}
+
+body{
+    background: #002126;
+    color: white;
+}
+
+.__game_image{
+    width: 250px;
+    border-radius: 3%;
+}
+
+.__game_info{
+    margin: 18rem 0 0 1.5rem;
+}
+
+.__game_title{
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.__game_date{
+    text-align: center;
+}
+
+.__border_black{
+    height: 1px;
+    background-color: rgba(0,0,0,.4);
+    width: 80%;
+    margin: auto;
+}
+.__border_grey{
+    height: 1px;
+    background-color: hsla(0,0%,100%,.08);
+    width: 80%;
+    margin: auto;
+}
+.__game_synopsis{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.__game_description{
+    font-size: 1rem;
+}

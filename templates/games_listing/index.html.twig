@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('assets/css/zinedineStyles.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_listing_styles.css')}}">
 {% endblock %}
 
 {% block body %}
@@ -16,15 +16,15 @@
 				<h1 class="__game_h1">Jeux</h1>
 			</div>
 
+			{# BARRE DE TRI PAR PLATEFORME ET PAR DATE A METTRE ICI #}
+
 			{% for jeu in jeux %}
 				<div class="__game d-flex">
 					<div class="__game_image_div">
 						<img class="__game_image" src="{{ asset(jeu.image) }}"/>
 					</div>
 
-
 					<div class="d-block">
-
 						<p class="__game_title">
 							<a href="">{{ jeu.titre }}</a>
 						</p>
@@ -36,9 +36,12 @@
 						</div>
 
 						<div class="__game_annonces">
-							<div>
-								<a href="{{ path('annonces_per_game', {'id': jeu.id}) }}">Voir les annonces</a>
-							</div>
+							<a class="__game_link" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
+								<div class="__game_link_div">
+									Voir les annonces
+									<i class="fas fa-arrow-right ml-2"></i>
+								</div>
+							</a>
 						</div>
 					</div>
 
@@ -50,4 +53,11 @@
 		</div>
 	</div>
 
+{% endblock %}
+
+{% block javascripts %}
+	{# BARRE DE TRI #}
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+	<script></script>
 {% endblock %}
