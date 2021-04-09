@@ -21,9 +21,9 @@ class JeuRepository extends ServiceEntityRepository
     
     public function findAllWithPlateformeAndAnnonce($itemPerPage, $offset)
     {
-        return $this->createQueryBuilder('jeu')
-            ->addSelect('jeu')
-            ->innerJoin('jeu.plateforme', 'p')
+        return $this->createQueryBuilder('j')
+            ->addSelect('j')
+            ->leftJoin('j.plateforme', 'p')
             
             ->setFirstResult($offset)
             ->setMaxResults($itemPerPage)
