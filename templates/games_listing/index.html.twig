@@ -4,60 +4,71 @@
 {% endblock %}
 
 {% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_listing_styles.css')}}">
+<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_listing_styles.css')}}">
 {% endblock %}
 
 {% block body %}
 
-	<div class="__game_container">
-		<div class="container">
-			<div class="__game_title_div">
-				<span class="__game_span">Les</span>
-				<h1 class="__game_h1">Jeux</h1>
+<div class="__game_container">
+	<div class="container">
+		<div class="__game_title_div">
+			<span class="__game_span">Les</span>
+			<h1 class="__game_h1">Jeux</h1>
+		</div>
+		{# BARRE DE TRI PAR PLATEFORME ET PAR DATE A METTRE ICI #}
+
+		<div class="__game_pagination">
+			{{ paginator|raw }}
+		</div>
+
+		{% for jeu in jeux %}
+		<div class="__game d-flex">
+			<div class="__game_image_div">
+				<a title="Voir les annonces de {{ jeu.titre }}" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
+					<img class="__game_image" src="{{ asset(jeu.image) }}" />
+				</a>
 			</div>
 
-			{# BARRE DE TRI PAR PLATEFORME ET PAR DATE A METTRE ICI #}
+			<div class="d-block">
+				<p class="__game_title">
+					<a title="Voir les annonces de {{ jeu.titre }}"
+						href="{{ path('annonces_per_game', {'id': jeu.id}) }}">{{ jeu.titre }}</a>
+				</p>
 
-			{% for jeu in jeux %}
-				<div class="__game d-flex">
-					<div class="__game_image_div">
-						<img class="__game_image" src="{{ asset(jeu.image) }}"/>
-					</div>
-
-					<div class="d-block">
-						<p class="__game_title">
-							<a href="">{{ jeu.titre }}</a>
-						</p>
-
-						<div class="__game_platform">
-							{% for p in jeu.plateforme %}
-								<img class="__game_platform_logo" src="{{ asset(p.logo) }}"/>
-							{% endfor %}
-						</div>
-
-						<div class="__game_annonces">
-							<a class="__game_link" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
-								<div class="__game_link_div">
-									Voir les annonces
-									<i class="fas fa-arrow-right ml-2"></i>
-								</div>
-							</a>
-						</div>
-					</div>
-
+				<div class="__game_platform">
+					{% for p in jeu.plateforme %}
+					<img class="__game_platform_logo" src="{{ asset(p.logo) }}" />
+					{% endfor %}
 				</div>
 
-				<div class="__border_black mt-3"></div>
-				<div class="__border_grey mb-3"></div>
-			{% endfor %}
+				<div class="__game_annonces">
+					<a title="Voir les annonces de {{ jeu.titre }}" class="__game_link"
+						href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
+						<div class="__game_link_div">
+							Voir les annonces
+							<i class="fas fa-arrow-right ml-2"></i>
+						</div>
+					</a>
+				</div>
+			</div>
+
 		</div>
+
+		<div class="__border_black mt-3"></div>
+		<div class="__border_grey mb-3"></div>
+		{% endfor %}
 	</div>
+</div>
+
+<div class="__game_pagination">
+	{{ paginator|raw }}
+</div>
 
 {% endblock %}
 
 {% block javascripts %}
-	{# BARRE DE TRI #}
-	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+{# BARRE DE TRI #}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-	<script></script>
+<script></script>
 {% endblock %}

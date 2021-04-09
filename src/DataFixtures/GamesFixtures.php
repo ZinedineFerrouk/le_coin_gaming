@@ -2,12 +2,12 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Jeu;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use App\DataFixtures\PlateformeFixtures;
-use App\Entity\Plateforme;
+use App\Entity\Annonce;
+use App\Entity\Jeu;
 
 class GamesFixtures extends Fixture implements DependentFixtureInterface
 {

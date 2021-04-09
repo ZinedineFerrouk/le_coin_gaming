@@ -103,6 +103,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.3"
     },
+    "jasongrimes/paginator": {
+        "version": "1.0.3"
+    },
     "laminas/laminas-code": {
         "version": "4.1.0"
     },

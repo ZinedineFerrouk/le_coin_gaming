@@ -18,6 +18,26 @@ class JeuRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Jeu::class);
     }
+    
+    public function findAllWithPlateformeAndAnnonce($itemPerPage, $offset)
+    {
+        return $this->createQueryBuilder('jeu')
+            ->addSelect('jeu')
+            ->join('jeu.plateforme', 'p')
+            
+            ->setFirstResult($offset)
+            ->setMaxResults($itemPerPage)
+            ->getQuery()
+            ->getResult();
+    }
+
+    // public function findAllPaginate()
+    // {
+    //     return $this->createQueryBuilder('j')
+            
+    //         ->getQuery()
+    //         ->getResult();
+    // }
 
     // /**
     //  * @return Jeu[] Returns an array of Jeu objects
@@ -36,15 +56,7 @@ class JeuRepository extends ServiceEntityRepository
     }
     */
 
-    public function findAllWithPlateformeAndAnnonce()
-    {
-        return $this->createQueryBuilder('j')
-            ->addSelect('j', 'p', 'a')
-            ->leftJoin('j.plateforme', 'p')
-            ->leftJoin('j.annonces', 'a')
-            ->getQuery()
-            ->getResult();
-    }
+    
 
     /*
     public function findOneBySomeField($value): ?Jeu
