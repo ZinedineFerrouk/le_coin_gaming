@@ -5,11 +5,12 @@
 {% block body %}
 <div class="containerProf">
     <div class="accueilProf">
-        <div class="titreProf">
-            <p>Bienvenue</p>
-            <h1>{{ app.user.pseudo }}</h1>
-            <a href="#"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
-        </div>
+            <div class="titreProf">
+                    <p>Bienvenue</p>
+                    <h1>{{ app.user.pseudo }}</h1>
+                    <a href="#"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
+                    <a href="{{ path('profil_annonce') }}"><input type="button" class="btn btn-primary" value="Mes Annonces"></a>
+            </div>
 
     </div>
 </div>
