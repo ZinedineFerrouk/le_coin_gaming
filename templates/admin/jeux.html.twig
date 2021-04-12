@@ -1,0 +1,38 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block body %}
+    <h1>Jeu index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Date_sortie</th>
+                {# <th>Image</th> #}
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jeu in jeus %}
+            <tr>
+                <td>{{ jeu.id }}</td>
+                <td>{{ jeu.titre }}</td>
+                <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d') : '' }}</td>
+                {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
+                <td>
+                    <a href="{{ path('jeu_show', {'id': jeu.id}) }}">show</a>
+                    <a href="{{ path('jeu_edit', {'id': jeu.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_jeu_new') }}">Create new</a>
+{% endblock %}

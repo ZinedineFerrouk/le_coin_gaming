@@ -1,21 +1,21 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1>User index</h1>
+    <h1>Liste des Utilisateurs:</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Email</th>
+                <th>Email</th>{# 
                 <th>Roles</th>
                 <th>Password</th>
                 <th>Nom</th>
-                <th>Prenom</th>
+                <th>Prenom</th> #}
                 <th>Pseudo</th>
-                <th>Num</th>
+                {# <th>Num</th> #}
                 <th>Age</th>
                 <th>actions</th>
             </tr>
@@ -24,13 +24,13 @@
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.email }}</td>
+                <td>{{ user.email }}</td>{# 
                 <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
                 <td>{{ user.password }}</td>
                 <td>{{ user.nom }}</td>
-                <td>{{ user.prenom }}</td>
+                <td>{{ user.prenom }}</td> #}
                 <td>{{ user.pseudo }}</td>
-                <td>{{ user.num }}</td>
+                {# <td>{{ user.num }}</td> #}
                 <td>{{ user.age }}</td>
                 <td>
                     <a href="{{ path('user_show', {'id': user.id}) }}">show</a>

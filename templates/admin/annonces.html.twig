@@ -1,0 +1,37 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block body %}
+    <h1>Liste des annonces</h1>
+    
+    <table class="table">
+        <thead>
+            <tr class="text-center">
+                <th>Jeux</th>
+                <th>Plateforme</th>
+                <th>Titre</th>
+                <th>Prix</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for annonce in annonces %}
+            <tr class="text-center">
+                <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
+                <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
+                <td>{{annonce.jeu.titre}}</td>
+                <td>{{ annonce.prix }} €</td>
+                <td>
+                    <a class="btn btn-primary m-1" href="{{ path('annonce_show', {'id': annonce.id}) }}">Voir l'annonce</a><br>
+                    <a class="btn btn-primary m-1" href="{{ path('admin_annonce_edit', {'id': annonce.id}) }}">Modifier l'annonce</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

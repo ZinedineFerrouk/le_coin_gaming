@@ -1,0 +1,10 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block body %}
+    <h1>Créer un jeu</h1>
+
+    {{ include('jeu/_form.html.twig') }}
+
+    <a href="{{ path('admin_jeu') }}">Retour à la liste</a>
+{% endblock %}
