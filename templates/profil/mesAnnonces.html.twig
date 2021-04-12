@@ -24,7 +24,7 @@
                 <td>{{ annonce.prix }} €</td>
                 <td>
                     <a class="btn btn-primary" href="{{ path('annonce_show', {'id': annonce.id}) }}">Voir</a>
-                    <a class="btn btn-primary" href="{{ path('annonce_edit', {'id': annonce.id}) }}">Editer</a>
+                    <a class="btn btn-success" href="{{ path('annonce_edit', {'id': annonce.id}) }}">Editer</a>
                 </td>
             </tr>
         {% else %}

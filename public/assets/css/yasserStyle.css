@@ -716,6 +716,28 @@ margin-right: 15px;
  padding: 20px 0 ;
 }
 
+.containerShowann{
+  background: #002126;
+  color: white;
+}
+
+.containerEditann{
+  margin-top: -7%;
+  background: #002126;
+  color: white;
+}
+
+.containerEditann h1{
+  padding-top: 200px;
+  text-align: center;
+}
+
+.formEdit{
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
 
 
 
