@@ -11,33 +11,34 @@ class PlateformeFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $tableau = [
-            [
+            1 => [
                 'titre' => 'Playstation',
                 'image' => 'assets/images/plateforme/play.png',
             ],
 
-            [
+            2 => [
                 'titre' => 'Xbox',
                 'image' => 'assets/images/plateforme/xbox.png',
             ],
 
-            [
+            3 => [
                 'titre' => 'Nintendo',
                 'image' => 'assets/images/plateforme/nintendo.png',
             ],
 
-            [
+            4 => [
                 'titre' => 'Windows',
                 'image' => 'assets/images/plateforme/windows.png',
             ],
         ];
 
         foreach ($tableau as $key => $value) {
-            $jeu = new Plateforme();
-            $jeu->setTitre($value['titre']);
-            $jeu->setLogo($value['image']);
+            $platforme = new Plateforme();
+            $platforme->setTitre($value['titre']);
+            $platforme->setLogo($value['image']);
+            $manager->persist($platforme);
 
-            $manager->persist($jeu);
+            $this->addReference('plateforme_' . $key, $platforme);
         }
 
         $manager->flush();

@@ -45,7 +45,7 @@ class Jeu
     private $annonces;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Plateforme::class, inversedBy="jeux")
+     * @ORM\ManyToMany(targetEntity=Plateforme::class, inversedBy="jeux", fetch="EXTRA_LAZY")
      */
     private $plateforme;
 
