@@ -9,19 +9,11 @@
                     <p>Bienvenue</p>
                     <h1>{{ app.user.pseudo }}</h1>
                     <a href="#"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
-                    <a href="{{ path('profil_annonce') }}"><input type="button" class="btn btn-primary" value="Mes Annonces"></a>
+                    <a href="{{ path('profil_annonce') }}"><input type="button" class="modifProf" value="Mes Annonces"></a>
             </div>
 
     </div>
 </div>
 
-<section class="fil1">
-    <div class="lastAnn">
-        <h1>Dernières Annonces</h1>
-        <div class="annonceProf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptas maxime ullam
-            ratione possimus et rerum? Libero ab veritatis sunt assumenda laborum voluptatem, eligendi dolores doloremque,
-            eveniet neque nisi aliquam?</div>
-    </div>
-    <div class="descProf">Bonjour </div>
-</section>
+
 {% endblock %}

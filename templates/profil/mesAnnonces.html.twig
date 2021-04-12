@@ -3,11 +3,11 @@
 {% block title %}Mes Annonces{% endblock %}
 
 {% block body %}
-    <h1>Mes Annonces</h1>
+<div class="containerAnnprof"><h1>Mes Annonces</h1>
 
     <table class="table">
         <thead>
-            <tr class="text-center">
+            <tr class="text-center text-white">
                 <th>Jeux</th>
                 <th>Plateforme</th>
                 <th>Titre</th>
@@ -17,7 +17,7 @@
         </thead>
         <tbody>
         {% for annonce in annonces %}
-            <tr class="text-center">
+            <tr class="text-center text-white">
                 <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
                 <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
                 <td>{{annonce.jeu.titre}}</td>
@@ -33,6 +33,7 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+    </table></div>
+    
 
 {% endblock %}

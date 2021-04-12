@@ -698,35 +698,26 @@ margin-right: 15px;
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  background: green;
+  background: #7FD9E0;
   color: white;
 }
 .desc {
   display: none;
 }
 
-/* fil d actu */
-
-.fil1{
-  padding-top: 150px;
+.containerAnnprof{
   background: #002126;
   color: white;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
+  padding: 50px;
 }
 
-.lastAnn{
-  
-  width: 60%;
-  margin-left: 45px;
+.containerAnnprof h1{
+ text-align: center;
+ padding: 20px 0 ;
 }
 
-.descProf{
-  
-margin-left: 45px;
-  width: 25%;
-}
+
+
 
 
 
