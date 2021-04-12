@@ -2,7 +2,14 @@ a:hover{
     text-decoration: none;
 }
 
+.__background-wallpaper{
+    width: 100%;
+    margin-top: -25%;
+}
+
+
 .__game{
+    background-color: #025a68;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(48, 48, 48, 0.3);

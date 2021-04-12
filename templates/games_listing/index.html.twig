@@ -10,11 +10,20 @@
 {% block body %}
 
 <div class="__game_container">
+
+	<div class="____background_image_container">
+		<div class="__background_image_div">
+			<img class="__background-wallpaper"
+				src="{{ asset('assets/images/background-wallpaper/background-wp.webp') }}" alt="Zelda wallpaper">
+		</div>
+	</div>
+
 	<div class="container">
 		<div class="__game_title_div">
 			<span class="__game_span">Les</span>
 			<h1 class="__game_h1">Jeux</h1>
 		</div>
+
 		{# BARRE DE TRI PAR PLATEFORME ET PAR DATE A METTRE ICI #}
 
 		<div class="__game_pagination">
@@ -70,5 +79,7 @@
 {# BARRE DE TRI #}
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<script></script>
+<script>
+	
+</script>
 {% endblock %}
