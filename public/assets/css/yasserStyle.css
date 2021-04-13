@@ -124,7 +124,7 @@ label #cancel {
   display: none;
 }
 
-@media screen and (min-width: 1224px) {
+@media screen and (min-width: 1024px) {
   .burger {
     display: none;
   }
@@ -140,6 +140,7 @@ label #cancel {
     margin-left: 45px;
     font-size: 16px;
     height: 100%;
+    width: 30%;
   }
 
   nav {
@@ -177,15 +178,7 @@ label #cancel {
   }
 }
 
-@media screen and (min-width: 650px) and (max-width: 1224px) {
-  nav ul {
-    display: -ms-grid;
-    display: grid;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-  }
-}
+
 
 /* ACCUEIL */
 .containerAcc {
@@ -245,7 +238,7 @@ label #cancel {
   display: none;
 }
 
-@media screen and (min-width: 1224px) {
+@media screen and (min-width: 1024px) {
 
   .containerAcc {
     margin-top: -10%;
@@ -280,24 +273,22 @@ label #cancel {
   }
 
   .slide-img img {
-    width: 350px;
+    width: 250px;
   }
 
-  #carousel-3d-controller-2~.carousel-3d-item:nth-of-type(1),
-  #carousel-3d-controller-1~.carousel-3d-item:nth-of-type(1),
-  #carousel-3d-controller-2~.carousel-3d-item:nth-of-type(2),
-  #carousel-3d-controller-1~.carousel-3d-item:nth-of-type(2),
-  #carousel-3d-controller-2~.carousel-3d-item:nth-of-type(3),
-  #carousel-3d-controller-1~.carousel-3d-item:nth-of-type(3) {
+  
+  #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(1),
+  #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(2),
+  #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(3) {
     -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
 
   .carousel-3d-item:nth-of-type(2),
-  #carousel-3d-controller-1:checked~.carousel-3d-item:nth-of-type(2),
-  #carousel-3d-controller-2:checked~.carousel-3d-item:nth-of-type(3),
-  #carousel-3d-controller-3:checked~.carousel-3d-item:nth-of-type(1) {
+  #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(2),
+  #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(3),
+  #carousel-3d-controller-3:checked ~ .carousel-3d-item:nth-of-type(1) {
     -webkit-transform: translateX(-175px) translateZ(-130px);
     transform: translateX(-175px) translateZ(-130px);
     opacity: 0.7;
@@ -307,9 +298,9 @@ label #cancel {
   }
 
   .carousel-3d-item:nth-of-type(1),
-  #carousel-3d-controller-1:checked~.carousel-3d-item:nth-of-type(1),
-  #carousel-3d-controller-2:checked~.carousel-3d-item:nth-of-type(2),
-  #carousel-3d-controller-3:checked~.carousel-3d-item:nth-of-type(3) {
+  #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(1),
+  #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(2),
+  #carousel-3d-controller-3:checked ~ .carousel-3d-item:nth-of-type(3){
     -webkit-transform: translateX(0) translateZ(0);
     transform: translateX(0) translateZ(0);
     opacity: 1;
@@ -319,9 +310,9 @@ label #cancel {
   }
 
   .carousel-3d-item:nth-of-type(3),
-  #carousel-3d-controller-1:checked~.carousel-3d-item:nth-of-type(3),
-  #carousel-3d-controller-2:checked~.carousel-3d-item:nth-of-type(1),
-  #carousel-3d-controller-3:checked~.carousel-3d-item:nth-of-type(2) {
+  #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(3),
+  #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(1),
+  #carousel-3d-controller-3:checked ~ .carousel-3d-item:nth-of-type(2){
     -webkit-transform: translateX(175px) translateZ(-130px);
     transform: translateX(175px) translateZ(-130px);
     opacity: 0.7;
@@ -331,14 +322,19 @@ label #cancel {
   }
 }
 
-@media screen and (min-width: 650px) and (max-width: 1224px) {
-  .containerAcc {
-    height: 860px;
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .containerAcc{
+    margin-top: -15%;
   }
+  
 
   .titre {
     padding-top: 370px;
   }
+
+  
+
+
 
 
 }
@@ -380,12 +376,14 @@ label #cancel {
   padding-bottom: 20px;
 }
 
-.propos img {
+.propos a {
   width: 44%;
   margin: 0 auto;
   padding-bottom: 10px;
 }
-
+.propos img{
+  width: 100%;
+}
 .propos .desc1 {
   width: 100%;
   padding-top: 20px;
@@ -408,17 +406,20 @@ label #cancel {
 
 @media screen and (min-width: 1224px) {
 
-
-  .propos .imgdesc {
+  
+  .propos .imgdesc  {
     margin: 0 auto;
   }
 
-  .propos img {
+  .propos a {
     width: 25%;
     padding: 6px;
   }
 
-
+  .propos img{
+    width: 100%;
+  }
+  
 
 }
 
@@ -522,10 +523,14 @@ label #cancel {
   padding-bottom: 20px;
 }
 
-.ventesR img {
+.ventesR a {
   width: 44%;
   margin: 0 auto;
   padding-bottom: 10px;
+}
+
+.ventesR img{
+  width: 100%;
 }
 
 .ventesR .desc1 {
@@ -555,10 +560,11 @@ label #cancel {
     margin: 0 auto;
   }
 
-  .ventesR img {
+  .ventesR a {
     width: 15%;
     padding: 6px;
   }
+  
 
 
 }
@@ -716,9 +722,21 @@ margin-right: 15px;
  padding: 20px 0 ;
 }
 
-.containerShowann{
+.containershowAnn{
+  margin-top: -10%;
   background: #002126;
   color: white;
+}
+
+.showAnn{
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+.showAnn h1{
+  padding-top: 200px;
+  text-align: center;
 }
 
 .containerEditann{
@@ -866,3 +884,34 @@ footer {
     flex: 2 0px;
   }
 }
+
+/* /////////////////////////////// CSS ZINEDINE //////////////////////////// */
+.__search_bar_div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.__search_bar{
+  width: 350px;
+  height: 50px;
+  padding: 0.5rem;
+  background-color:#001518;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(48, 48, 48, 0.3);
+}
+
+.__search_bar::placeholder,
+.__search_bar:focus{
+  color: #BFECF2;
+  padding-left: 1rem;
+  outline: none ;
+}
+
+
+/* /////////////////////////////// FIN CSS ZINEDINE //////////////////////////// */

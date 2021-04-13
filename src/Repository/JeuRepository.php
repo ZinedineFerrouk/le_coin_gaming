@@ -18,15 +18,38 @@ class JeuRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Jeu::class);
     }
-    
+
     public function findAllWithPlateformeAndAnnonce($itemPerPage, $offset)
     {
         return $this->createQueryBuilder('j')
             ->addSelect('j')
             // ->leftJoin('j.plateforme', 'p')
-            
+
             ->setFirstResult($offset)
             ->setMaxResults($itemPerPage)
+            ->getQuery()
+            ->getResult();
+    }
+
+
+    public function getSearchResult($input)
+    {
+        return $this->createQueryBuilder('j')
+            ->select('j.id', 'j.titre')
+            ->where('j.titre LIKE :input')
+            ->setParameter('input', '%' . $input . '%')
+
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function getLastResults($limit, $offset)
+    {
+        return $this->createQueryBuilder('j')
+            ->select('j.id', 'j.titre', 'j.image')
+            ->orderBy('j.date_sortie', 'DESC')
+            ->setFirstResult($offset)
+            ->setMaxResults($limit)
             ->getQuery()
             ->getResult();
     }
@@ -34,7 +57,7 @@ class JeuRepository extends ServiceEntityRepository
     // public function findAllPaginate()
     // {
     //     return $this->createQueryBuilder('j')
-            
+
     //         ->getQuery()
     //         ->getResult();
     // }
@@ -56,7 +79,7 @@ class JeuRepository extends ServiceEntityRepository
     }
     */
 
-    
+
 
     /*
     public function findOneBySomeField($value): ?Jeu

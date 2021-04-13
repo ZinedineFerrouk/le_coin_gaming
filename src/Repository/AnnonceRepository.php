@@ -44,6 +44,18 @@ class AnnonceRepository extends ServiceEntityRepository
             ;
     }
 
+    public function getLastResults($limit, $offset)
+    {
+        return $this->createQueryBuilder('a')
+            ->addselect('a','j')
+            ->leftJoin('a.jeu','j')
+            ->orderBy('j.date_sortie')
+            ->setFirstResult($offset)
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
+
     
 
     // /**
