@@ -26,10 +26,7 @@
             <p><span class="font-weight-bold">Mail: </span> {{user.email}} </p>
         </div>
         <div class="text-center my-2">
-            <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour aux annonces</a>
-            {% if is_granted('ROLE_ADMIN') %}
-                <a class="btn btn-primary"  href="{{ path('admin_annonces') }}">Retour aux annonces(admin)</a>
-            {% endif %}
+            <a class="btn btn-primary" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">Retour aux annonces</a>
         </div>
         
     </div>

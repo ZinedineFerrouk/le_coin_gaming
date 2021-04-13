@@ -47,7 +47,7 @@ class AnnonceController extends AbstractController
             $entityManager->persist($annonce);
             $entityManager->flush();
 
-            return $this->redirectToRoute('annonce_index');
+            return $this->redirectToRoute('games_listing');
         }
 
         return $this->render('annonce/new.html.twig', [
@@ -57,7 +57,7 @@ class AnnonceController extends AbstractController
     }
 
     /**
-     * @Route("/jeux/annonces/{id}", name="annonce_show", methods={"GET"}, requirements={"id": "\d+"})
+     * @Route("/jeux/{id}", name="annonce_show", methods={"GET"}, requirements={"id": "\d+"})
      */
     public function show(Annonce $annonce): Response
     {
