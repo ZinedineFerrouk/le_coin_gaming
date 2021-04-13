@@ -33,13 +33,16 @@
                 <i class="fas fa-times" id="cancel"></i>
             </span>
         </label>
-        <!-- BARRE DE RECHERCHE -->
-        <div class="__search_bar_div">
-            <input type="text" id="__search_bar" class="__search_bar" name="__search_bar" placeholder="Rechercher un jeu">
 
-            <div id="__search_results"></div>
+        <!-- BARRE DE RECHERCHE -->
+        <div class="__search_bar_div_container">
+            <div class="__search_bar_div">
+                <input type="text" id="__search_bar" class="__search_bar" name="__search_bar"
+                    placeholder="Rechercher un jeu">
+            </div>
+            <div id="__search_results" class="position-absolute w-25 __search_results"></div>
         </div>
-        
+
         <nav>
             <ul>
                 <li><a href="{{ path('games_listing') }}">Parcourir</a></li>
@@ -111,43 +114,34 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-
             $('#__search_bar').keyup(function () {
                 var search = $(this).val();
-
-                let url = "{{ path('api_search') }}"
 
                 let params = new URLSearchParams();
                 params.append('search', search);
 
+                let url = "{{ path('api_search') }}"
+                let gameUrl = "{{ path('annonces_per_game', {'id': 1}) }}"
+
                 if (search != '') {
                     axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
                     axios.post(url, params).then(function (response) {
-                        // console.log(response.data.result);
+                        let list = $(document.createElement('ul')).attr('class', 'list-group').attr('style', 'width:350px');
+
                         response.data.result.forEach(game => {
-                            console.log(game.id);
-                            console.log(game.titre);
+                            let li = $(document.createElement('li')).attr('class', 'list-group-item list-group-item-action list-group-item-light').attr('style', 'list-style-type: none;');
+                            let a = $(document.createElement('a')).attr('href', gameUrl.replace('1', game.id)).attr('class', 'text-secondary').text(game.titre);
+
+                            li.append(a);
+                            list.append(li);
                         });
+                        $("#__search_results").empty().append(list);
                     })
 
-                    // $.ajax({
-                    //     url: '{{ path("api_search") }}',
-                    //     method: "POST",
-                    //     data: {
-                    //         searchBar: search
-                    //     },
-                    //     success: function (response) {
-                    //         console.log(response)
-                    //     //     // RENDU HTML 
-                    //     //     const div = $(document.createElement('div')).addClass('d-block');
-
-                    //     //     data.forEach(element => {
-                    //     //         const a = $(document.createElement('a')).addClass('d-block').attr('href', articlesURL.replace('1', element.id)).text(element.titre.substr(0, 50));
-                    //     //         div.append(a);
-                    //     //     });
-                    //     //     $("#result-div").empty().append(div);
-                    //     }
-                    // });
+                    $('body').on('click', function () {
+                        $("#__search_results").attr('class', 'd-none');
+                        console.log('ok');
+                    })
                 }
             });
         });
