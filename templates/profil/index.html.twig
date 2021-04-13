@@ -6,10 +6,15 @@
 <div class="containerProf">
     <div class="accueilProf">
             <div class="titreProf">
-                    <p>Bienvenue</p>
-                    <h1>{{ app.user.pseudo }}</h1>
-                    <a href="{{ path('profil_user') }}"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
-                    <a href="{{ path('profil_annonce') }}"><input type="button" class="modifProf" value="Mes Annonces"></a>
+                <p>Bienvenue</p>
+                <h1>{{ app.user.pseudo }}</h1>
+                <a href="{{ path('profil_user') }}"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
+                <a href="{{ path('profil_annonce') }}"><input type="button" class="modifProf" value="Mes Annonces"></a>
+                {% if is_granted('ROLE_ADMIN') %}
+                <div>
+                    <a class="btn btn-primary m-3" href="{{ path('admin') }}">Aller vers l'admin</a>
+                </div>
+                {% endif %}
             </div>
 
     </div>
