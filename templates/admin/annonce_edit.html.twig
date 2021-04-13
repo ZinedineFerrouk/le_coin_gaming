@@ -1,0 +1,13 @@
+{% extends 'admin.html.twig' %}
+
+
+{% block body %}
+    <h1>Modifier l'Annonce : </h1>
+
+    {{ include('annonce/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+
+    <a href="{{ path('admin_annonces') }}">Retour aux annonces:</a>
+
+    {{ include('annonce/_delete_form.html.twig') }}
+
+{% endblock %}
