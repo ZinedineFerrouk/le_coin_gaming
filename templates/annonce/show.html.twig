@@ -1,6 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Annonce{% endblock %}
+{% block title %}Annonce | Le Coin Gaming{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_annonces_styles.css')}}">
+{% endblock %}
+
 
 {% block body %}
 
@@ -26,7 +31,7 @@
             <p><span class="font-weight-bold">Mail: </span> {{user.email}} </p>
         </div>
         <div class="text-center my-2">
-            <a class="btn btn-primary" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">Retour aux annonces</a>
+            <a class="__show_button" href="{{ path('annonces_per_game', {id: jeu.id}) }}">Retour aux annonces</a>
         </div>
         
     </div>

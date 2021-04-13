@@ -45,12 +45,25 @@ body{
     font-size: 1rem;
 }
 .__game_annonce{
+    background-color: #025a68;
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(48, 48, 48, 0.3);
+    padding: 1rem;
 }
 .__game_annonce_details{
     display: flex;
     justify-content: space-between;
     color: white;
+}
+
+.__show_button{
+    background-color: #025a68;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.__show_button:hover{
+    color: #7FD9E0;
 }
