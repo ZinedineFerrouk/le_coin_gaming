@@ -8,6 +8,7 @@ use App\Form\AnnonceType;
 use App\Form\JeuType;
 use App\Repository\AnnonceRepository;
 use App\Repository\JeuRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,9 +24,12 @@ class AdminController extends AbstractController
     /**
      * @Route("/", name="admin")
      */
-    public function index(): Response
+    public function index(AnnonceRepository $annonce, JeuRepository $jeux, UserRepository $user): Response
     {
         return $this->render('admin/index.html.twig', [
+            'annonces' => $annonce->count([]),
+            'jeux' => $jeux->count([]),
+            'users' => $user->count([]),
         ]);
     }
 
