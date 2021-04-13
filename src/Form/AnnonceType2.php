@@ -8,12 +8,10 @@ use App\Entity\Plateforme;
 use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Choice;
 
-class AnnonceType extends AbstractType
+class AnnonceType2 extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -31,15 +29,6 @@ class AnnonceType extends AbstractType
                 'choice_label' => 'titre',
                 'multiple' => false,
                 'expanded' => false,
-            ])
-            ->add('status', ChoiceType::class, [
-                'choices' => [
-                    'Non Publié' => 'Non-Publié',
-                    'Publié' => 'Publié'
-                ],
-                'expanded' => true,
-                'multiple' => false,
-                'label' => 'Status' 
             ])
         ;
     }

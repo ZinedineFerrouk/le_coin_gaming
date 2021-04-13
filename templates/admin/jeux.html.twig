@@ -2,39 +2,99 @@
 
 
 {% block body %}
-    <h1>Jeu index</h1>
+    <h1>Liste des Jeux</h1>
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Tout les Jeux
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Status</th>
+                                <th>Date_sortie</th>
+                                {# <th>Image</th> #}
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for jeu in jeus %}
+                            <tr>
+                                <td>{{ jeu.id }}</td>
+                                <td>{{ jeu.titre }}</td>
+                                <td>{{ jeu.status }}</td>
+                                <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d') : '' }}</td>
+                                {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
+                                <td>
+                                    <a href="{{ path('admin_jeu_show', {'id': jeu.id}) }}">Voir Jeu</a>
+                                    <a href="{{ path('admin_jeu_edit', {'id': jeu.id}) }}">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6">Aucun jeu</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                        Les Jeux Non Publié
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Titre</th>
+                                <th>Status</th>
+                                <th>Date_sortie</th>
+                                {# <th>Image</th> #}
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for nonP in NonPublier %}
+                            <tr>
+                                <td>{{ nonP.id }}</td>
+                                <td>{{ nonP.titre }}</td>
+                                <td>{{ nonP.status }}</td>
+                                <td>{{ nonP.dateSortie ? nonP.dateSortie|date('Y-m-d') : '' }}</td>
+                                {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
+                                <td>
+                                    <a href="{{ path('admin_jeu_show', {'id': nonP.id}) }}">Voir Jeu</a>
+                                    <a href="{{ path('admin_jeu_edit', {'id': nonP.id}) }}">edit</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6">Aucun jeu</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Status</th>
-                <th>Date_sortie</th>
-                {# <th>Image</th> #}
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for jeu in jeus %}
-            <tr>
-                <td>{{ jeu.id }}</td>
-                <td>{{ jeu.titre }}</td>
-                <td>{{ jeu.status }}</td>
-                <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d') : '' }}</td>
-                {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
-                <td>
-                    <a href="{{ path('admin_jeu_show', {'id': jeu.id}) }}">Voir Jeu</a>
-                    <a href="{{ path('admin_jeu_edit', {'id': jeu.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    
 
-    <a href="{{ path('admin_jeu_new') }}">Ajouter un jeu</a>
+    <a class="btn btn-primary m-2" href="{{ path('admin_jeu_new') }}">Ajouter un jeu</a>
 {% endblock %}
