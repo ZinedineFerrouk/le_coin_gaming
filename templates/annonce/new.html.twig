@@ -3,9 +3,15 @@
 {% block title %}New Annonce{% endblock %}
 
 {% block body %}
-    <h1>Create new Annonce</h1>
+<div class="containerSell">
+    <div class="formSell">
+        <h1>Vendre un Produit</h1>
 
-    {{ include('annonce/_form.html.twig') }}
+        {{ include('annonce/_form.html.twig') }}
 
-    <a href="{{ path('annonce_index') }}">back to list</a>
+        <a href="{{ path('annonce_index') }}">back to list</a>
+    </div>
+
+</div>
+
 {% endblock %}
