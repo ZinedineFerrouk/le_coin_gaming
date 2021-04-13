@@ -3,11 +3,12 @@
 {% block title %}Annonce{% endblock %}
 
 {% block body %}
-{# style="width:97px; height:128px"  #}
-    <div class="container">
-        <h1 class="text-center my-3">Détail de l'annonce:</h1>
-        <div class="text-center my-3">
-            <img style="width:200px; height:300px" src="{{ asset(jeu.image) }}" alt="">
+
+<div class="containershowAnn">
+    <div class="showAnn">
+        <h1 class="text-center my-3">{{ jeu.titre }}</h1>
+        <div class="text-center my-3 ">
+            <img  class="rounded" style="width:300px; height:400px" src="{{ asset(jeu.image) }}" alt="">
         </div>
         <div>
             <h4>Description: </h4>
@@ -15,7 +16,8 @@
         </div>
         <div class="d-flex justify-content-between">
             <p><span class="font-weight-bold">Prix : </span>{{ annonce.prix }} €</p>
-            <p><span class="font-weight-bold">Date de publication : </span>{{ annonce.createdAt ? annonce.createdAt|date('d-m-Y') : '' }}</p>
+            <p><span class="font-weight-bold">Date de publication : </span>{{ annonce.createdAt ?
+                annonce.createdAt|date('d-m-Y') : '' }}</p>
         </div>
         <p><span class="font-weight-bold">Boite du jeu: </span>{{ annonce.boite ? 'Oui' : 'Non' }}</p>
         <div>
@@ -26,6 +28,9 @@
         <div class="text-center my-2">
             <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour aux annonces</a>
         </div>
+        
     </div>
-    {# {{ include('annonce/_delete_form.html.twig') }} #}
+    
+</div>
+
 {% endblock %}
