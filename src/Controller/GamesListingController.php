@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Annonce;
 use App\Entity\Jeu;
 use App\Repository\JeuRepository;
 

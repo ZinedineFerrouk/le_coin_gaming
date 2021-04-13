@@ -56,7 +56,7 @@ class AnnonceController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="annonce_show", methods={"GET"})
+     * @Route("/jeux/annonces/{id}", name="annonce_show", methods={"GET"}, requirements={"id": "\d+"})
      */
     public function show(Annonce $annonce): Response
     {
