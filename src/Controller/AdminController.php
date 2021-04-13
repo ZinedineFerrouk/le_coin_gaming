@@ -43,8 +43,12 @@ class AdminController extends AbstractController
     public function les_annonce(AnnonceRepository $annonceRepository): Response
     {
         $annonces = $annonceRepository->findAllAnnonce();
+        $annoncesNonPub = $annonceRepository->annonceNonPublie();
+
+
         return $this->render('admin/annonces.html.twig', [
             'annonces' => $annonces,
+            'NonPublier' => $annoncesNonPub,
         ]);
     }
 
@@ -94,8 +98,10 @@ class AdminController extends AbstractController
      */
     public function les_jeu(JeuRepository $jeuRepository): Response
     {
+        $nonPublier = $jeuRepository->jeuxNonPublier();
         return $this->render('admin/jeux.html.twig', [
             'jeus' => $jeuRepository->findAll(),
+            'NonPublier' => $nonPublier,
         ]);
     }
 

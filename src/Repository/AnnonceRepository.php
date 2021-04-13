@@ -31,6 +31,20 @@ class AnnonceRepository extends ServiceEntityRepository
             ;
     }
 
+
+    public function annonceNonPublie()
+    {
+        return $this->createQueryBuilder('a')
+            ->addselect('a','j','p')
+            ->leftJoin('a.jeu','j')
+            ->leftJoin('a.plateforme','p')
+            ->where('a.status = ?1')
+            ->setParameter(1, 'Non-Publié')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     public function findAnnonceById($id)
     {
         return $this->createQueryBuilder('a')
