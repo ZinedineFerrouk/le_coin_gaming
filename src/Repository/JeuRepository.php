@@ -43,6 +43,17 @@ class JeuRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+    public function getLastResults($limit, $offset)
+    {
+        return $this->createQueryBuilder('j')
+            ->select('j.id', 'j.titre', 'j.image')
+            ->orderBy('j.date_sortie', 'DESC')
+            ->setFirstResult($offset)
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
+
     // public function findAllPaginate()
     // {
     //     return $this->createQueryBuilder('j')
