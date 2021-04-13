@@ -9,6 +9,7 @@
             <tr>
                 <th>Id</th>
                 <th>Titre</th>
+                <th>Status</th>
                 <th>Date_sortie</th>
                 {# <th>Image</th> #}
                 <th>actions</th>
@@ -19,6 +20,7 @@
             <tr>
                 <td>{{ jeu.id }}</td>
                 <td>{{ jeu.titre }}</td>
+                <td>{{ jeu.status }}</td>
                 <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d') : '' }}</td>
                 {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
                 <td>

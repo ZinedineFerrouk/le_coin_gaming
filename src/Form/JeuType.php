@@ -27,7 +27,7 @@ class JeuType extends AbstractType
             ])
             ->add('status', ChoiceType::class, [
                 'choices' => [
-                    'Non Publié' => 'non-Publié',
+                    'Non Publié' => 'Non-Publié',
                     'Publié' => 'Publié'
                 ],
                 'expanded' => true,
