@@ -49,6 +49,11 @@ class Jeu
      */
     private $plateforme;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $status;
+
     public function __construct()
     {
         $this->annonces = new ArrayCollection();
@@ -158,6 +163,18 @@ class Jeu
     public function removePlateforme(Plateforme $plateforme): self
     {
         $this->plateforme->removeElement($plateforme);
+
+        return $this;
+    }
+
+    public function getStatus(): ?string
+    {
+        return $this->status;
+    }
+
+    public function setStatus(string $status): self
+    {
+        $this->status = $status;
 
         return $this;
     }

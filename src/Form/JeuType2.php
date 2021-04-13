@@ -10,7 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class JeuType extends AbstractType
+class JeuType2 extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -25,16 +25,6 @@ class JeuType extends AbstractType
                 'multiple' => true,
                 'expanded' => false,
             ])
-            ->add('status', ChoiceType::class, [
-                'choices' => [
-                    'Non Publié' => 'non-Publié',
-                    'Publié' => 'Publié'
-                ],
-                'expanded' => true,
-                'multiple' => false,
-                'label' => 'Status' 
-            ])
-
         ;
     }
 
