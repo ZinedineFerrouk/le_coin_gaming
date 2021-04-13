@@ -22,11 +22,14 @@
         <p><span class="font-weight-bold">Boite du jeu: </span>{{ annonce.boite ? 'Oui' : 'Non' }}</p>
         <div>
             <h4>Pour contacter le vendeur:</h4>
-            <p><span class="font-weight-bold">Tél: </span> 06.XX.XX.XX.XX</p>
-            <p><span class="font-weight-bold">Mail: </span> test@test.fr </p>
+            <p><span class="font-weight-bold">Tél: </span> {{user.num}}</p>
+            <p><span class="font-weight-bold">Mail: </span> {{user.email}} </p>
         </div>
         <div class="text-center my-2">
             <a class="btn btn-primary" href="{{ path('annonce_index') }}">Retour aux annonces</a>
+            {% if is_granted('ROLE_ADMIN') %}
+                <a class="btn btn-primary"  href="{{ path('admin_annonces') }}">Retour aux annonces(admin)</a>
+            {% endif %}
         </div>
         
     </div>

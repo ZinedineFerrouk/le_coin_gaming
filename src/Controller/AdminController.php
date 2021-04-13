@@ -8,6 +8,7 @@ use App\Form\AnnonceType;
 use App\Form\JeuType;
 use App\Repository\AnnonceRepository;
 use App\Repository\JeuRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,9 +24,12 @@ class AdminController extends AbstractController
     /**
      * @Route("/", name="admin")
      */
-    public function index(): Response
+    public function index(AnnonceRepository $annonce, JeuRepository $jeux, UserRepository $user): Response
     {
         return $this->render('admin/index.html.twig', [
+            'annonces' => $annonce->count([]),
+            'jeux' => $jeux->count([]),
+            'users' => $user->count([]),
         ]);
     }
 
@@ -33,7 +37,7 @@ class AdminController extends AbstractController
     /**
      * @Route("/annonces", name="admin_annonces", methods={"GET"})
      */
-    public function show_annonce(AnnonceRepository $annonceRepository): Response
+    public function les_annonce(AnnonceRepository $annonceRepository): Response
     {
         $annonces = $annonceRepository->findAllAnnonce();
         return $this->render('admin/annonces.html.twig', [
@@ -42,9 +46,26 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/annonces/{id}", name="admin_annonce_show", methods={"GET"})
+     */
+    public function show_annonce(Annonce $annonce): Response
+    {
+        $plateforme = $annonce->getPlateforme();
+        $jeu = $annonce->getJeu();
+        $user = $annonce->getUser();
+
+        return $this->render('admin/annonce_show.html.twig', [
+            'annonce' => $annonce,
+            'jeu' => $jeu,
+            'plateforme' => $plateforme,
+            'user' => $user,
+        ]);
+    }
+
+    /**
      * @Route("/jeux", name="admin_jeu", methods={"GET"})
      */
-    public function show_jeu(JeuRepository $jeuRepository): Response
+    public function les_jeu(JeuRepository $jeuRepository): Response
     {
         return $this->render('admin/jeux.html.twig', [
             'jeus' => $jeuRepository->findAll(),
@@ -91,6 +112,19 @@ class AdminController extends AbstractController
         return $this->render('admin/annonce_edit.html.twig', [
             'annonce' => $annonce,
             'form' => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @Route("/jeux/{id}", name="admin_jeu_show", methods={"GET"})
+     */
+    public function show_jeu(Jeu $jeu): Response
+    {
+        $annonces = $jeu->getAnnonces();
+
+        return $this->render('admin/jeux_show.html.twig', [
+            'jeu' => $jeu,
+            'annonces' => $annonces,
         ]);
     }
 }
