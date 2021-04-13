@@ -62,11 +62,13 @@ class AnnonceController extends AbstractController
     {
         $plateforme = $annonce->getPlateforme();
         $jeu = $annonce->getJeu();
+        $user = $annonce->getUser();
 
         return $this->render('annonce/show.html.twig', [
             'annonce' => $annonce,
             'jeu' => $jeu,
             'plateforme' => $plateforme,
+            'user' => $user,
         ]);
     }
 
