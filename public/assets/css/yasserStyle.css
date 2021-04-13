@@ -323,7 +323,7 @@ label #cancel {
 
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .containerAcc{
-    margin-top: -50%;
+    margin-top: -15%;
   }
 
   .titre {
