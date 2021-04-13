@@ -123,7 +123,7 @@ label #cancel {
   display: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1224px) {
   .burger {
     display: none;
   }
@@ -235,7 +235,8 @@ label #cancel {
   display: none;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
+
   .containerAcc {
     margin-top: -10%;
   }
@@ -639,6 +640,23 @@ label #cancel {
   border: none;
   background: #7fd9e0;
   color: white;
+}
+
+/* \\\\\\\\\PAGE VENTE//////////*/
+
+.containerSell{
+  background: #002126;
+  color: white;
+  padding: 70px;
+}
+
+.formSell{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.formSell h1{
+  text-align: center;
 }
 
 /* \\\\\\\\\PAGE PROFIL//////////*/

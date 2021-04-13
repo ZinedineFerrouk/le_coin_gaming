@@ -23,7 +23,7 @@
                 {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
                 <td>
                     <a href="{{ path('admin_jeu_show', {'id': jeu.id}) }}">Voir Jeu</a>
-                    <a href="{{ path('jeu_edit', {'id': jeu.id}) }}">edit</a>
+                    <a href="{{ path('admin_jeu_edit', {'id': jeu.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -34,5 +34,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('admin_jeu_new') }}">Create new</a>
+    <a href="{{ path('admin_jeu_new') }}">Ajouter un jeu</a>
 {% endblock %}
