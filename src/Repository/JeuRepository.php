@@ -35,7 +35,7 @@ class JeuRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('j')
             ->select('j.id', 'j.titre', 'j.image')
-            ->orderBy('j.date_sortie')
+            ->orderBy('j.date_sortie', 'DESC')
             ->setFirstResult($offset)
             ->setMaxResults($limit)
             ->getQuery()
