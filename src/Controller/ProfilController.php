@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Form\UserType2;
 use Doctrine\ORM\Mapping\Id;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -27,7 +29,7 @@ class ProfilController extends AbstractController
     /**
      * @Route("/mesAnnonces", name="profil_annonce", methods={"GET"})
      */
-    public function show(): Response
+    public function profilAnnonce(): Response
     {
         $user = $this->getUser();
         $annonces = $user->getAnnonces();
@@ -35,4 +37,38 @@ class ProfilController extends AbstractController
             "annonces" => $annonces,
         ]);
     }
+    
+
+    /**
+     * @Route("/myprofil", name="profil_user", methods={"GET","POST"})
+     */
+    public function profilUser(Request $request): Response
+    {
+        $user = $this->getUser();
+        $form = $this->createForm(UserType2::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('profil');
+        }
+
+        return $this->render('profil/monProfil.html.twig', [
+            'user' => $user,
+            'form' => $form->createView(),
+        ]);
+    }
+
+
+    /**
+     * @Route("/myprofil", name="profil_user", methods={"GET"})
+     */
+   /*  public function profilUser(): Response
+    {
+        $user = $this->getUser();
+        return $this->render('profil/monProfil.html.twig', [
+            "user" => $user,
+        ]);
+    } */
 }

@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Annonce{% endblock %}
+{% block title %}Vendre un Produit{% endblock %}
 
 {% block body %}
 <div class="containerSell">
@@ -9,7 +9,7 @@
 
         {{ include('annonce/_form.html.twig') }}
 
-        <a href="{{ path('annonce_index') }}">back to list</a>
+        <a href="{{ path('home') }}">Retour à l'accueil</a>
     </div>
 
 </div>

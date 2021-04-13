@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Annonce;
+use App\Form\AnnonceType;
 use App\Form\AnnonceType2;
 use App\Repository\AnnonceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -84,13 +85,12 @@ class AnnonceController extends AbstractController
         if ($proprio != $userActuel) {
             return $this->redirectToRoute('home');
         }
-        $form = $this->createForm(AnnonceType::class, $annonce);
+        $form = $this->createForm(AnnonceType2::class, $annonce);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('annonce_index');
+            return $this->redirectToRoute('profil_annonce');
         }
 
         return $this->render('annonce/edit.html.twig', [
