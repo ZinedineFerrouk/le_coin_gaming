@@ -36,16 +36,18 @@
                 <i class="fas fa-times" id="cancel"></i>
             </span>
         </label>
-<form id="content">
-                    <input type="text" id="__search_bar" class="__search_bar" name="__search_bar">
-                    <button type="reset" class="search" id="search-btn"></button>
-                </form>
+                
+
         <!-- BARRE DE RECHERCHE -->
         <div class="__search_bar_div_container">
             <div class="__search_bar_div">
-                
-                
-                
+                <!-- <form id="content">
+                    <input type="text" name="input" class="input" id="search-input">
+                    <button type="reset" class="search" id="search-btn"></button>
+                </form> -->
+
+                <input type="text" id="__search_bar" class="__search_bar" name="__search_bar"
+                    placeholder="Rechercher un jeu">
             </div>
             <div id="__search_results" class="position-absolute w-25 __search_results"></div>
         </div>
@@ -190,15 +192,15 @@
                     //     console.log('ok');
                     // })
 
-                    const input = document.getElementById("__search_bar");
-                    const searchBtn = document.getElementById("search-btn");
+                    // const input = document.getElementById("search-input");
+                    // const searchBtn = document.getElementById("search-btn");
 
-                    const expand = () => {
-                        searchBtn.classList.toggle("close");
-                        input.classList.toggle("square");
-                    };
+                    // const expand = () => {
+                    //     searchBtn.classList.toggle("close");
+                    //     input.classList.toggle("square");
+                    // };
 
-                    searchBtn.addEventListener("click", expand);
+                    // searchBtn.addEventListener("click", expand);
                 }
             });
         });
