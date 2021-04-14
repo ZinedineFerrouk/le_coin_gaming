@@ -3,35 +3,99 @@
 
 {% block body %}
     <h1>Liste des annonces</h1>
+
+    <div id="accordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Toutes les annonces
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="text-center">
+                                <th>Jeux</th>
+                                <th>Plateforme</th>
+                                <th>Titre</th>
+                                <th>Prix</th>
+                                <th>Status</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for annonce in annonces %}
+                            <tr class="text-center">
+                                <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
+                                <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
+                                <td>{{annonce.jeu.titre}}</td>
+                                <td>{{annonce.prix}} €</td>
+                                <td>{{ annonce.status }} </td>
+                                <td>
+                                    <a class="btn btn-primary m-1" href="{{ path('admin_annonce_show', {'id': annonce.id}) }}">Voir l'annonce</a><br>
+                                    <a class="btn btn-primary m-1" href="{{ path('admin_annonce_edit', {'id': annonce.id}) }}">Modifier l'annonce</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">Aucune annonce</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Les annonces Non Publié
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr class="text-center">
+                                <th>Jeux</th>
+                                <th>Plateforme</th>
+                                <th>Titre</th>
+                                <th>Prix</th>
+                                <th>Status</th>
+                                <th>actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for nonP in NonPublier %}
+                            <tr class="text-center">
+                                <td><img style="width:97px; height:128px" src="{{ asset(nonP.jeu.image) }}" alt=""></td>
+                                <td><img src="{{ asset(nonP.plateforme.logo) }}" alt=""></td>
+                                <td>{{nonP.jeu.titre}}</td>
+                                <td>{{nonP.prix}} €</td>
+                                <td>{{ nonP.status }} </td>
+                                <td>
+                                    <a class="btn btn-primary m-1" href="{{ path('admin_annonce_show', {'id': nonP.id}) }}">Voir l'annonce</a><br>
+                                    <a class="btn btn-primary m-1" href="{{ path('admin_annonce_edit', {'id': nonP.id}) }}">Modifier l'annonce</a>
+                                </td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="5">Aucune annonce</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     
-    <table class="table">
-        <thead>
-            <tr class="text-center">
-                <th>Jeux</th>
-                <th>Plateforme</th>
-                <th>Titre</th>
-                <th>Prix</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for annonce in annonces %}
-            <tr class="text-center">
-                <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
-                <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
-                <td>{{annonce.jeu.titre}}</td>
-                <td>{{ annonce.prix }} €</td>
-                <td>
-                    <a class="btn btn-primary m-1" href="{{ path('admin_annonce_show', {'id': annonce.id}) }}">Voir l'annonce</a><br>
-                    <a class="btn btn-primary m-1" href="{{ path('admin_annonce_edit', {'id': annonce.id}) }}">Modifier l'annonce</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    
 
 {% endblock %}

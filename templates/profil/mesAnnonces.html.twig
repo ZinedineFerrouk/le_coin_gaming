@@ -11,6 +11,7 @@
                 <th>Jeux</th>
                 <th>Plateforme</th>
                 <th>Titre</th>
+                <th>Status</th>
                 <th>Prix</th>
                 <th>actions</th>
             </tr>
@@ -21,6 +22,7 @@
                 <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
                 <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
                 <td>{{annonce.jeu.titre}}</td>
+                <td>{{annonce.status}}</td>
                 <td>{{ annonce.prix }} €</td>
                 <td>
                     <a class="btn btn-primary" href="{{ path('annonce_show', {'id': annonce.id}) }}">Voir</a>
@@ -33,7 +35,11 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table></div>
+    </table>
+    <div class='text-center'>
+        <a class='btn btn-primary my-3' href="{{ path('profil') }}">Retour</a>
+    <div>
+</div>
     
 
 {% endblock %}

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Annonce;
 use App\Form\AnnonceType;
+use App\Form\AnnonceType2;
 use App\Repository\AnnonceRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,17 +37,18 @@ class AnnonceController extends AbstractController
             return $this->redirectToRoute('app_login');
         }
         $annonce = new Annonce();
-        $form = $this->createForm(AnnonceType::class, $annonce);
+        $form = $this->createForm(AnnonceType2::class, $annonce);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
             $annonce->setCreatedAt(new \DateTime());
             $annonce->setUser($this->getUser());
+            $annonce->setStatus('Non-Publié');
             $entityManager->persist($annonce);
             $entityManager->flush();
 
-            return $this->redirectToRoute('annonce_index');
+            return $this->redirectToRoute('games_listing');
         }
 
         return $this->render('annonce/new.html.twig', [
@@ -56,7 +58,7 @@ class AnnonceController extends AbstractController
     }
 
     /**
-     * @Route("/jeux/annonces/{id}", name="annonce_show", methods={"GET"}, requirements={"id": "\d+"})
+     * @Route("/jeux/{id}", name="annonce_show", methods={"GET"}, requirements={"id": "\d+"})
      */
     public function show(Annonce $annonce): Response
     {
@@ -83,13 +85,12 @@ class AnnonceController extends AbstractController
         if ($proprio != $userActuel) {
             return $this->redirectToRoute('home');
         }
-        $form = $this->createForm(AnnonceType::class, $annonce);
+        $form = $this->createForm(AnnonceType2::class, $annonce);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('annonce_index');
+            return $this->redirectToRoute('profil_annonce');
         }
 
         return $this->render('annonce/edit.html.twig', [

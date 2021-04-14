@@ -95,6 +95,7 @@ class GamesFixtures extends Fixture implements DependentFixtureInterface
             $jeu->setDescription($value['description']);
             $jeu->setDateSortie(new \DateTime());
             $jeu->setImage($value['image']);
+            $jeu->setStatus('Publié');
 
             $manager->persist($jeu);
             $this->addReference('jeu_' . $key, $jeu);

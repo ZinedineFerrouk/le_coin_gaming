@@ -54,6 +54,17 @@ class JeuRepository extends ServiceEntityRepository
             ->getResult();
     }
 
+
+    public function jeuxNonPublier()
+    {
+        return $this->createQueryBuilder('j')
+            ->where('j.status = ?1')
+            ->setParameter(1, 'Non-Publié')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
     // public function findAllPaginate()
     // {
     //     return $this->createQueryBuilder('j')
