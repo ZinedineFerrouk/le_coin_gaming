@@ -36,15 +36,14 @@
                 <i class="fas fa-times" id="cancel"></i>
             </span>
         </label>
-                
+
 
         <!-- BARRE DE RECHERCHE -->
         <div class="__search_bar_div_container">
             <div class="__search_bar_div">
-                <!-- <form id="content">
-                    <input type="text" name="input" class="input" id="search-input">
-                    <button type="reset" class="search" id="search-btn"></button>
-                </form> -->
+                <div id="__search_btn" class="btn __search_icon_div">
+                    <i class="fas fa-search __search_icon"></i>
+                </div>
 
                 <input type="text" id="__search_bar" class="__search_bar" name="__search_bar"
                     placeholder="Rechercher un jeu">
@@ -175,7 +174,7 @@
                 if (search != '') {
                     axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
                     axios.post(url, params).then(function (response) {
-                        let list = $(document.createElement('ul')).attr('class', 'list-group').attr('style', 'width:350px');
+                        let list = $(document.createElement('ul')).attr('class', 'list-group');
 
                         response.data.result.forEach(game => {
                             let li = $(document.createElement('li')).attr('class', 'list-group-item list-group-item-action list-group-item-light').attr('style', 'list-style-type: none;');
@@ -186,23 +185,23 @@
                         });
                         $("#__search_results").empty().append(list);
                     })
-
-                    // $('body').on('click', function () {
-                    //     $("#__search_results").attr('class', 'd-none');
-                    //     console.log('ok');
-                    // })
-
-                    // const input = document.getElementById("search-input");
-                    // const searchBtn = document.getElementById("search-btn");
-
-                    // const expand = () => {
-                    //     searchBtn.classList.toggle("close");
-                    //     input.classList.toggle("square");
-                    // };
-
-                    // searchBtn.addEventListener("click", expand);
                 }
             });
+
+            $("#__search_btn").on("click", function () {
+                let searchBar = document.getElementById('__search_bar');
+                searchBar.classList.toggle('btn-activated');
+
+                let icon = document.querySelector('.__search_icon');
+
+                if (icon.classList.contains('fa-search')) {
+                    icon.classList.replace('fa-search', 'fa-times');
+                    searchBar.focus()
+                } else {
+                    icon.classList.replace('fa-times', 'fa-search');
+                }
+            })
+
         });
     </script>
 
