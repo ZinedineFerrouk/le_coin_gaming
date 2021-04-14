@@ -75,7 +75,7 @@ nav a:hover {
   -o-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none;
-  color: green;
+  color: #7fd9e0;
 }
 .toggler:checked ~ nav ul {
   top: 0;
@@ -215,7 +215,7 @@ label #cancel {
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  background: green;
+  background: #7fd9e0;
   color: white;
 }
 
