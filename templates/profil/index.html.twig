@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ app.user.pseudo }}{% endblock %}
+{% block title %}Bienvenue {{ app.user.pseudo|capitalize }} | Le Coin Gaming{% endblock %}
 
 {% block body %}
 <div class="containerProf">
     <div class="accueilProf">
             <div class="titreProf">
                 <p>Bienvenue</p>
-                <h1>{{ app.user.pseudo }}</h1>
+                <h1>{{ app.user.pseudo|capitalize }}</h1>
                 <a href="{{ path('profil_user') }}"><input type="button" class="modifProf" value="Modifier Mon Profil"></a>
                 <a href="{{ path('profil_annonce') }}"><input type="button" class="modifProf" value="Mes Annonces"></a>
                 {% if is_granted('ROLE_ADMIN') %}

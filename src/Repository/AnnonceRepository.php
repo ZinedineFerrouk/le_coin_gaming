@@ -45,6 +45,20 @@ class AnnonceRepository extends ServiceEntityRepository
         ;
     }
 
+    public function annoncePublie($id)
+    {
+        return $this->createQueryBuilder('a')
+            ->addselect('a','j','p')
+            ->leftJoin('a.jeu','j')
+            ->leftJoin('a.plateforme','p')
+            ->where('a.status = ?1')
+            ->andWhere('j.id = :id')
+            ->setParameters([1 => 'Publié', 'id' => $id])
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     public function findAnnonceById($id)
     {
         return $this->createQueryBuilder('a')

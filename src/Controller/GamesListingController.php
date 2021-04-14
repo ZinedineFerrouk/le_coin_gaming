@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Annonce;
 use App\Entity\Jeu;
+use App\Repository\AnnonceRepository;
 use App\Repository\JeuRepository;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -27,7 +28,7 @@ class GamesListingController extends AbstractController
         $offset = ($currentPage - 1) * $itemsPerPage;
         
         $paginator = new Paginator($totalItems, $itemsPerPage, $currentPage, $urlPattern);
-        $jeux = $jeuRepository->findAllWithPlateformeAndAnnonce($itemsPerPage, $offset);
+        $jeux = $jeuRepository->findAllPublishedGames($itemsPerPage, $offset);
         // dd($jeux);
 
         return $this->render('games_listing/index.html.twig', [
@@ -39,11 +40,10 @@ class GamesListingController extends AbstractController
     /**
      * @Route("/jeux/annonces/{id}", name="annonces_per_game", methods={"GET"}, requirements={"id": "\d+"})
      */
-    public function annoncePerGame(Jeu $jeu): Response
+    public function annoncePerGame(Jeu $jeu, AnnonceRepository $annonceRepo): Response
     {
-        $annonces = $jeu->getAnnonces();
+        $annonces = $annonceRepo->annoncePublie($jeu->getId());
 
-        // Récupèrer tous les jeux vidéos (image, titre, date_dortie->prendre que l'année) -> status 'publie'
         return $this->render('games_listing/annonces_per_game.html.twig', [
             'annonces' => $annonces,
             'jeu' => $jeu
