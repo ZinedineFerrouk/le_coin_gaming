@@ -3,6 +3,8 @@
 {% block title %}Register{% endblock %}
 
 {% block body %}
+
+<!-- Page Inscription -->
 <div class="register">
     <div class="backRegis">
         <div class="formRegis">{% for flashError in app.flashes('verify_email_error') %}
@@ -19,19 +21,14 @@
                 <div class="formRegis1">{{ form_row(registrationForm.age) }}
                     {{ form_row(registrationForm.email) }}
                     {{ form_row(registrationForm.plainPassword, {
-                    label: 'Password'
+                    label: 'Mot de Passe'
                     }) }}
                     {{ form_row(registrationForm.agreeTerms) }}
                     <button type="submit" class="btn">Register</button>
                     {{ form_end(registrationForm) }}
                 </div>
             </div>
-
-
-
-
         </div>
-
     </div>
 </div>
 
