@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Jeu;
 use App\Form\JeuType;
+use App\Form\JeuType2;
 use App\Repository\JeuRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,15 +32,16 @@ class JeuController extends AbstractController
     public function new(Request $request): Response
     {
         $jeu = new Jeu();
-        $form = $this->createForm(JeuType::class, $jeu);
+        $form = $this->createForm(JeuType2::class, $jeu);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $jeu->setStatus('Non-Publié');
             $entityManager->persist($jeu);
             $entityManager->flush();
 
-            return $this->redirectToRoute('jeu_index');
+            return $this->redirectToRoute('annonce_new');
         }
 
         return $this->render('jeu/new.html.twig', [
