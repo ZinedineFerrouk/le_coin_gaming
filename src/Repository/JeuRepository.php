@@ -19,11 +19,11 @@ class JeuRepository extends ServiceEntityRepository
         parent::__construct($registry, Jeu::class);
     }
 
-    public function findAllWithPlateformeAndAnnonce($itemPerPage, $offset)
+    public function findAllPublishedGames($itemPerPage, $offset)
     {
         return $this->createQueryBuilder('j')
-            ->addSelect('j')
-            // ->leftJoin('j.plateforme', 'p')
+            ->where('j.status = ?1')
+            ->setParameter(1, 'Publié')
 
             ->setFirstResult($offset)
             ->setMaxResults($itemPerPage)
