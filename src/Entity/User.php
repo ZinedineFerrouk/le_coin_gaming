@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
@@ -24,6 +25,13 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\Length(
+     *      max = 100,
+     *      maxMessage = "L'email ne doit pas dépasser {{ limit }} caractères"
+     * )
+     * @Assert\Email(
+     *     message = "'{{ value }}' n'est pas une adresse mail valide !"
+     * )
      */
     private $email;
 
@@ -35,26 +43,56 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\Length(
+     *    min = 6,
+     *    max = 50,
+     *    minMessage = "Le mot de passe doit avoir au moins {{ limit }} caractères",
+     *    maxMessage = "Le mot de passe ne doit pas dépasser {{ limit }} caractères",
+     * )
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(
+     *    min = 3,
+     *    max = 30,
+     *    minMessage = "Le nom doit avoir au moins {{ limit }} caractères",
+     *    maxMessage = "Le nom ne doit pas dépasser {{ limit }} caractères",
+     * )
      */
     private $nom;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(
+     *    min = 3,
+     *    max = 30,
+     *    minMessage = "Le prénom doit avoir au moins {{ limit }} caractères",
+     *    maxMessage = "Le prénom ne doit pas dépasser {{ limit }} caractères",
+     * )
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\Length(
+     *    min = 3,
+     *    max = 40,
+     *    minMessage = "Le pseudo doit avoir au moins {{ limit }} caractères",
+     *    maxMessage = "Le pseudo ne doit pas dépasser {{ limit }} caractères",
+     * )
      */
     private $pseudo;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
+     * @Assert\NotBlank
+     * @Assert\Regex(
+     *     pattern     = "#^0[1-78]([-. ]?[0-9]{2}){4}$#",
+     *     message = "Le numero tel n'est pas valide"
+     * )
+     * 
      */
     private $num;
 
@@ -190,12 +228,12 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getNum(): ?int
+    public function getNum(): ?string
     {
         return $this->num;
     }
 
-    public function setNum(?int $num): self
+    public function setNum(?string $num): self
     {
         $this->num = $num;
 
