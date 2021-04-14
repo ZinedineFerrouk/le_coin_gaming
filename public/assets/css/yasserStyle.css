@@ -877,7 +877,7 @@ footer {
 
 .__search_bar {
   margin-top: 40px;
-  width: 350px;
+  width: 300px;
   height: 50px;
   padding: 0.5rem;
   background-color: #001518;
@@ -900,7 +900,34 @@ footer {
   justify-content: center;
 }
 
-#content {
+@media screen and (max-width: 1224px) {
+  .__search_bar_div {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .__search_bar {
+    margin: 15px 150px;
+    width: 250px;
+  }
+
+  header{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .__search_bar_div {
+    display: none;
+  }
+
+
+}
+
+/* #content {
   position: absolute;
   height: 50px;
   width: 300px;
@@ -946,7 +973,6 @@ footer {
 
 .search {
   background: none;
-  position: absolute;
   top: 0px;
   left: 0;
   height: 50px;
@@ -1037,6 +1063,6 @@ footer {
   -webkit-transform: translate(-100%, -50%);
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
-}
+} */
 
 /* /////////////////////////////// FIN CSS ZINEDINE //////////////////////////// */
