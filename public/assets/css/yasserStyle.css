@@ -624,12 +624,13 @@ label #cancel {
   color: white;
   padding: 70px;
   height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .formSell{
   width: 50%;
   margin: 0 auto;
-  padding-top: 180px;
 }
 
 .formSell h1{
@@ -649,16 +650,16 @@ label #cancel {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-}
-.titreProf {
-  position: relative;
-  z-index: 2;
- padding-top: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+}
+.accueilProf{
+  padding-top: 150px;
 }
 .titreProf h1 {
   font-size: 90px;
-  position: relative;
   color: white;
   padding-bottom: 20px;
 }
@@ -684,9 +685,7 @@ label #cancel {
   .containerProf{
     height: 115vh;
   }
-  .titreProf {
-    padding-top: 500px;
-  }
+  
 }
 
 
@@ -694,19 +693,21 @@ label #cancel {
 /* \\\\\\\\\\\\\\\\\Page Modification du Profil/////////////// */
 
 .modifProf1 {
-  margin-top: -25%;
-  height: 1100px;
+  height: 100vh;
   background-image: url("../img/horizon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  
 }
 .backModif{
   background: rgba(0, 33, 38, 0.7);
-  height: 1100px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .formModif{
-  padding-top: 500px;
   color: white;
 }
 
