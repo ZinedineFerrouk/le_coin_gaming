@@ -6,17 +6,15 @@
   font-family: "popp", sans-serif, Arial, Helvetica;
 }
 
-/*  Header */
+/*\\\\\\\\\\\\\\\\\\  HEADER ////////////////// */
 
 .logo a {
   text-decoration: none;
   color: white;
 }
-
 nav ul a.link {
   color: #fb8500;
 }
-
 header {
   text-align: center;
   position: -webkit-sticky;
@@ -26,15 +24,12 @@ header {
   z-index: 3;
   background: rgba(0, 33, 38, 0.8);
 }
-
 .scrolling-active {
   background: #002126;
 }
-
 .toggler {
   display: none;
 }
-
 .logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,7 +44,6 @@ header {
   align-items: center;
   font-weight: bold;
 }
-
 nav ul {
   position: fixed;
   width: 100%;
@@ -65,43 +59,36 @@ nav ul {
   transition: all 0.5s ease-in-out;
   list-style: none;
 }
-
 nav li {
   margin: 50px 13px;
   line-height: 50px;
 }
-
 nav a {
   color: white;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
 }
-
 nav a:hover {
   background: #002126;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none;
-  color: green;
+  color: #7fd9e0;
 }
-
 .toggler:checked ~ nav ul {
   top: 0;
   left: 0;
   -webkit-clip-path: circle(75%);
   clip-path: circle(75%);
 }
-
 .toggler:checked ~ label #btn {
   display: none;
 }
-
 .toggler:checked ~ label #cancel {
   display: block;
 }
-
 .burger {
   position: absolute;
   font-size: 35px;
@@ -118,11 +105,12 @@ nav a:hover {
   align-items: center;
   z-index: 2;
 }
-
 label #cancel {
   display: none;
 }
+ /* **********Responsive*********** */
 
+ /* Format PC */
 @media screen and (min-width: 1224px) {
   .burger {
     display: none;
@@ -177,7 +165,11 @@ label #cancel {
   }
 }
 
-/* ACCUEIL */
+
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\ ACCUEIL //////////////////////*/
 .containerAcc {
   margin-top: -25%;
   height: 860px;
@@ -223,7 +215,7 @@ label #cancel {
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  background: green;
+  background: #7fd9e0;
   color: white;
 }
 
@@ -234,7 +226,9 @@ label #cancel {
 .rad {
   display: none;
 }
+/* **************Responsive************** */
 
+/* Format PC */
 @media screen and (min-width: 1025px) {
 
   .containerAcc {
@@ -248,7 +242,7 @@ label #cancel {
     top: 250px;
     right: 20%;
   }
-
+/* Slider */
   .slider-container {
     position: relative;
     -webkit-perspective: 350px;
@@ -256,23 +250,19 @@ label #cancel {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-
   .slide-content p {
     padding: 0;
     text-align: center;
   }
-
   .carousel-3d-item {
     position: absolute;
     top: 50%;
     left: 40%;
     outline: 1px solid transparent;
   }
-
   .slide-img img {
     width: 250px;
   }
-
   #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(1),
   #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(2),
   #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(3) {
@@ -280,7 +270,6 @@ label #cancel {
     -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
-
   .carousel-3d-item:nth-of-type(2),
   #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(2),
   #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(3),
@@ -292,7 +281,6 @@ label #cancel {
     -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
-
   .carousel-3d-item:nth-of-type(1),
   #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(1),
   #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(2),
@@ -304,7 +292,6 @@ label #cancel {
     -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
     transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
-
   .carousel-3d-item:nth-of-type(3),
   #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(3),
   #carousel-3d-controller-2:checked ~ .carousel-3d-item:nth-of-type(1),
@@ -318,19 +305,21 @@ label #cancel {
   }
 }
 
+/* Format Tablette */
 @media screen and (min-width: 600px) and (max-width: 1024px) {
   .containerAcc {
     margin-top: -15%;
   }
-
   .titre {
     padding-top: 370px;
   }
 }
 
-/* a propos */
 
-.propos {
+
+/* Jeux Récents */
+
+.classJeu1 {
   background: #001214;
   padding-top: 100px;
   padding-bottom: 200px;
@@ -343,7 +332,6 @@ label #cancel {
   -webkit-box-shadow: 0px -3px 20px 15px rgba(0, 0, 0, 0.88) inset;
   -moz-box-shadow: 0px -3px 20px 15px rgba(0, 0, 0, 0.88) inset;
 }
-
 .imgdesc {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -354,31 +342,27 @@ label #cancel {
   -ms-flex-pack: center;
   justify-content: center;
 }
-
-.propos h2,
-.propos p {
+.classJeu1 h2,
+.classJeu1 p {
   color: white;
   text-align: center;
 }
-
-.propos h2 {
+.classJeu1 h2 {
   padding-bottom: 20px;
 }
-
-.propos a {
+.classJeu1 a {
   width: 44%;
   margin: 0 auto;
   padding-bottom: 10px;
 }
-.propos img {
+.classJeu1 img {
   width: 100%;
 }
-.propos .desc1 {
+.classJeu1 .desc1 {
   width: 100%;
   padding-top: 20px;
 }
-
-.propos .desc1 .buttonPop {
+.classJeu1 .desc1 .buttonPop {
   padding: 12px;
   font-size: 15px;
   font-weight: bold;
@@ -388,80 +372,74 @@ label #cancel {
   background: green;
   color: white;
 }
-
 .desc1 {
   text-align: center;
 }
+/* *************Responsive************ */
 
+/* Format PC */
 @media screen and (min-width: 1224px) {
-  .propos .imgdesc {
+  .classJeu1 .imgdesc {
     margin: 0 auto;
   }
-
-  .propos a {
+  .classJeu1 a {
     width: 25%;
     padding: 6px;
   }
-
-  .propos img {
+  .classJeu1 img {
     width: 100%;
   }
 }
 
-/* Nos Services */
 
-.services1 {
+/* Fonctionnalités */
+
+.fonct {
   background: #002126;
 }
-
-.services1 h1,
-.services1 h3,
-.services1 p {
+.fonct h1,
+.fonct h3,
+.fonct p {
   color: white;
   text-align: center;
 }
-
 .imgser {
   text-align: center;
 }
-
 .imgser .fas {
   font-size: 50px;
   margin: auto;
   padding-bottom: 30px;
   color: white;
 }
-
 .border {
   background: black;
   width: 100%;
   height: 2px;
 }
-
-.service1,
-.service2,
-.service3 {
+.fonct1,
+.fonct2,
+.fonct3 {
   padding: 25px;
 }
+/* **************Responsive************** */
 
+/* Format PC */
 @media screen and (min-width: 1224px) {
-  .service {
+  .fonctP {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     width: 100%;
     margin: auto;
-
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
   }
-
-  .service2,
-  .service1 {
+  .fonct2,
+  .fonct1 {
     margin-right: 20px;
   }
-
   .border {
     background: black;
     width: 4px;
@@ -469,7 +447,8 @@ label #cancel {
   }
 }
 
-/* Ventes Pop */
+
+/* Ventes Récentes */
 
 .ventesR {
   background: #001214;
@@ -484,7 +463,6 @@ label #cancel {
   -webkit-box-shadow: 0px -3px 20px 15px rgba(0, 0, 0, 0.88) inset;
   -moz-box-shadow: 0px -3px 20px 15px rgba(0, 0, 0, 0.88) inset;
 }
-
 .imgdesc {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -495,32 +473,26 @@ label #cancel {
   -ms-flex-pack: center;
   justify-content: center;
 }
-
 .ventesR h2,
 .ventesR p {
   color: white;
   text-align: center;
 }
-
 .ventesR h2 {
   padding-bottom: 20px;
 }
-
 .ventesR a {
   width: 44%;
   margin: 0 auto;
   padding-bottom: 10px;
 }
-
 .ventesR img {
   width: 100%;
 }
-
 .ventesR .desc1 {
   width: 100%;
   padding-top: 20px;
 }
-
 .ventesR .desc1 .buttonPop {
   padding: 12px;
   font-size: 15px;
@@ -531,23 +503,29 @@ label #cancel {
   background: green;
   color: white;
 }
-
 .desc1 {
   text-align: center;
 }
+/* ************Responsive************ */
 
+/* Format PC */
 @media screen and (min-width: 1224px) {
   .ventesR .imgdesc {
     margin: 0 auto;
   }
-
   .ventesR a {
     width: 15%;
     padding: 6px;
   }
 }
 
-/* Register */
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\ INSCRIPTION /////////////////////*/
+
 .register {
   margin-top: -25%;
   height: 1100px;
@@ -556,12 +534,10 @@ label #cancel {
   background-size: cover;
   background-position: center;
 }
-
 .backRegis {
   background: rgba(0, 33, 38, 0.7);
   height: 1100px;
 }
-
 .formRegis {
   padding-top: 450px;
   color: white;
@@ -578,11 +554,9 @@ label #cancel {
 .formRegis1 {
   width: 25%;
 }
-
 .formRegis h1 {
   text-align: center;
 }
-
 .formRegis .btn {
   padding: 12px;
   font-size: 15px;
@@ -593,14 +567,19 @@ label #cancel {
   background: #7fd9e0;
   color: white;
 }
+/* *****************Responsive****************** */
 
-/* RESPONSIVE MEDIA QUERY */
-
+/* Format PC */
 @media screen and (min-width: 1224px) {
   .formRegis {
     padding-top: 600px;
   }
 }
+
+
+
+
+
 
 /* \\\\\\\\\\\\\\\\\\\PAGE LOGIN ///////////////////// */
 
@@ -612,17 +591,14 @@ label #cancel {
   background-size: cover;
   background-position: center;
 }
-
 .backLog {
   background: rgba(0, 33, 38, 0.7);
   height: 1100px;
 }
-
 .formLog {
   padding-top: 600px;
   color: white;
 }
-
 .formLog1 {
   width: 25%;
   margin: 0 auto;
@@ -642,7 +618,12 @@ label #cancel {
   color: white;
 }
 
-/* \\\\\\\\\PAGE VENTE//////////*/
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\PAGE VENTE////////////////////*/
 
 .containerSell{
   background: #002126;
@@ -659,7 +640,12 @@ label #cancel {
   text-align: center;
 }
 
-/* \\\\\\\\\PAGE PROFIL//////////*/
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\PAGE PROFIL///////////////////*/
 
 .containerProf {
   margin-top: -25%;
@@ -669,14 +655,12 @@ label #cancel {
   background-size: cover;
   background-position: center;
 }
-
 .titreProf {
   position: relative;
   z-index: 2;
   padding: 250px 0;
   text-align: center;
 }
-
 .titreProf h1 {
   font-size: 90px;
   position: relative;
@@ -688,7 +672,6 @@ label #cancel {
   margin: 7px 0;
   color: white;
 }
-
 .modifProf {
   padding: 12px;
   font-size: 20px;
@@ -699,55 +682,42 @@ label #cancel {
   background: #7fd9e0;
   color: white;
 }
-.desc {
-  display: none;
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\Page Modification du Profil/////////////// */
+
+.modifProf1 {
+  margin-top: -25%;
+  height: 1100px;
+  background-image: url("../img/horizon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.backModif{
+  background: rgba(0, 33, 38, 0.7);
+  height: 1100px;
+}
+.formModif{
+  padding-top: 500px;
+  color: white;
 }
 
+
+
+/* \\\\\\\\\\\\\\\Page Mes Annonces (Utilisateur)///////////// */
 .containerAnnprof {
   background: #002126;
   color: white;
-  padding: 50px;
 }
-
 .containerAnnprof h1 {
   text-align: center;
   padding: 20px 0;
 }
-
-.containershowAnn {
-  margin-top: -10%;
-  background: #002126;
-  color: white;
-}
-
-.showAnn {
-  width: 50%;
-  margin: 0 auto;
-  padding-bottom: 50px;
-}
-
-.showAnn h1 {
-  padding-top: 200px;
-  text-align: center;
-}
-
-.containerEditann {
-  margin-top: -7%;
-  background: #002126;
-  color: white;
-}
-
-.containerEditann h1 {
-  padding-top: 200px;
-  text-align: center;
-}
-
-.formEdit {
-  width: 50%;
-  margin: 0 auto;
-  padding-bottom: 50px;
-}
-
+/* **************Responsive************ */
 @media screen and (min-width: 1150px) {
   .containerProf {
     margin-top: -10%;
@@ -761,7 +731,62 @@ label #cancel {
   }
 }
 
-/* footer */
+
+
+
+/* \\\\\\\\\\\\\\\\Page Voir l'Annonce//////////////// */
+.containershowAnn {
+  margin-top: -10%;
+  background: #002126;
+  color: white;
+}
+.showAnn {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 300px;
+  padding-bottom: 100px;
+}
+.showAnnleft{
+  width: 60%;
+}
+.showAnnright{
+  padding-top: 100px;
+  width: 35%;
+  margin-left: -10%;
+}
+
+
+
+
+/* \\\\\\\\\\\\\\\Page Modification de l'annonce//////////////// */
+.containerEditann {
+  margin-top: -7%;
+  background: #002126;
+  color: white;
+}
+.containerEditann h1 {
+  padding-top: 200px;
+  text-align: center;
+}
+.formEdit {
+  width: 50%;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* \\\\\\\\\\\\\\\\\\\\\FOOTER///////////////////////// */
 
 footer {
   background: #001214;
@@ -877,7 +902,7 @@ footer {
 
 .__search_bar {
   margin-top: 40px;
-  width: 350px;
+  width: 300px;
   height: 50px;
   padding: 0.5rem;
   background-color: #001518;
@@ -900,7 +925,34 @@ footer {
   justify-content: center;
 }
 
-#content {
+@media screen and (max-width: 1224px) {
+  .__search_bar_div {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+
+  .__search_bar {
+    margin: 15px 150px;
+    width: 250px;
+  }
+
+  header{
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .__search_bar_div {
+    display: none;
+  }
+
+
+}
+
+/* #content {
   position: absolute;
   height: 50px;
   width: 300px;
@@ -946,7 +998,6 @@ footer {
 
 .search {
   background: none;
-  position: absolute;
   top: 0px;
   left: 0;
   height: 50px;
@@ -1037,6 +1088,6 @@ footer {
   -webkit-transform: translate(-100%, -50%);
   -ms-transform: translate(-100%, -50%);
   transform: translate(-100%, -50%);
-}
+} */
 
 /* /////////////////////////////// FIN CSS ZINEDINE //////////////////////////// */

@@ -3,6 +3,8 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+
+<!-- Presentation Page -->
 <div class="containerAcc">
     <div class="accueil">
         <div class="titre">
@@ -14,34 +16,28 @@
                         <input type="radio" name="carousel-3d" id="carousel-3d-controller-1" class="rad" />
                         <input type="radio" name="carousel-3d" id="carousel-3d-controller-2" class="rad" />
                         <input type="radio" name="carousel-3d" id="carousel-3d-controller-3" class="rad" />
-
                         {% for jeu in lastThreeGames %}
-
                         <div id="carousel-3d-controller-1" class="carousel-3d-item">
                             <div class="slide-img">
-                                <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img src="{{asset(jeu.image)}}" alt="" /></a>
+                                <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img
+                                        src="{{asset(jeu.image)}}" alt="" /></a>
                             </div>
                             <div class="slide-content">
-                                <!-- <img src="assets/dist/img/easy.png"> -->
                                 <p>{{jeu.titre}}</p>
                             </div>
                         </div>
-
                         {% endfor %}
-
                     </figure>
                 </div>
             </div>
-
             <a href="{{ path('annonce_new')}}"><input type="button" class="button" value="Vendre un Produit"></a>
         </div>
-
     </div>
 </div>
 
 
-
-<section class="propos">
+<!-- Classement de Jeux Récents -->
+<section class="classJeu1">
     <h2>Jeux Récents</h2><br>
     <div class="jeuxR">
         <div class="imgdesc">
@@ -49,22 +45,17 @@
             <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img src="{{jeu.image}}" alt="" /></a>
             {% endfor %}
         </div>
-
-
         <div class="desc1">
-            <!-- <p>Vous retrouverez ici les jeux les plus récents</p> -->
             <a href="#"><input type="button" class="buttonPop" value="Voir plus de jeux populaires"></a>
         </div>
-
     </div>
-
-
 </section>
 
-<section id="services4" class="services1">
 
-    <div class="service">
-        <div class="service1">
+<!-- Fonctionnalité Principale du Site -->
+<section id="services4" class="fonct">
+    <div class="fonctP">
+        <div class="fonct1">
             <div class="imgser"><i class="fas fa-bullhorn"></i></div>
             <h3>Visibilité Digitale</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur aperiam,
@@ -72,7 +63,7 @@
                 id ratione deleniti numquam vero tenetur voluptatum velit!</p>
         </div>
         <div class="border"></div>
-        <div class="service2">
+        <div class="fonct2">
             <div class="imgser"><i class="fas fa-scroll"></i></div>
             <h3>Visibilité Digitale</h3>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat unde repellendus
@@ -80,7 +71,7 @@
                 possimus ipsum? Inventore neque consequuntur deleniti tempora.</p>
         </div>
         <div class="border"></div>
-        <div class="service3">
+        <div class="fonct3">
             <div class="imgser"><i class="fas fa-comments"></i></div>
             <h3>Visibilité Digitale</h3>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nam ut repellat.
@@ -88,33 +79,28 @@
                 doloribus impedit. Adipisci sed beatae eum reiciendis nihil!</p>
         </div>
     </div>
-
 </section>
 
+
+
+<!-- Les Derniers Jeux ayant une Annonce -->
 <section class="ventesR">
     <h2>Les Dernières Annonces</h2>
     <div class="jeuxR">
         <div class="imgdesc">
             {% for annonce in lastSixjeux %}
-
-
-            <a href="{{ path('annonces_per_game', {'id': annonce.jeu.id}) }}"><img src="{{asset(annonce.jeu.image)}}" alt="" /></a>
-
+            <a href="{{ path('annonces_per_game', {'id': annonce.jeu.id}) }}"><img src="{{asset(annonce.jeu.image)}}"
+                    alt="" /></a>
             {% endfor %}
         </div>
-
-
         <div class="desc1">
-
-            <!-- <p>Vous retrouverez ici les dernières annonces faites récemment!</p> -->
             <a href="#"><input type="button" class="buttonPop" value="Voir plus de jeux populaires"></a>
         </div>
     </div>
-
-
-
 </section>
+
 {% endblock %}
+
 {% block javascripts %}
 <script src="assets/js/accueil.js"></script>
 {% endblock %}

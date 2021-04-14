@@ -3,11 +3,42 @@
 {% block title %}Mon profil | Le Coin Gaming{% endblock %}
 
 {% block body %}
-<h1>Modifier Mon Profil</h1>
+<div class="modifProf1">
+    <div class="backModif">
+        <div class="formModif">
+            <h1 class="text-center">Modifier Mon Profil</h1>
 
-    {{ include('user/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+            {{ form_start(form) }}
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
 
-    <a href="{{ path('profil') }}">Retour</a>
-    
+            <div class="row w-25 mx-auto">
+                <div class="col-12">
+                    {{ form_row(form.pseudo) }}
+                </div>
+                <div class="col-12">
+                    {{ form_row(form.nom) }}
+                </div>
+                <div class="col-12">
+                    {{ form_row(form.prenom) }}
+                </div>
+                <div class="col-12">
+                    {{ form_row(form.age) }}
+                </div>
+                <div class="col-12">
+                    {{ form_row(form.num) }}
+                </div>
+                <button class="btn btn-success col-6  ">{{ button_label|default('Save') }}</button>
+
+
+                {{ form_end(form) }}
+
+                <a href="{{ path('profil') }}" class="btn btn-primary col-6">Retour</a>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 {% endblock %}
