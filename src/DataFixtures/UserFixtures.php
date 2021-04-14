@@ -50,6 +50,17 @@ class UserFixtures extends Fixture
             $this->addReference('user_' . $i, $abonne);
         }
 
+        $antoine = (new User())
+            ->setEmail('quidelantoine@gmail.com')
+            ->setPseudo('michel')
+            ->setNom('Quidel')
+            ->setPrenom('Antoine')
+            ->setAge('43')
+            ->setRoles(['ROLE_ADMIN'])
+        ;
+        $antoine->setPassword($this->passwordEncoder->encodePassword($antoine,'michel'));
+        $manager->persist($antoine);
+
         $manager->flush();
     }
 }
