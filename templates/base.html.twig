@@ -36,7 +36,7 @@
                 <i class="fas fa-times" id="cancel"></i>
             </span>
         </label>
-                
+
 
         <!-- BARRE DE RECHERCHE -->
         <div class="__search_bar_div_container">
@@ -84,75 +84,39 @@
     </header>
     {% block body %}{% endblock %}
     <footer class="footer">
-
-        <div class="footer-left">
-            <label class="logo">Le Coin Gaming</label>
-
-            <div class="socials">
-                <a href="#">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-dribbble"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a href="#">
-                    <i class="fab fa-tumblr"></i>
-                </a>
-            </div>
+        <div class="titreFoot">
+            <h2>Le Coin Gaming</h2>
+        </div>
+        <div class="liens">
+            <ul>
+                <li>
+                    <a href="{{ path('games_listing') }}">Parcourir</a>
+                </li>
+                <li>
+                    <a href="{{ path('annonce_new')}}">Vendre un Produit</a>
+                </li>
+                <li>
+                    <a href="#">FAQ</a>
+                </li>
+                <li>
+                    <a href="#">Termes</a>
+                </li>
+                <li>
+                    <a href="#">Support</a>
+                </li>
+                
+                
+            </ul>
         </div>
 
-        <ul class="footer-right">
-
-            <li class="features">
-                <h2>Liens</h2>
-
-                <ul class="box">
-                    <li>
-                        <a href="{{ path('games_listing') }}">Jeux</a>
-                    </li>
-                    <li>
-                        <a href="#">Blog</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
-                    <li>
-                        <a href="#">FAQ</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="features">
-                <h2>Contact</h2>
-
-                <ul class="box">
-                    <li>
-                        <a href="tel:0654789565">+33654789565</a>
-                    </li>
-                    <li>
-                        <a href="#">pricing</a>
-                    </li>
-                    <li>
-                        <a href="#">London</a>
-                    </li>
-                    <li>
-                        <a href="#">United kingdom</a>
-                    </li>
-                    <li>
-                        <a href="#">Customer Service</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
-        <div class="footer-bottom">
-            <p>All Right reserved</p>
+        <div class="socials">
+            <p>lorem </p>
         </div>
+
+
+
+
+
 
 
     </footer>

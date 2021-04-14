@@ -715,7 +715,7 @@ label #cancel {
 }
 .containerAnnprof h1 {
   text-align: center;
-  padding: 20px 0;
+  padding: 50px 0;
 }
 /* **************Responsive************ */
 @media screen and (min-width: 1150px) {
@@ -790,106 +790,67 @@ label #cancel {
 
 footer {
   background: #001214;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 20px;
+  width: 100%;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  padding: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+ 
 }
 
-.footer > * {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 100%;
-  flex: 1 100%;
+.titreFoot{
+  padding-left: 50px;
+  width: 30%;
+  margin: 0;
+  color: white;
 }
 
-.footer-left {
-  margin-right: 1, 22em;
-  margin-bottom: 5em;
+
+
+.liens{
+  width: 45%;
 }
 
-.footer h2 {
-  color: #fb8500;
+.socials{
+  width: 22%;
+}
+footer .liens > ul {
+  display: flex;
+  justify-content: space-around;
 }
 
-.footer ul {
+footer ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
-.footer li {
+footer li {
   line-height: 2em;
 }
 
-.footer a {
+footer a {
   text-decoration: none;
-}
-
-.footer-right > * {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 50%;
-  flex: 1 50%;
-  margin-right: 1, 25em;
-}
-
-.footer-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-}
-
-.box a {
+  font-weight: bold;
   color: white;
 }
 
-.footer-bottom {
-  text-align: center;
-  color: white;
-  padding-top: 50px;
+footer a:hover {
+  background: #002126;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none;
+  color: #7fd9e0;
 }
 
-.footer-left .logo {
-  margin-left: 0;
+footer p{
+  margin: 0;
 }
 
-.socials a {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.socials i {
-  color: white;
-  padding: 10px 12px;
-  font-size: 20px;
-}
 
 @media screen and (min-width: 1224px) {
-  .footer-right > * {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-  }
-
-  .footer-left {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0px;
-    flex: 1 0px;
-  }
-
-  .footer-right {
-    -webkit-box-flex: 2;
-    -ms-flex: 2 0px;
-    flex: 2 0px;
-  }
+  
 }
 
 /* /////////////////////////////// CSS ZINEDINE //////////////////////////// */
