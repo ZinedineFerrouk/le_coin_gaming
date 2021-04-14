@@ -18,7 +18,7 @@ nav ul a.link {
 header {
   text-align: center;
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 3;
@@ -75,7 +75,7 @@ nav a:hover {
   -o-transition: 0.5s;
   transition: 0.5s;
   text-decoration: none;
-  color: green;
+  color: #7fd9e0;
 }
 .toggler:checked ~ nav ul {
   top: 0;
@@ -171,8 +171,7 @@ label #cancel {
 
 /* \\\\\\\\\\\\\\\\\\\\ ACCUEIL //////////////////////*/
 .containerAcc {
-  margin-top: -25%;
-  height: 860px;
+  height: 100vh;
   background-image: url("../img/1788067.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -181,7 +180,7 @@ label #cancel {
 
 .accueil {
   background: rgba(0, 33, 38, 0.5);
-  height: 860px;
+  height: 100vh;
 }
 
 .titre {
@@ -215,7 +214,7 @@ label #cancel {
   border-radius: 5px;
   cursor: pointer;
   border: none;
-  background: green;
+  background: #7fd9e0;
   color: white;
 }
 
@@ -230,11 +229,6 @@ label #cancel {
 
 /* Format PC */
 @media screen and (min-width: 1025px) {
-
-  .containerAcc {
-    margin-top: -10%;
-  }
-
   .desc {
     display: block;
     width: 25vw;
@@ -629,11 +623,13 @@ label #cancel {
   background: #002126;
   color: white;
   padding: 70px;
+  height: 100vh;
 }
 
 .formSell{
   width: 50%;
   margin: 0 auto;
+  padding-top: 180px;
 }
 
 .formSell h1{
@@ -648,8 +644,7 @@ label #cancel {
 /* \\\\\\\\\\\\\\\\\PAGE PROFIL///////////////////*/
 
 .containerProf {
-  margin-top: -25%;
-  height: 650px;
+  height: 100vh;
   background-image: url("../img/red.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -658,7 +653,7 @@ label #cancel {
 .titreProf {
   position: relative;
   z-index: 2;
-  padding: 250px 0;
+ padding-top: 250px;
   text-align: center;
 }
 .titreProf h1 {
@@ -683,7 +678,16 @@ label #cancel {
   color: white;
 }
 
+/* ***************Responsive************** */
 
+@media screen and (min-width: 1224px) {
+  .containerProf{
+    height: 115vh;
+  }
+  .titreProf {
+    padding-top: 500px;
+  }
+}
 
 
 
@@ -715,7 +719,7 @@ label #cancel {
 }
 .containerAnnprof h1 {
   text-align: center;
-  padding: 20px 0;
+  padding: 50px 0;
 }
 /* **************Responsive************ */
 @media screen and (min-width: 1150px) {
@@ -790,106 +794,69 @@ label #cancel {
 
 footer {
   background: #001214;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  padding: 20px;
+  width: 100%;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  padding: 50px;
+  flex-wrap: wrap;
+  align-items: center;
+ 
 }
 
-.footer > * {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 100%;
-  flex: 1 100%;
+.titreFoot{
+  padding-left: 50px;
+  width: 30%;
+  margin: 0;
+  color: white;
 }
 
-.footer-left {
-  margin-right: 1, 22em;
-  margin-bottom: 5em;
+.liens{
+  width: 45%;
+}
+.socials{
+  width: 22%;
+  color: white;
+  padding-left: 100px;
+}
+.socials i {
+  margin: 0 10px;
+}
+footer .liens > ul {
+  display: flex;
+  justify-content: space-around;
 }
 
-.footer h2 {
-  color: #fb8500;
-}
-
-.footer ul {
+footer ul {
   list-style: none;
   padding-left: 0;
+  margin: 0;
 }
 
-.footer li {
+footer li {
   line-height: 2em;
 }
 
-.footer a {
+footer a {
   text-decoration: none;
-}
-
-.footer-right > * {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 50%;
-  flex: 1 50%;
-  margin-right: 1, 25em;
-}
-
-.footer-right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-}
-
-.box a {
+  font-weight: bold;
   color: white;
 }
 
-.footer-bottom {
-  text-align: center;
-  color: white;
-  padding-top: 50px;
+footer a:hover {
+  background: #002126;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  text-decoration: none;
+  color: #7fd9e0;
 }
 
-.footer-left .logo {
-  margin-left: 0;
+footer p{
+  margin: 0;
 }
 
-.socials a {
-  width: 40px;
-  height: 40px;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.socials i {
-  color: white;
-  padding: 10px 12px;
-  font-size: 20px;
-}
 
 @media screen and (min-width: 1224px) {
-  .footer-right > * {
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-  }
-
-  .footer-left {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 0px;
-    flex: 1 0px;
-  }
-
-  .footer-right {
-    -webkit-box-flex: 2;
-    -ms-flex: 2 0px;
-    flex: 2 0px;
-  }
+  
 }
 
 /* /////////////////////////////// CSS ZINEDINE //////////////////////////// */
