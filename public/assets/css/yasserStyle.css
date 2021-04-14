@@ -18,7 +18,7 @@ nav ul a.link {
 header {
   text-align: center;
   position: -webkit-sticky;
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 3;
@@ -171,8 +171,7 @@ label #cancel {
 
 /* \\\\\\\\\\\\\\\\\\\\ ACCUEIL //////////////////////*/
 .containerAcc {
-  margin-top: -25%;
-  height: 860px;
+  height: 100vh;
   background-image: url("../img/1788067.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -181,7 +180,7 @@ label #cancel {
 
 .accueil {
   background: rgba(0, 33, 38, 0.5);
-  height: 860px;
+  height: 100vh;
 }
 
 .titre {
@@ -230,11 +229,6 @@ label #cancel {
 
 /* Format PC */
 @media screen and (min-width: 1025px) {
-
-  .containerAcc {
-    margin-top: -10%;
-  }
-
   .desc {
     display: block;
     width: 25vw;
@@ -629,11 +623,13 @@ label #cancel {
   background: #002126;
   color: white;
   padding: 70px;
+  height: 100vh;
 }
 
 .formSell{
   width: 50%;
   margin: 0 auto;
+  padding-top: 180px;
 }
 
 .formSell h1{
@@ -648,8 +644,7 @@ label #cancel {
 /* \\\\\\\\\\\\\\\\\PAGE PROFIL///////////////////*/
 
 .containerProf {
-  margin-top: -25%;
-  height: 650px;
+  height: 100vh;
   background-image: url("../img/red.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -658,7 +653,7 @@ label #cancel {
 .titreProf {
   position: relative;
   z-index: 2;
-  padding: 250px 0;
+ padding-top: 250px;
   text-align: center;
 }
 .titreProf h1 {
@@ -683,7 +678,16 @@ label #cancel {
   color: white;
 }
 
+/* ***************Responsive************** */
 
+@media screen and (min-width: 1224px) {
+  .containerProf{
+    height: 115vh;
+  }
+  .titreProf {
+    padding-top: 500px;
+  }
+}
 
 
 
@@ -805,14 +809,16 @@ footer {
   color: white;
 }
 
-
-
 .liens{
   width: 45%;
 }
-
 .socials{
   width: 22%;
+  color: white;
+  padding-left: 100px;
+}
+.socials i {
+  margin: 0 10px;
 }
 footer .liens > ul {
   display: flex;
