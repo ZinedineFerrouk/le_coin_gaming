@@ -4,7 +4,8 @@
 {% endblock %}
 
 {% block body %}
-	<div class="containerSell">
+<div class="containerSell">
+	<div class="backSell">
 		<div class="formSell">
 			<h1>Vendre un Produit</h1>
 
@@ -26,7 +27,7 @@
 				<div class="col-lg-12 my-3">
 					<a class="" href="{{ path('jeu_new') }}">Ajouter un jeu</a>
 				</div>
-				<div class="col-lg-12">
+				<div class="col-lg-12 ">
 					{{ form_row(form.plateforme) }}
 				</div>
 				<div class="col-lg-12">
@@ -40,7 +41,9 @@
 				<a href="{{ path('home') }}">Retour à l'accueil</a>
 			</div>
 		</div>
-
 	</div>
+
+
+</div>
 
 {% endblock %}
