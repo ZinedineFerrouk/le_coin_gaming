@@ -45,9 +45,7 @@
             <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img src="{{jeu.image}}" alt="" /></a>
             {% endfor %}
         </div>
-        <div class="desc1">
-            <a href="#"><input type="button" class="buttonPop" value="Voir plus de jeux populaires"></a>
-        </div>
+       
     </div>
 </section>
 
@@ -57,26 +55,22 @@
     <div class="fonctP">
         <div class="fonct1">
             <div class="imgser"><i class="fas fa-bullhorn"></i></div>
-            <h3>Visibilité Digitale</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste aspernatur aperiam,
-                ducimus temporibus nisi, ipsam quo inventore suscipit magnam dolore quasi atque,
-                id ratione deleniti numquam vero tenetur voluptatum velit!</p>
+            <h3>Des milliers d'annonces !</h3>
+            <p>Et elles vous attendent, <a href="{{ path('games_listing') }}">Découvrez les dès maintenant</a></p>
         </div>
         <div class="border"></div>
         <div class="fonct2">
             <div class="imgser"><i class="fas fa-scroll"></i></div>
-            <h3>Visibilité Digitale</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat unde repellendus
-                dolore eius, cum, esse quis vel laboriosam, nostrum autem voluptates omnis? Eos,
-                possimus ipsum? Inventore neque consequuntur deleniti tempora.</p>
+            <h3>Ventes 100% sécurisés</h3>
+            <p>Les annonces sont controlés par notre équipe avant d'être publié sur le site</p>
         </div>
         <div class="border"></div>
         <div class="fonct3">
-            <div class="imgser"><i class="fas fa-comments"></i></div>
-            <h3>Visibilité Digitale</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique nam ut repellat.
-                Iste ea voluptatum laborum, officiis repellendus qui mollitia asperiores quae
-                doloribus impedit. Adipisci sed beatae eum reiciendis nihil!</p>
+            <a href="{{ path('faq') }}">
+            <div class="imgser"><i class="fas fa-question"></i></div>
+            <h3>FAQ</h3>
+            </a>
+            <p>Nous vous accompagnons dans votre découverte de notre site grâce a notre froire aux questions!</p>
         </div>
     </div>
 </section>
@@ -93,9 +87,7 @@
                     alt="" /></a>
             {% endfor %}
         </div>
-        <div class="desc1">
-            <a href="#"><input type="button" class="buttonPop" value="Voir plus de jeux populaires"></a>
-        </div>
+        
     </div>
 </section>
 

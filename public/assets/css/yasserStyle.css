@@ -218,6 +218,10 @@ label #cancel {
   color: white;
 }
 
+.button:hover {
+  background: #67bfc5;
+}
+
 .desc {
   display: none;
 }
@@ -416,6 +420,10 @@ label #cancel {
 .fonct3 {
   padding: 25px;
 }
+
+.fonct3 a:hover{
+  text-decoration: none;
+}
 /* **************Responsive************** */
 
 /* Format PC */
@@ -431,11 +439,11 @@ label #cancel {
     align-items: center;
   }
   .fonct2,
-  .fonct1 {
-    margin-right: 20px;
+  .fonct1,.fonct3 {
+    width: 36%;
   }
   .border {
-    background: black;
+    background: white;
     width: 4px;
     height: 300px;
   }
@@ -521,8 +529,7 @@ label #cancel {
 /* \\\\\\\\\\\\\\\\\\\\\ INSCRIPTION /////////////////////*/
 
 .register {
-  margin-top: -25%;
-  height: 1100px;
+  height: 100vh;
   background-image: url("../img/zelda.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -530,10 +537,13 @@ label #cancel {
 }
 .backRegis {
   background: rgba(0, 33, 38, 0.7);
-  height: 1100px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .formRegis {
-  padding-top: 450px;
   color: white;
 }
 .formG {
@@ -542,12 +552,9 @@ label #cancel {
   justify-content: center;
 }
 .form1 {
-  width: 25%;
   margin-right: 15px;
 }
-.formRegis1 {
-  width: 25%;
-}
+
 .formRegis h1 {
   text-align: center;
 }
@@ -561,15 +568,10 @@ label #cancel {
   background: #7fd9e0;
   color: white;
 }
-/* *****************Responsive****************** */
 
-/* Format PC */
-@media screen and (min-width: 1224px) {
-  .formRegis {
-    padding-top: 600px;
-  }
+.formRegis .btn:hover {
+  background: #67bfc5;
 }
-
 
 
 
@@ -578,8 +580,7 @@ label #cancel {
 /* \\\\\\\\\\\\\\\\\\\PAGE LOGIN ///////////////////// */
 
 .login {
-  margin-top: -25%;
-  height: 1100px;
+  height: 100vh;
   background-image: url("../img/horizon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -587,16 +588,16 @@ label #cancel {
 }
 .backLog {
   background: rgba(0, 33, 38, 0.7);
-  height: 1100px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .formLog {
-  padding-top: 600px;
   color: white;
 }
-.formLog1 {
-  width: 25%;
-  margin: 0 auto;
-}
+
 .formLog1 h1 {
   text-align: center;
 }
@@ -612,6 +613,10 @@ label #cancel {
   color: white;
 }
 
+.formLog1 .btn:hover {
+  background: #67bfc5;
+}
+
 
 
 
@@ -620,17 +625,23 @@ label #cancel {
 /* \\\\\\\\\\\\\\\\\PAGE VENTE////////////////////*/
 
 .containerSell{
-  background: #002126;
-  color: white;
-  padding: 70px;
+  background-image: url("../img/horizon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: 100vh;
+}
+.backSell{
+  background: rgba(0, 33, 38, 0.7);
+  height: 100vh;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
-
 .formSell{
+  color: white;
   width: 50%;
-  margin: 0 auto;
 }
 
 .formSell h1{
@@ -656,7 +667,10 @@ label #cancel {
   text-align: center;
 }
 .accueilProf{
-  padding-top: 150px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
 .titreProf h1 {
   font-size: 90px;
@@ -677,6 +691,10 @@ label #cancel {
   border: none;
   background: #7fd9e0;
   color: white;
+}
+
+.modifProf:hover {
+  background: #67bfc5;
 }
 
 /* ***************Responsive************** */
@@ -710,6 +728,17 @@ label #cancel {
 .formModif{
   color: white;
 }
+.profilEd{
+  width: 75%;
+}
+.btnR{
+  background: #7fd9e0;
+  color: white;
+}
+.btnR:hover{
+  background: #67bfc5;
+  color: white;
+}
 
 
 
@@ -717,41 +746,36 @@ label #cancel {
 .containerAnnprof {
   background: #002126;
   color: white;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  
+  
 }
 .containerAnnprof h1 {
+  padding-top: 120px;
   text-align: center;
-  padding: 50px 0;
+  
 }
-/* **************Responsive************ */
-@media screen and (min-width: 1150px) {
-  .containerProf {
-    margin-top: -10%;
-  }
-  .desc {
-    display: block;
-    width: 25vw;
-    position: absolute;
-    top: 250px;
-    right: 15%;
-  }
-}
-
 
 
 
 /* \\\\\\\\\\\\\\\\Page Voir l'Annonce//////////////// */
 .containershowAnn {
-  margin-top: -10%;
+  height: 100vh;
   background: #002126;
   color: white;
+  display: flex;
+  align-items: center;
+}
+.colorRef{
+  color: #7fd9e0;
 }
 .showAnn {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
-  padding-top: 300px;
-  padding-bottom: 100px;
 }
 .showAnnleft{
   width: 60%;
@@ -767,23 +791,54 @@ label #cancel {
 
 /* \\\\\\\\\\\\\\\Page Modification de l'annonce//////////////// */
 .containerEditann {
-  margin-top: -7%;
-  background: #002126;
-  color: white;
+  height: 100vh;
+  background-image: url("../img/horizon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.backEdit{
+  background: rgba(0, 33, 38, 0.7);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .containerEditann h1 {
-  padding-top: 200px;
   text-align: center;
 }
 .formEdit {
   width: 50%;
   margin: 0 auto;
-  padding-bottom: 50px;
+ color: white;
 }
 
 
 
+/* //////////////////FAQ\\\\\\\\\\\\\\\\\ */
 
+.containerFaq{
+  height: 100vh;
+  background: #001214;
+  display: flex;
+  align-items: center;
+  
+}
+
+
+.card-header{
+  background: #7fd9e0;
+}
+.card button:hover{
+  color: #002126;
+  text-decoration: none;
+}
+.card button{
+  color: white;
+}
+.card-body{
+  background: white;
+}
 
 
 
@@ -797,33 +852,37 @@ footer {
   background: #001214;
   padding: 20px;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
- 
+  display: grid;
+  justify-content: center;
+  width: 100%;
 }
 
 .titreFoot{
-  padding-left: 50px;
-  width: 30%;
+  
   margin: 0;
   color: white;
+  width: 100%;
+  text-align: center;
 }
 
 .liens{
-  width: 45%;
+  width: 100%;
 }
 .socials{
   width: 22%;
   color: white;
   padding-left: 100px;
+  width: 100%;
+  padding: 0;
+  margin: 10px 0;
+  text-align: center;
 }
 .socials i {
   margin: 0 10px;
 }
 footer .liens > ul {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+    text-align: center;
 }
 
 footer ul {
@@ -833,6 +892,7 @@ footer ul {
 }
 
 footer li {
+  padding: 20px;
   line-height: 2em;
 }
 
@@ -855,8 +915,41 @@ footer p{
   margin: 0;
 }
 
+.socials i {
+  font-size: 30px;
+}
+
 
 @media screen and (min-width: 1224px) {
+  footer{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .liens{
+    width: 45%;
+  }
+
+  footer .liens > ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  footer li{
+    padding: 0;
+  }
+
+  .titreFoot{
+    padding-left: 50px;
+    width: 30%;
+    text-align: center;
+  }
+
+  .socials{
+    width: 22%;
+  color: white;
+  padding-left: 100px;
+  }
   
 }
 

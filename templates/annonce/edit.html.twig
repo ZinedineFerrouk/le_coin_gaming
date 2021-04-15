@@ -4,12 +4,17 @@
 
 {% block body %}
 <div class="containerEditann">
-    <h1>Modifier mon Annonce </h1>
-    <div class="formEdit">{{ include('annonce/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
+    <div class="backEdit">
+        <div class="formEdit">
+            <h1>Modifier mon Annonce </h1>
+            {{ include('annonce/_form.html.twig', {'button_label': 'Sauvegarder'}) }}
 
-        <a href="{{ path('profil_annonce') }}">Retour à mes annonces:</a>
+                <a href="{{ path('profil_annonce') }}">Retour à mes annonces:</a>
 
-        {{ include('annonce/_delete_form.html.twig') }}
+                {{ include('annonce/_delete_form.html.twig') }}
+            
+        </div>
+
     </div>
 
 </div>

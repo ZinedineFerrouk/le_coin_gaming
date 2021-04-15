@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Foire aux Questions !{% endblock %}
+
+{% block body %}
+<section class="containerFaq">
+     
+    <div class="container py-3">
+        
+        <div class="row">
+            <div class="col-10 mx-auto">
+                <h1 class="text-center text-white pb-4">Foire Aux Questions</h1>
+                <div class="accordion" id="faqExample">
+                    <div class="card">
+                        <div class="card-header p-2" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" type="button" data-toggle="collapse"
+                                    data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Q: Comment déposer une annonce ?
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-parent="#faqExample">
+                            <div class="card-body">
+                                 Après avoir créer un compte sur le site, vous cliquez sur vendre et vous pourrez déposer une annonce du jeu de votre choix grâce à une grande collection de jeux mise à votre disposition. Votre annonce sera publié dès que notre équipe aura validé celle-ci.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-2" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Q: Comment faire si le jeu que je veux vendre n'est pas disponible dans la collection?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                            <div class="card-body">
+                                Pour les personnes qui désirent vendre un jeu non disponible dans notre collection, nous leur donnons la possibilité de créer la fiche descriptif de leur jeu pour l'ajouter à notre collection. Ce qui donnera la possibilité a n'importe qui de vendre n'importe quel jeu qui voudra
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-2" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Q. Comment pourrez-je entré en contact avec une personne à qui je veux acheter un jeu ??
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#faqExample">
+                            <div class="card-body">
+                                Pour toute personne désirant entré en contact avec un vendeur, Celui-ci aura juste à lire l'annonce du vendeur dans laquelle il précisera le moyen de communication qui veut qu'on le contacte.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header p-2" id="headingThree">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                    data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Q. Combien coûte le dépôt d'une annonce sur le coin gaming ?
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-parent="#faqExample">
+                            <div class="card-body">
+                                Le dépôt d'une annonce sur le coin gaming est totalement gratuit.  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--/row-->
+    </div>
+    <!--container-->
+
+</section>
+
+{% endblock %}
