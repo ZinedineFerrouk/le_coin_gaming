@@ -4,8 +4,12 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "popp", sans-serif, Arial, Helvetica;
+  text-decoration: none;
 }
 
+* > a {
+  cursor: pointer;
+}
 /*\\\\\\\\\\\\\\\\\\  HEADER ////////////////// */
 
 .logo a {
