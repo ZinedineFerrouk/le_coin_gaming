@@ -10,6 +10,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
+use \Gumlet\ImageResize;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+
 
 /**
  * @Route("/jeu")
@@ -29,13 +34,37 @@ class JeuController extends AbstractController
     /**
      * @Route("/new", name="jeu_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, SluggerInterface $slugger): Response
     {
         $jeu = new Jeu();
         $form = $this->createForm(JeuType2::class, $jeu);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('image')->getData();
+            $imagePath = $this->getParameter('jeux_directory');
+
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+                $filePath = $imagePath . '/' . $newFilename;
+
+                try {
+                    $image->move(
+                        $imagePath,
+                        $newFilename
+                    );
+
+                    $image = new ImageResize($filePath);
+                    $image->resizeToWidth(480);
+                    $image->save($filePath, IMAGETYPE_JPEG);
+                } catch (FileException $e) {
+                }
+
+                $jeu->setImage('assets/images/games/' . $newFilename);
+            }
+
             $entityManager = $this->getDoctrine()->getManager();
             $jeu->setStatus('Non-Publié');
             $entityManager->persist($jeu);
@@ -88,12 +117,12 @@ class JeuController extends AbstractController
      */
     public function delete(Request $request, Jeu $jeu): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$jeu->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $jeu->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($jeu);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('jeu_index');
+        return $this->redirectToRoute('admin_jeu');
     }
 }

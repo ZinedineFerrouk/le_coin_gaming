@@ -7,6 +7,15 @@ body{
     color: white;
 }
 
+.container{
+    margin-top: 230px !important;
+}
+
+.container-annonces{
+    width: 80%;
+    margin: 4rem auto;
+}
+
 .__game_image{
     width: 250px;
     border-radius: 3%;

@@ -990,6 +990,10 @@ footer p{
   justify-content: center;
 }
 
+.__search_icon_div {
+  display: none;
+}
+
 @media screen and (max-width: 1224px) {
   .__search_bar_div {
     width: 40%;
