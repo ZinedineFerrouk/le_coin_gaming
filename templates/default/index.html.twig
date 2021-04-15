@@ -42,10 +42,10 @@
     <div class="jeuxR">
         <div class="imgdesc">
             {% for jeu in lastFourgames %}
-            <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img src="{{jeu.image}}" alt="" /></a>
+            <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img style="height: 600px;" src="{{jeu.image}}" alt="" /></a>
             {% endfor %}
         </div>
-       
+
     </div>
 </section>
 
@@ -67,8 +67,8 @@
         <div class="border"></div>
         <div class="fonct3">
             <a href="{{ path('faq') }}">
-            <div class="imgser"><i class="fas fa-question"></i></div>
-            <h3>FAQ</h3>
+                <div class="imgser"><i class="fas fa-question"></i></div>
+                <h3>FAQ</h3>
             </a>
             <p>Nous vous accompagnons dans votre découverte de notre site grâce a notre froire aux questions!</p>
         </div>
@@ -83,11 +83,11 @@
     <div class="jeuxR">
         <div class="imgdesc">
             {% for annonce in lastSixjeux %}
-            <a href="{{ path('annonces_per_game', {'id': annonce.jeu.id}) }}"><img src="{{asset(annonce.jeu.image)}}"
-                    alt="" /></a>
+            <a href="{{ path('annonces_per_game', {'id': annonce.jeu.id}) }}"><img style="height: 400px"
+                    src="{{asset(annonce.jeu.image)}}" alt="" /></a>
             {% endfor %}
         </div>
-        
+
     </div>
 </section>
 

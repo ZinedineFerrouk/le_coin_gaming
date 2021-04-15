@@ -18,63 +18,63 @@ class GamesFixtures extends Fixture implements DependentFixtureInterface
                 'titre' => 'The Witcher 3',
                 'description' => 'The Witcher 3 : Wild Hunt est un Action-RPG se déroulant dans un monde ouvert. Troisième épisode de la série du même nom, inspirée des livres du polonais Andrzej Sapkowski, cet opus relate la fin de l\'histoire de Geralt de Riv.',
                 'date_sortie' => '2015-05-19 00:00:00',
-                'image' => 'assets/images/games/the_witcher_3.png',
+                'image' => 'assets/images/games/telechargement-4-607842e582f4b.jpg',
             ],
 
             2 => [
                 'titre' => 'The Elder Scrolls V : Skyrim : Special Edition',
                 'description' => 'The Elder Scrolls V : Skyrim : Special Edition sur PS4 est un jeu de rôle et le cinquième volet de la saga Elder Scrolls. L\'histoire se déroule dans la contrée de Skyrim, près de 200 ans après les événements narrés dans le précédent opus. L\'assassinat du Haut-Roi de Bordeciel a plongé le pays dans la guerre civile et pour couronner le tout, c\'est le moment que choisit Alduin pour réapparaître. Une seule personne peut rétablir l\'équilibre, le Dovahkiin, « fils de Dragons » et ça tombe bien : c\'est vous !',
                 'date_sortie' => '2016-10-28 00:00:00',
-                'image' => 'assets/images/games/skyrim.jpg',
+                'image' => 'assets/images/games/skyrim-60784354d424a.jpg',
             ],
 
             3 => [
                 'titre' => 'Cyberpunk 2077',
                 'description' => "Cyberpunk 2077 est un jeu de rôle futuriste et dystopique inspiré du jeu de rôle papier du même nom. Dans un monde devenu indissociable de la cybernétique, l'indépendance des robots humanoïdes pose quelques problèmes...",
                 'date_sortie' => '2020-12-10 00:00:00',
-                'image' => 'assets/images/games/cyberpunk_2077.jpg',
+                'image' => 'assets/images/games/telechargement-5-607843acacb9f.jpg',
             ],
 
             4 => [
                 'titre' => 'Outriders',
                 'description' => "Outriders est un jeu de shoot cryptique très sombre dévoilé par People Can Fly pour Square Enix. Il oppose le joueur à des humanoïdes, mais aussi à d'étranges créatures, aussi effrayantes que grandes. Le jeu propose 3 classes au gameplay différent.",
                 'date_sortie' => '2021-04-01 00:00:00',
-                'image' => 'assets/images/games/outriders.jpg',
+                'image' => 'assets/images/games/outriders-607843df868c7.jpg',
             ],
 
             5 => [
                 'titre' => "Assassin's Creed Valhalla",
                 'description' => "Assassin's Creed Valhalla est un RPG en monde ouvert se déroulant pendant l'âge des vikings. Vous incarnez Eivor, un viking du sexe de votre choix qui a quitté la Norvège pour trouver la fortune et la gloire en Angleterre. Raids, construction et croissance de votre colonie, mais aussi personnalisation du héros ou de l'héroïne sont au programme de cet épisode.",
                 'date_sortie' => '2020-11-10 00:00:00',
-                'image' => 'assets/images/games/assassin\'s_creed_valhalla.webp',
+                'image' => 'assets/images/games/assassin-s-creed-valhalla-607843ffa867f.webp',
             ],
 
             6 => [
                 'titre' => "Hitman 3",
                 'description' => "Hitman 3 est un jeu d'infiltration dans lequel vous incarnez l'agent 47. Dans ce troisième épisode de la nouvelle trilogie lancée en 2017, six lieux sont disponibles au lancement, mais il est possible de transférer les anciennes missions des deux premiers volets.",
                 'date_sortie' => '2021-01-20 00:00:00',
-                'image' => 'assets/images/games/hitman_3.webp',
+                'image' => 'assets/images/games/hitman-3-607844282e233.webp',
             ],
 
             7 => [
                 'titre' => "Watch Dogs Legion",
                 'description' => "Watch Dogs Legion, troisième épisode de la série d'Ubisoft, vous plonge dans le Londres post-Brexit ultra-connecté et surveillé. Vous aurez la possibilité d'hacker n'importe qui, mais aussi d'en prendre possession. Chaque mort est permanente, d'où l'utilité de prendre possession des PNJ.",
                 'date_sortie' => '2020-10-29 00:00:00',
-                'image' => 'assets/images/games/watch_dogs_legion.webp',
+                'image' => 'assets/images/games/watch-dogs-legion-6078444468604.webp',
             ],
 
             8 => [
                 'titre' => "Mafia : Definitive Edition",
                 'description' => "Mafia : Definitive Edition est un remake du premier épisode de la série. Se déroulant dans le milieu de la pègre des années 30, vous incarnez un jeune truand décidé à se faire une place et un nom dans le milieu. Devenez un homme envié et redouté de tous, en vous forgeant une réputation de redoutable homme de main dans votre quête pour le respect et le pouvoir au sein de la famille Salieri.",
                 'date_sortie' => '2020-09-25 00:00:00',
-                'image' => 'assets/images/games/mafia_definitive_edition.webp',
+                'image' => 'assets/images/games/telechargement-6-607844da4bd23.jpg',
             ],
 
             9 => [
                 'titre' => "Troy",
                 'description' => "Troy est le dernier opus de la licence Total War Saga. Il s'inspire de l'Iliade d'Homère, et traite du point de départ historique qui a provoqué la guerre de Troie, ajoutant à la série de nouvelles fonctionnalités inspirées par l'Histoire.",
                 'date_sortie' => '2020-08-13 00:00:00',
-                'image' => 'assets/images/games/troy.webp',
+                'image' => 'assets/images/games/troy-60784541c2422.webp',
             ],
 
             10 => [

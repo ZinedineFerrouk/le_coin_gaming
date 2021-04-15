@@ -75,9 +75,9 @@ class AnnonceRepository extends ServiceEntityRepository
     public function getLastResults($limit, $offset)
     {
         return $this->createQueryBuilder('a')
-            ->addselect('a','j')
-            ->leftJoin('a.jeu','j')
-            ->orderBy('j.date_sortie')
+            ->where('a.status = :status')
+            ->orderBy('a.created_at', 'DESC')
+            ->setParameter('status', 'Publié')
             ->setFirstResult($offset)
             ->setMaxResults($limit)
             ->getQuery()
