@@ -12,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=UserRepository::class)
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
+ * @UniqueEntity(fields={"email"}, message="Cette adresse mail est déjà utilisé!")
  */
 class User implements UserInterface
 {
@@ -25,6 +25,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=180, unique=true)
+     * @Assert\NotBlank
      * @Assert\Length(
      *      max = 100,
      *      maxMessage = "L'email ne doit pas dépasser {{ limit }} caractères"
@@ -43,6 +44,7 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotBlank
      * @Assert\Length(
      *    min = 6,
      *    max = 50,
@@ -54,6 +56,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
      * @Assert\Length(
      *    min = 3,
      *    max = 30,
@@ -65,6 +68,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
      * @Assert\Length(
      *    min = 3,
      *    max = 30,
@@ -76,6 +80,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=50)
+     * @Assert\NotBlank
      * @Assert\Length(
      *    min = 3,
      *    max = 40,
@@ -98,6 +103,8 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank
+     * @Assert\Positive
      */
     private $age;
 
