@@ -6,6 +6,7 @@ use App\Repository\JeuRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=JeuRepository::class)
@@ -21,16 +22,31 @@ class Jeu
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 3,
+     *      max = 100,
+     *      minMessage = "Le titre doit avoir au moins {{ limit }} caractères",
+     *      maxMessage = "Le titre ne doit pas excéder {{ limit }} caractères"
+     * )
      */
     private $titre;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 100,
+     *      max = 600,
+     *      minMessage = "La description doit avoir au moins {{ limit }} caractères",
+     *      maxMessage = "La description ne doit pas excéder {{ limit }} caractères"
+     * )
      */
     private $description;
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\NotBlank
      */
     private $date_sortie;
 
