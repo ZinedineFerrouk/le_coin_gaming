@@ -10,14 +10,14 @@
 {% block body %}
 
 <div class="containershowAnn">
-    <div class="showAnn">
-        <div class="showAnnleft">
+    <div class="showAnn row">
+        <div class="showAnnleft col-lg-6 col-sm-12">
             <h1 class="text-center ">{{ jeu.titre }}</h1>
             <div class="text-center  ">
                 <img class="rounded" style="width:300px; height:400px" src="{{ asset(jeu.image) }}" alt="">
             </div>
         </div>
-        <div class="showAnnright">
+        <div class="showAnnright  col-lg-6 col-sm-12">
             <div>
                 <h4 class="colorRef">Description: </h4>
                 <p>{{ jeu.description }}</p>
@@ -33,12 +33,11 @@
                 <p><span class="font-weight-bold colorRef">Tél: </span> {{user.num}}</p>
                 <p><span class="font-weight-bold colorRef">Mail: </span> {{user.email}} </p>
             </div>
+            <a class="__show_button p-2 " href="{{ path('profil_annonce')}}">Retour aux annonces</a>
         </div>
 
 
-        <div class="text-center my-2">
-            <a class="__show_button" href="{{ path('annonces_per_game', {id: jeu.id}) }}">Retour aux annonces</a>
-        </div>
+ 
 
     </div>
 

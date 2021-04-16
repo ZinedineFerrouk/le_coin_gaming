@@ -3,8 +3,7 @@
 
 {% block body %}
     <h1 class="text-center">Liste des annonces</h1>
-
-    <div id="accordion ">
+    <div id="accordion">
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h5 class="mb-0">
@@ -16,14 +15,14 @@
 
             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body ">
-                    <table class="table col-lg-12 col-sm-2">
+                    <table class="table">
                         <thead>
                             <tr class="text-center">
                                 <th>Jeux</th>
-                                <th>Plateforme</th>
-                                <th>Titre</th>
+                                <th class="displayThTd">Plateforme</th>
+                                <th class="displayThTd">Titre</th>
                                 <th>Prix</th>
-                                <th>Status</th>
+                                <th class="displayThTd">Status</th>
                                 <th>actions</th>
                             </tr>
                         </thead>
@@ -31,10 +30,10 @@
                         {% for annonce in annonces %}
                             <tr class="text-center">
                                 <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
-                                <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
-                                <td>{{annonce.jeu.titre}}</td>
+                                <td class="displayThTd"><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
+                                <td class="displayThTd">{{annonce.jeu.titre}}</td>
                                 <td>{{annonce.prix}} €</td>
-                                <td>{{ annonce.status }} </td>
+                                <td class="displayThTd">{{ annonce.status }} </td>
                                 <td>
                                     <a class="btn btn-primary m-1" href="{{ path('admin_annonce_show', {'id': annonce.id}) }}">Voir l'annonce</a><br>
                                     <a class="btn btn-primary m-1" href="{{ path('admin_annonce_edit', {'id': annonce.id}) }}">Modifier l'annonce</a>
@@ -64,10 +63,10 @@
                         <thead>
                             <tr class="text-center">
                                 <th>Jeux</th>
-                                <th>Plateforme</th>
-                                <th>Titre</th>
-                                <th>Prix</th>
-                                <th>Status</th>
+                                <th class="displayThTd">Plateforme</th>
+                                <th class="displayThTd">Titre</th>
+                                <th >Prix</th>
+                                <th class="displayThTd">Status</th>
                                 <th>actions</th>
                             </tr>
                         </thead>
@@ -75,10 +74,10 @@
                         {% for nonP in NonPublier %}
                             <tr class="text-center">
                                 <td><img style="width:97px; height:128px" src="{{ asset(nonP.jeu.image) }}" alt=""></td>
-                                <td><img src="{{ asset(nonP.plateforme.logo) }}" alt=""></td>
-                                <td>{{nonP.jeu.titre}}</td>
+                                <td class="displayThTd"><img src="{{ asset(nonP.plateforme.logo) }}" alt=""></td>
+                                <td class="displayThTd">{{nonP.jeu.titre}}</td>
                                 <td>{{nonP.prix}} €</td>
-                                <td>{{ nonP.status }} </td>
+                                <td class="displayThTd">{{ nonP.status }} </td>
                                 <td>
                                     <a class="btn btn-primary m-1" href="{{ path('admin_annonce_show', {'id': nonP.id}) }}">Voir l'annonce</a><br>
                                     <a class="btn btn-primary m-1" href="{{ path('admin_annonce_edit', {'id': nonP.id}) }}">Modifier l'annonce</a>
