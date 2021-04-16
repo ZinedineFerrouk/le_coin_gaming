@@ -1082,4 +1082,8 @@ footer p{
     z-index: 4
   }
 }
+
+.__show_button:hover{
+  color: #fb8500;
+}
 /* /////////////////////////////// FIN CSS ZINEDINE //////////////////////////// */

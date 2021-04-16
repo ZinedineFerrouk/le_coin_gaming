@@ -1,78 +1,85 @@
-a:hover{
-    text-decoration: none;
+a:hover {
+  text-decoration: none;
 }
 
-body{
-    background: #002126;
-    color: white;
+body {
+  background: #002126;
+  color: white;
 }
 
-.container{
-    margin-top: 230px !important;
+.container {
+  margin-top: 230px !important;
 }
 
-.container-annonces{
-    width: 80%;
-    margin: 4rem auto;
+.container-annonces {
+  width: 80%;
+  margin: 4rem auto;
 }
 
-.__game_image{
-    width: 250px;
-    border-radius: 3%;
+.__game_image {
+  width: 250px;
+  border-radius: 3%;
 }
 
-.__game_info{
-    margin: 18rem 0 0 1.5rem;
+.__game_title {
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-.__game_title{
-    font-weight: 700;
-    letter-spacing: 2px;
+.__game_date {
+  text-align: center;
 }
 
-.__game_date{
-    text-align: center;
+.__border_black {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 80%;
+  margin: auto;
 }
-
-.__border_black{
-    height: 1px;
-    background-color: rgba(0,0,0,.4);
-    width: 80%;
-    margin: auto;
+.__border_grey {
+  height: 1px;
+  background-color: hsla(0, 0%, 100%, 0.08);
+  width: 80%;
+  margin: auto;
 }
-.__border_grey{
-    height: 1px;
-    background-color: hsla(0,0%,100%,.08);
-    width: 80%;
-    margin: auto;
+.__game_synopsis {
+  font-weight: 700;
+  font-size: 1.5rem;
 }
-.__game_synopsis{
-    font-weight: 700;
-    font-size: 1.5rem;
+.__game_description {
+  font-size: 1rem;
 }
-.__game_description{
-    font-size: 1rem;
-}
-.__game_annonce{
-    background-color: #025a68;
-    box-shadow: 
-    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+.__game_annonce {
+  background-color: #025a68;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
     -8px -8px 12px 0 rgba(48, 48, 48, 0.3);
-    padding: 1rem;
+  padding: 1rem;
 }
-.__game_annonce_details{
-    display: flex;
-    justify-content: space-between;
-    color: white;
-}
-
-.__show_button{
-    background-color: #025a68;
-    color: white;
-    padding: 1rem;
-    border-radius: 5px;
+.__game_annonce_details {
+  /* display: flex;
+    justify-content: space-between; */
+  color: white;
 }
 
-.__show_button:hover{
-    color: #7FD9E0;
+.__show_button {
+  background-color: #025a68;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.__show_button:hover {
+  color: #7fd9e0;
+}
+
+.__game__image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1224px) {
+  .__game_show_annonce {
+    display: none;
+  }
 }

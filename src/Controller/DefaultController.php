@@ -19,8 +19,6 @@ class DefaultController extends AbstractController
         $lastFourgames = $repo->getLastResults(4,3);
         $lastSixjeux = $annonceRepo->getLastResults(6,0);
         
-        
-        
         return $this->render('default/index.html.twig', [
             'lastThreeGames' => $lastThreegames,
             'lastFourgames' => $lastFourgames,
