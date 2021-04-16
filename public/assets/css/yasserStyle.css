@@ -652,6 +652,31 @@ label #cancel {
   text-align: center;
 }
 
+.containerSell1{
+  background-image: url("../img/horizon.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+.sell{
+  background: rgba(0, 33, 38, 0.7);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formSell1{
+  color: white;
+  width: 50%;
+}
+
+.formSell1 h1 {
+  padding-top: 100px;
+  text-align: center;
+}
 
 
 
@@ -753,11 +778,8 @@ label #cancel {
   height: 100vh;
   display: grid;
   align-items: center;
-  
-  
 }
 .containerAnnprof h1 {
-  padding-top: 120px;
   text-align: center;
   
 }
@@ -766,11 +788,12 @@ label #cancel {
 
 /* \\\\\\\\\\\\\\\\Page Voir l'Annonce//////////////// */
 .containershowAnn {
-  height: 100vh;
+  height: 125vh;
   background: #002126;
   color: white;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 .colorRef{
   color: #7fd9e0;
@@ -779,17 +802,35 @@ label #cancel {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 auto;
+
 }
 .showAnnleft{
   width: 60%;
+  
 }
 .showAnnright{
-  padding-top: 100px;
+  margin: 50px 0;
   width: 35%;
+}
+
+
+/* ********************Responsive************** */
+@media screen and (min-width: 1224px) {
+  .containershowAnn {
+    height: 100vh;
+  }
+.showAnnright{
+  padding-top: 50px;
   margin-left: -10%;
 }
 
+.showAnn{
+  margin: 0;
+}
+
+
+
+}
 
 
 
@@ -855,7 +896,6 @@ label #cancel {
 footer {
   background: #001214;
   padding: 20px;
-  width: 100%;
   display: grid;
   justify-content: center;
   width: 100%;

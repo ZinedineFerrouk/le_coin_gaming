@@ -4,44 +4,45 @@
 
 {% block body %}
 <div class="containerAnnprof">
-    
-       <h1>Mes Annonces</h1>
+    <div class="AnnProf">
+        <h1>Mes Annonces</h1>
 
-    <table class="table">
-        <thead>
-            <tr class="text-center text-white table-active">
-                <th>Jeux</th>
-                <th>Plateforme</th>
-                <th>Titre</th>
-                <th>Status</th>
-                <th>Prix</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for annonce in annonces %}
-            <tr class="text-center text-white">
-                <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
-                <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
-                <td>{{annonce.jeu.titre}}</td>
-                <td>{{annonce.status}}</td>
-                <td>{{ annonce.prix }} €</td>
-                <td>
-                    <a class="btn btn-primary m-2" href="{{ path('annonce_show', {'id': annonce.id}) }}">Voir</a>
-                    <a class="btn btn-success m-2" href="{{ path('annonce_edit', {'id': annonce.id}) }}">Editer</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="5">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <div class='text-center'>
-        <a class='btn btn-primary my-3' href="{{ path('profil') }}">Retour</a>
+        <table class="table">
+            <thead>
+                <tr class="text-center text-white table-active">
+                    <th>Jeux</th>
+                    <th>Plateforme</th>
+                    <th>Titre</th>
+                    <th>Status</th>
+                    <th>Prix</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for annonce in annonces %}
+                <tr class="text-center text-white">
+                    <td><img style="width:97px; height:128px" src="{{ asset(annonce.jeu.image) }}" alt=""></td>
+                    <td><img src="{{ asset(annonce.plateforme.logo) }}" alt=""></td>
+                    <td>{{annonce.jeu.titre}}</td>
+                    <td>{{annonce.status}}</td>
+                    <td>{{ annonce.prix }} €</td>
+                    <td>
+                        <a class="btn btn-primary m-2" href="{{ path('annonce_show', {'id': annonce.id}) }}">Voir</a>
+                        <a class="btn btn-success m-2" href="{{ path('annonce_edit', {'id': annonce.id}) }}">Editer</a>
+                    </td>
+                </tr>
+                {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class='text-center'>
+            <a class='btn btn-primary my-3' href="{{ path('profil') }}">Retour</a>
+        </div>
     </div>
 </div>
-    
+
 
 {% endblock %}
