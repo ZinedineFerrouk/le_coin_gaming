@@ -529,7 +529,7 @@ label #cancel {
 }
 .backRegis {
   background: rgba(0, 33, 38, 0.7);
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   display: flex;
   justify-content: center;
