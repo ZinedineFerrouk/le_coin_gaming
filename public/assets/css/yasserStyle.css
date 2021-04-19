@@ -112,9 +112,9 @@ nav a:hover {
 label #cancel {
   display: none;
 }
- /* **********Responsive*********** */
+/* **********Responsive*********** */
 
- /* Format PC */
+/* Format PC */
 @media screen and (min-width: 1224px) {
   .burger {
     display: none;
@@ -168,10 +168,6 @@ label #cancel {
     border-radius: 3px;
   }
 }
-
-
-
-
 
 /* \\\\\\\\\\\\\\\\\\\\ ACCUEIL //////////////////////*/
 .containerAcc {
@@ -244,7 +240,7 @@ label #cancel {
     top: 250px;
     right: 20%;
   }
-/* Slider */
+  /* Slider */
   .slider-container {
     position: relative;
     -webkit-perspective: 350px;
@@ -316,8 +312,6 @@ label #cancel {
     padding-top: 370px;
   }
 }
-
-
 
 /* Jeux Récents */
 
@@ -393,7 +387,6 @@ label #cancel {
   }
 }
 
-
 /* Fonctionnalités */
 
 .fonct {
@@ -425,7 +418,7 @@ label #cancel {
   padding: 25px;
 }
 
-.fonct3 a:hover{
+.fonct3 a:hover {
   text-decoration: none;
 }
 /* **************Responsive************** */
@@ -443,7 +436,8 @@ label #cancel {
     align-items: center;
   }
   .fonct2,
-  .fonct1,.fonct3 {
+  .fonct1,
+  .fonct3 {
     width: 36%;
   }
   .border {
@@ -452,7 +446,6 @@ label #cancel {
     height: 300px;
   }
 }
-
 
 /* Ventes Récentes */
 
@@ -525,11 +518,6 @@ label #cancel {
   }
 }
 
-
-
-
-
-
 /* \\\\\\\\\\\\\\\\\\\\\ INSCRIPTION /////////////////////*/
 
 .register {
@@ -577,10 +565,6 @@ label #cancel {
   background: #67bfc5;
 }
 
-
-
-
-
 /* \\\\\\\\\\\\\\\\\\\PAGE LOGIN ///////////////////// */
 
 .login {
@@ -621,21 +605,16 @@ label #cancel {
   background: #67bfc5;
 }
 
-
-
-
-
-
 /* \\\\\\\\\\\\\\\\\PAGE VENTE////////////////////*/
 
-.containerSell{
+.containerSell {
   background-image: url("../img/horizon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
-.backSell{
+.backSell {
   background: rgba(0, 33, 38, 0.7);
   height: 100vh;
   width: 100%;
@@ -643,23 +622,23 @@ label #cancel {
   justify-content: center;
   align-items: center;
 }
-.formSell{
+.formSell {
   color: white;
   width: 50%;
 }
 
-.formSell h1{
+.formSell h1 {
   text-align: center;
 }
 
-.containerSell1{
+.containerSell1 {
   background-image: url("../img/horizon.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 100vh;
 }
-.sell{
+.sell {
   background: rgba(0, 33, 38, 0.7);
   height: 100vh;
   width: 100%;
@@ -668,7 +647,7 @@ label #cancel {
   align-items: center;
 }
 
-.formSell1{
+.formSell1 {
   color: white;
   width: 50%;
 }
@@ -677,10 +656,6 @@ label #cancel {
   padding-top: 100px;
   text-align: center;
 }
-
-
-
-
 
 /* \\\\\\\\\\\\\\\\\PAGE PROFIL///////////////////*/
 
@@ -695,7 +670,7 @@ label #cancel {
   justify-content: center;
   text-align: center;
 }
-.accueilProf{
+.accueilProf {
   position: absolute;
   top: 55%;
   left: 50%;
@@ -729,13 +704,10 @@ label #cancel {
 /* ***************Responsive************** */
 
 @media screen and (min-width: 1224px) {
-  .containerProf{
+  .containerProf {
     height: 115vh;
   }
-  
 }
-
-
 
 /* \\\\\\\\\\\\\\\\\Page Modification du Profil/////////////// */
 
@@ -745,31 +717,28 @@ label #cancel {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  
 }
-.backModif{
+.backModif {
   background: rgba(0, 33, 38, 0.7);
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.formModif{
+.formModif {
   color: white;
 }
-.profilEd{
+.profilEd {
   width: 75%;
 }
-.btnR{
+.btnR {
   background: #7fd9e0;
   color: white;
 }
-.btnR:hover{
+.btnR:hover {
   background: #67bfc5;
   color: white;
 }
-
-
 
 /* \\\\\\\\\\\\\\\Page Mes Annonces (Utilisateur)///////////// */
 .containerAnnprof {
@@ -781,10 +750,7 @@ label #cancel {
 }
 .containerAnnprof h1 {
   text-align: center;
-  
 }
-
-
 
 /* \\\\\\\\\\\\\\\\Page Voir l'Annonce//////////////// */
 .containershowAnn {
@@ -795,44 +761,36 @@ label #cancel {
   align-items: center;
   justify-content: center;
 }
-.colorRef{
+.colorRef {
   color: #7fd9e0;
 }
 .showAnn {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-
 }
-.showAnnleft{
+.showAnnleft {
   width: 60%;
-  
 }
-.showAnnright{
+.showAnnright {
   margin: 50px 0;
   width: 35%;
 }
-
 
 /* ********************Responsive************** */
 @media screen and (min-width: 1224px) {
   .containershowAnn {
     height: 100vh;
   }
-.showAnnright{
-  padding-top: 50px;
-  margin-left: -10%;
+  .showAnnright {
+    padding-top: 50px;
+    margin-left: -10%;
+  }
+
+  .showAnn {
+    margin: 0;
+  }
 }
-
-.showAnn{
-  margin: 0;
-}
-
-
-
-}
-
-
 
 /* \\\\\\\\\\\\\\\Page Modification de l'annonce//////////////// */
 .containerEditann {
@@ -842,7 +800,7 @@ label #cancel {
   background-size: cover;
   background-position: center;
 }
-.backEdit{
+.backEdit {
   background: rgba(0, 33, 38, 0.7);
   height: 100vh;
   display: flex;
@@ -855,41 +813,31 @@ label #cancel {
 .formEdit {
   width: 50%;
   margin: 0 auto;
- color: white;
+  color: white;
 }
-
-
 
 /* //////////////////FAQ\\\\\\\\\\\\\\\\\ */
 
-.containerFaq{
+.containerFaq {
   height: 100vh;
   background: #001214;
   display: flex;
   align-items: center;
-  
 }
 
-
-.card-header{
+.card-header {
   background: #7fd9e0;
 }
-.card button:hover{
+.card button:hover {
   color: #002126;
   text-decoration: none;
 }
-.card button{
+.card button {
   color: white;
 }
-.card-body{
+.card-body {
   background: white;
 }
-
-
-
-
-
-
 
 /* \\\\\\\\\\\\\\\\\\\\\FOOTER///////////////////////// */
 
@@ -901,18 +849,17 @@ footer {
   width: 100%;
 }
 
-.titreFoot{
-  
+.titreFoot {
   margin: 0;
   color: white;
   width: 100%;
   text-align: center;
 }
 
-.liens{
+.liens {
   width: 100%;
 }
-.socials{
+.socials {
   width: 22%;
   color: white;
   padding-left: 100px;
@@ -926,7 +873,7 @@ footer {
 }
 footer .liens > ul {
   display: grid;
-    text-align: center;
+  text-align: center;
 }
 
 footer ul {
@@ -955,7 +902,7 @@ footer a:hover {
   color: #7fd9e0;
 }
 
-footer p{
+footer p {
   margin: 0;
 }
 
@@ -963,14 +910,13 @@ footer p{
   font-size: 30px;
 }
 
-
 @media screen and (min-width: 1224px) {
-  footer{
+  footer {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
-  .liens{
+  .liens {
     width: 45%;
   }
 
@@ -979,22 +925,21 @@ footer p{
     justify-content: space-around;
   }
 
-  footer li{
+  footer li {
     padding: 0;
   }
 
-  .titreFoot{
+  .titreFoot {
     padding-left: 50px;
     width: 30%;
     text-align: center;
   }
 
-  .socials{
+  .socials {
     width: 22%;
-  color: white;
-  padding-left: 100px;
+    color: white;
+    padding-left: 100px;
   }
-  
 }
 
 /* /////////////////////////////// CSS ZINEDINE //////////////////////////// */
@@ -1048,7 +993,7 @@ footer p{
     width: 250px;
   }
 
-  header{
+  header {
     display: flex;
   }
 }
@@ -1064,12 +1009,12 @@ footer p{
     margin: 30px 50px;
   }
 
-  .__search_icon{
+  .__search_icon {
     font-size: 30px;
     color: white;
   }
 
-  .btn-activated{
+  .btn-activated {
     border: turquoise solid 1.5px;
     margin: 0;
     padding: 0;
@@ -1079,11 +1024,22 @@ footer p{
     left: 0;
     top: 0;
     height: 100%;
-    z-index: 4
+    z-index: 4;
   }
 }
 
-.__show_button:hover{
+.__show_button:hover {
   color: #fb8500;
 }
+
+.__reset_password_div,
+.__reset_password_reset {
+  margin: 18rem auto;
+}
+
+body {
+  background: #002126;
+  color: white;
+}
+
 /* /////////////////////////////// FIN CSS ZINEDINE //////////////////////////// */

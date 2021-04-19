@@ -48,6 +48,7 @@ class AnnonceController extends AbstractController
             $entityManager->persist($annonce);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Votre annonce doit être validé par un administrateur avant publication');
             return $this->redirectToRoute('games_listing');
         }
 
