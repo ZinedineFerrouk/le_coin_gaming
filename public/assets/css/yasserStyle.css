@@ -1038,8 +1038,13 @@ footer p {
 }
 
 .__reset_password_div,
-.__reset_password_reset {
+.__reset_password_reset
+{
   margin: 18rem auto;
+}
+
+.__reset_success_div {
+  margin: 23.3rem auto;
 }
 
 body {
