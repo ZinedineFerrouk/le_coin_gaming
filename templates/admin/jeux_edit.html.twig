@@ -3,11 +3,15 @@
 {% block title %}Edit Jeu{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Modifier Jeu</h1>
+    <div class="container">
+        <h1 class="text-center">Modifier Jeu</h1>
 
-    {{ include('jeu/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('jeu/_form.html.twig', {'button_label': 'Enregistrer'}) }}
 
-    <a href="{{ path('admin_jeu') }}">Retour à la liste</a>
+        <div class="my-3">
+            <a href="{{ path('admin_jeu') }}">Retour à la liste</a>
+        </div>
 
-    {{ include('jeu/_delete_form.html.twig') }}
+        {{ include('jeu/_delete_form.html.twig') }}
+    <div>
 {% endblock %}

@@ -3,8 +3,8 @@
 {% block title %}User index{% endblock %}
 
 {% block body %}
-    <h1 class="text-center">Liste des Utilisateurs</h1>
-    <a href="{{ path('user_new') }}" class="btn btn-primary ml-3 mb-2">Créer un utilisateur</a>
+    <h1 class="text-center">Liste des Utilisateurs</h1>{# 
+    <a href="{{ path('user_new') }}" class="btn btn-primary ml-3 mb-2">Créer un utilisateur</a> #}
     <table class="table">
         <thead>
             <tr>
@@ -33,13 +33,13 @@
                 {# <td>{{ user.num }}</td> #}
                 <td>{{ user.age }}</td>
                 <td>
-                    <a href="{{ path('user_show', {'id': user.id}) }}">show</a>
-                    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                    <a href="{{ path('user_show', {'id': user.id}) }}">Voir</a>
+                    <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="10">no records found</td>
+                <td colspan="10">Aucun utilisateur</td>
             </tr>
         {% endfor %}
         </tbody>
