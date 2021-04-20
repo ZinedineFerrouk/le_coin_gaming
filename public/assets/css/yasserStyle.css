@@ -898,7 +898,9 @@ label #cancel {
 }
 
 .card-header {
-  background: #7fd9e0;
+  /* background: #7fd9e0; */
+  background: #002126;
+  
 }
 .card button:hover {
   color: #002126;
@@ -909,6 +911,7 @@ label #cancel {
 }
 .card-body {
   background: white;
+  color: black;
 }
 
 /* \\\\\\\\\\\\\\\\\\\\\FOOTER///////////////////////// */
