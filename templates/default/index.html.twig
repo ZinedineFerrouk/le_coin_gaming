@@ -24,6 +24,7 @@
                             </div>
                             <div class="slide-content">
                                 <p>{{jeu.titre}}</p>
+                                
                             </div>
                         </div>
                         {% endfor %}
@@ -42,7 +43,7 @@
     <div class="jeuxR">
         <div class="imgdesc">
             {% for jeu in lastFourgames %}
-            <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img style="height: 600px;" src="{{jeu.image}}" alt="" /></a>
+            <a href="{{ path('annonces_per_game', {'id': jeu.id}) }}"><img style="height: 100%;" src="{{jeu.image}}" alt="" /></a>
             {% endfor %}
         </div>
 
@@ -83,7 +84,7 @@
     <div class="jeuxR">
         <div class="imgdesc">
             {% for annonce in lastSixjeux %}
-            <a href="{{ path('annonces_per_game', {'id': annonce.jeu.id}) }}"><img style="height: 400px"
+            <a href="{{ path('annonces_per_game', {'id': annonce.jeu.id}) }}"><img style="height: 100%"
                     src="{{asset(annonce.jeu.image)}}" alt="" /></a>
             {% endfor %}
         </div>
