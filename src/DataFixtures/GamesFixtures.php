@@ -22,7 +22,7 @@ class GamesFixtures extends Fixture implements DependentFixtureInterface
             ],
 
             2 => [
-                'titre' => 'The Elder Scrolls V : Skyrim : Special Edition',
+                'titre' => 'The Elder Scrolls V : Skyrim',
                 'description' => 'The Elder Scrolls V : Skyrim : Special Edition sur PS4 est un jeu de rôle et le cinquième volet de la saga Elder Scrolls. L\'histoire se déroule dans la contrée de Skyrim, près de 200 ans après les événements narrés dans le précédent opus. L\'assassinat du Haut-Roi de Bordeciel a plongé le pays dans la guerre civile et pour couronner le tout, c\'est le moment que choisit Alduin pour réapparaître. Une seule personne peut rétablir l\'équilibre, le Dovahkiin, « fils de Dragons » et ça tombe bien : c\'est vous !',
                 'date_sortie' => '2016-10-28 00:00:00',
                 'image' => 'assets/images/games/skyrim-60784354d424a.jpg',
