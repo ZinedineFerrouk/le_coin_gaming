@@ -3,6 +3,9 @@
 
 {% block body %}
     <h1 class="text-center">Liste des Jeux</h1>
+
+    <a class="btn btn-primary m-2" href="{{ path('admin_jeu_new') }}">Ajouter un jeu</a>
+    
     <div id="accordion">
         <div class="card">
             <div class="card-header" id="headingOne">
@@ -34,8 +37,8 @@
                                 <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d') : '' }}</td>
                                 {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
                                 <td>
-                                    <a href="{{ path('admin_jeu_show', {'id': jeu.id}) }}">Voir Jeu</a>
-                                    <a href="{{ path('admin_jeu_edit', {'id': jeu.id}) }}">edit</a>
+                                    <a href="{{ path('admin_jeu_show', {'id': jeu.id}) }}">Voir</a>
+                                    <a href="{{ path('admin_jeu_edit', {'id': jeu.id}) }}">Modifier</a>
                                 </td>
                             </tr>
                         {% else %}
@@ -78,8 +81,8 @@
                                 <td>{{ nonP.dateSortie ? nonP.dateSortie|date('Y-m-d') : '' }}</td>
                                 {# <td><img style="width:200px;" src="{{ asset(jeu.image) }}" /></td> #}
                                 <td>
-                                    <a href="{{ path('admin_jeu_show', {'id': nonP.id}) }}">Voir Jeu</a>
-                                    <a href="{{ path('admin_jeu_edit', {'id': nonP.id}) }}">edit</a>
+                                    <a href="{{ path('admin_jeu_show', {'id': nonP.id}) }}">Voir</a>
+                                    <a href="{{ path('admin_jeu_edit', {'id': nonP.id}) }}">Modifier</a>
                                 </td>
                             </tr>
                         {% else %}
