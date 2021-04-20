@@ -175,12 +175,38 @@ class AdminController extends AbstractController
     /**
      * @Route("/jeux/{id}/edit", name="admin_jeu_edit", methods={"GET","POST"}, requirements={"id": "\d+"})
      */
-    public function edit(Request $request, Jeu $jeu): Response
+    public function edit(Request $request, Jeu $jeu, SluggerInterface $slugger): Response
     {
         $form = $this->createForm(JeuType::class, $jeu);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $image = $form->get('image')->getData();
+            $imagePath = $this->getParameter('jeux_directory');
+
+            if ($image) {
+                $originalFilename = pathinfo($image->getClientOriginalName(), PATHINFO_FILENAME);
+                $safeFilename = $slugger->slug($originalFilename);
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $image->guessExtension();
+                $filePath = $imagePath . '/' . $newFilename;
+
+                try {
+                    $image->move(
+                        $imagePath,
+                        $newFilename
+                    );
+
+                    $image = new ImageResize($filePath);
+                    $image->resizeToWidth(480);
+                    $image->save($filePath, IMAGETYPE_JPEG);
+
+                } catch (FileException $e) {
+                }
+
+                $jeu->setImage('assets/images/games/' . $newFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_jeu');
