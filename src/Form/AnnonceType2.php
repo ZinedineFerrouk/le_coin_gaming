@@ -5,7 +5,7 @@ namespace App\Form;
 use App\Entity\Annonce;
 use App\Entity\Jeu;
 use App\Entity\Plateforme;
-use App\Entity\User;
+use App\Repository\JeuRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -20,6 +20,12 @@ class AnnonceType2 extends AbstractType
             ->add('boite')
             ->add('jeu', EntityType::class,[
                 'class' => Jeu::class,
+                'query_builder' => function (JeuRepository $er) {
+                    return $er->createQueryBuilder('j')
+                        ->where('j.status = :status')
+                        ->setParameter('status', 'Publié');
+                },
+                
                 'choice_label' => 'titre',
                 'multiple' => false,
                 'expanded' => false,

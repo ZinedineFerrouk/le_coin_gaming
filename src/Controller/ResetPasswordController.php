@@ -88,14 +88,14 @@ class ResetPasswordController extends AbstractController
 
         $token = $this->getTokenFromSession();
         if (null === $token) {
-            throw $this->createNotFoundException('No reset password token found in the URL or in the session.');
+            throw $this->createNotFoundException('Aucun token valide n\'as été trouvé.');
         }
 
         try {
             $user = $this->resetPasswordHelper->validateTokenAndFetchUser($token);
         } catch (ResetPasswordExceptionInterface $e) {
             $this->addFlash('reset_password_error', sprintf(
-                'There was a problem validating your reset request - %s',
+                'Un problème est survenue lors de votre demande - %s',
                 $e->getReason()
             ));
 
@@ -121,7 +121,8 @@ class ResetPasswordController extends AbstractController
 
             // The session is cleaned up after the password has been changed.
             $this->cleanSessionAfterReset();
-
+            
+            $this->addFlash('success', 'Votre mot de passe a bien été modifié.');
             return $this->redirectToRoute('profil');
         }
 
