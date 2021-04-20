@@ -757,14 +757,14 @@ label #cancel {
 
 .modifProf1 {
   height: 100vh;
-  background-image: url("../img/horizon.jpg");
+  background-image: url("../img/Genshin-Impact.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .backModif {
   background: rgba(0, 33, 38, 0.7);
-  height: 120vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
