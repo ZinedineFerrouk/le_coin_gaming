@@ -2,34 +2,36 @@
 
 
 {% block body %}
-    <h1 class="text-center">Jeu</h1>
+    <div class="container">
+        <h1 class="text-center">Jeu</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ jeu.id }}</td>
-            </tr>
-            <tr>
-                <th>Titre</th>
-                <td>{{ jeu.titre }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ jeu.description }}</td>
-            </tr>
-            <tr>
-                <th>Date_sortie</th>
-                <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ jeu.image }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ jeu.id }}</td>
+                </tr>
+                <tr>
+                    <th>Titre</th>
+                    <td>{{ jeu.titre }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ jeu.description }}</td>
+                </tr>
+                <tr>
+                    <th>Date_sortie</th>
+                    <td>{{ jeu.dateSortie ? jeu.dateSortie|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td>{{ jeu.image }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    
+        
 
-    <a href="{{ path('admin_jeu') }}">Retour à la liste</a>
+        <a href="{{ path('admin_jeu') }}">Retour à la liste</a>
+    </div>
 {% endblock %}
