@@ -237,7 +237,7 @@ label #cancel {
 /* **************Responsive************** */
 
 /* Format PC */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1025px) {
   .desc {
     display: block;
     width: 25vw;
@@ -310,7 +310,6 @@ label #cancel {
 
 /* Format Tablette */
 @media screen and (min-width: 600px) and (max-width: 1024px) {
-   
   .containerAcc {
     margin-top: -15%;
   }
@@ -343,10 +342,6 @@ label #cancel {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-}
-
-.imgdesc img {
-height: 400px;
 }
 .classJeu1 h2,
 .classJeu1 p {
@@ -730,7 +725,7 @@ height: 400px;
 }
 .backModif {
   background: rgba(0, 33, 38, 0.7);
-  height: 120vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
