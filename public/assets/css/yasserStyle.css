@@ -244,7 +244,7 @@ label #cancel {
     display: block;
     width: 25vw;
     position: absolute;
-    top: 250px;
+    top: 190px;
     right: 20%;
   }
   /* Slider */
@@ -640,8 +640,10 @@ label #cancel {
 }
 .backSell {
   background: rgba(0, 33, 38, 0.7);
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  padding-top: 200px;
+  
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -670,7 +672,7 @@ label #cancel {
 }
 .sell {
   background: rgba(0, 33, 38, 0.7);
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -683,13 +685,9 @@ label #cancel {
           align-items: center;
 }
 
-.formSell1 {
-  color: white;
-  width: 50%;
-}
+
 
 .formSell1 h1 {
-  padding-top: 100px;
   text-align: center;
 }
 
@@ -776,6 +774,7 @@ label #cancel {
           justify-content: center;
 }
 .formModif {
+  padding-top: 150px;
   color: white;
 }
 .profilEd {
@@ -915,7 +914,7 @@ label #cancel {
 
 footer {
   background: #001214;
-  padding: 20px;
+  padding: 30px;
   display: -ms-grid;
   display: grid;
   -webkit-box-pack: center;
