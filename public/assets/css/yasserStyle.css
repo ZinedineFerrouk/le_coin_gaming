@@ -1,3 +1,8 @@
+:root{
+  --transition-carousel:1s;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -268,9 +273,9 @@ label #cancel {
   #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(1),
   #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(2),
   #carousel-3d-controller-1 ~ .carousel-3d-item:nth-of-type(3) {
-    -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -webkit-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -o-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
   .carousel-3d-item:nth-of-type(2),
   #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(2),
@@ -279,9 +284,9 @@ label #cancel {
     -webkit-transform: translateX(-175px) translateZ(-130px);
     transform: translateX(-175px) translateZ(-130px);
     opacity: 0.7;
-    -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -webkit-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -o-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
   .carousel-3d-item:nth-of-type(1),
   #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(1),
@@ -290,9 +295,9 @@ label #cancel {
     -webkit-transform: translateX(0) translateZ(0);
     transform: translateX(0) translateZ(0);
     opacity: 1;
-    -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -webkit-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -o-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
   .carousel-3d-item:nth-of-type(3),
   #carousel-3d-controller-1:checked ~ .carousel-3d-item:nth-of-type(3),
@@ -301,9 +306,9 @@ label #cancel {
     -webkit-transform: translateX(175px) translateZ(-130px);
     transform: translateX(175px) translateZ(-130px);
     opacity: 0.7;
-    -webkit-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    -o-transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
-    transition: all 1s cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -webkit-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    -o-transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
+    transition: all var(--transition-carousel) cubic-bezier(0.48, 0.16, 0.15, 0.98);
   }
 }
 
@@ -541,7 +546,7 @@ label #cancel {
 }
 .backRegis {
   background: rgba(0, 33, 38, 0.7);
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   display: flex;
   justify-content: center;
