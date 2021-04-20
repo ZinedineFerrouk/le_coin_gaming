@@ -70,6 +70,7 @@ class JeuController extends AbstractController
             $entityManager->persist($jeu);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Le jeux doit être validé par un administrateur avant publication');
             return $this->redirectToRoute('annonce_new');
         }
 

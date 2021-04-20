@@ -4,82 +4,83 @@
 {% endblock %}
 
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_listing_styles.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/zinedine/game_listing_styles.css')}}">
 {% endblock %}
 
 {% block body %}
 
-<div class="__game_container">
+	<div class="__game_container">
 
-	<div class="____background_image_container">
-		<div class="__background_image_div">
-			<img class="__background-wallpaper"
-				src="{{ asset('assets/images/background-wallpaper/background-wp.webp') }}" alt="Zelda wallpaper">
-		</div>
-	</div>
-
-	<div class="container">
-		<div class="__game_title_div">
-			<span class="__game_span">Les</span>
-			<h1 class="__game_h1">Jeux</h1>
+		<div class="____background_image_container">
+			<div class="__background_image_div">
+				<img class="__background-wallpaper" src="{{ asset('assets/images/background-wallpaper/background-wp.webp') }}" alt="Zelda wallpaper">
+			</div>
 		</div>
 
-		{# BARRE DE TRI PAR PLATEFORME #}
+		<div class="container">
 
-		<div class="__game_pagination">
-			{{ paginator|raw }}
-		</div>
-
-		{% for jeu in jeux %}
-		<div class="__game d-flex">
-			<div class="__game_image_div">
-				<a title="Voir les annonces de {{ jeu.titre }}" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
-					<img class="__game_image" src="{{ asset(jeu.image) }}" />
-				</a>
+			{% for message in app.flashes('success') %}
+				<div class="alert alert-success">
+					{{ message }}
+				</div>
+			{% endfor %}
+			<div class="__game_title_div">
+				<span class="__game_span">Les</span>
+				<h1 class="__game_h1">Jeux</h1>
 			</div>
 
-			<div class="d-block">
-				<p class="__game_title">
-					<a title="Voir les annonces de {{ jeu.titre }}"
-						href="{{ path('annonces_per_game', {'id': jeu.id}) }}">{{ jeu.titre }}</a>
-				</p>
+			{# BARRE DE TRI PAR PLATEFORME #}
 
-				<div class="__game_platform">
-					{% for p in jeu.plateforme %}
-					<img class="__game_platform_logo" src="{{ asset(p.logo) }}" />
-					{% endfor %}
-				</div>
+			<div class="__game_pagination">
+				{{ paginator|raw }}
+			</div>
 
-				<div class="__game_annonces">
-					<a title="Voir les annonces de {{ jeu.titre }}" class="__game_link"
-						href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
-						<div class="__game_link_div">
-							Voir les annonces
-							<i class="fas fa-arrow-right ml-2"></i>
+			{% for jeu in jeux %}
+				<div class="__game d-flex">
+					<div class="__game_image_div">
+						<a title="Voir les annonces de {{ jeu.titre }}" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
+							<img class="__game_image" src="{{ asset(jeu.image) }}"/>
+						</a>
+					</div>
+
+					<div class="d-block">
+						<p class="__game_title">
+							<a title="Voir les annonces de {{ jeu.titre }}" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">{{ jeu.titre }}</a>
+						</p>
+
+						<div class="__game_platform">
+							{% for p in jeu.plateforme %}
+								<img class="__game_platform_logo mx-1" src="{{ asset(p.logo) }}"/>
+							{% endfor %}
 						</div>
-					</a>
+
+						<div class="__game_annonces">
+							<a title="Voir les annonces de {{ jeu.titre }}" class="__game_link" href="{{ path('annonces_per_game', {'id': jeu.id}) }}">
+								<div class="__game_link_div">
+									Voir les annonces
+									<i class="fas fa-arrow-right ml-2"></i>
+								</div>
+							</a>
+						</div>
+					</div>
+
 				</div>
-			</div>
 
+				<div class="__border_black mt-3"></div>
+				<div class="__border_grey mb-3"></div>
+			{% endfor %}
 		</div>
-
-		<div class="__border_black mt-3"></div>
-		<div class="__border_grey mb-3"></div>
-		{% endfor %}
 	</div>
-</div>
 
-<div class="__game_pagination">
-	{{ paginator|raw }}
-</div>
+	<div class="__game_pagination">
+		{{ paginator|raw }}
+	</div>
 
 {% endblock %}
 
 {% block javascripts %}
-{# BARRE DE TRI #}
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+	{# BARRE DE TRI #}
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-<script>
-
-</script>
+	<script></script>
 {% endblock %}
