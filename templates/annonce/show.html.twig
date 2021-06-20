@@ -33,7 +33,7 @@
                 <p><span class="font-weight-bold colorRef">Tél: </span> {{user.num}}</p>
                 <p><span class="font-weight-bold colorRef">Mail: </span> {{user.email}} </p>
             </div>
-            <a class="__show_button p-2 " href="{{ path('profil_annonce')}}">Retour aux annonces</a>
+            <a class="__show_button p-2 " href="{{ path('annonces_per_game', {'id': jeu.id}) }}">Retour aux annonces</a>
         </div>
 
 
